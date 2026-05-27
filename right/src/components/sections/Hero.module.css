@@ -1,0 +1,187 @@
+/* Hero セクション */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--color-bg-main);
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.gradientCircle {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 80vw;
+  height: 80vw;
+  max-width: 1000px;
+  max-height: 1000px;
+  background: radial-gradient(
+    circle,
+    rgba(231, 103, 70, 0.15) 0%,
+    rgba(231, 103, 70, 0.05) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--container-max);
+  padding: 0 var(--container-padding);
+  padding-top: var(--header-height);
+}
+
+.textWrapper {
+  max-width: 800px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s var(--easing-smooth);
+  transition-delay: 0.5s;
+}
+
+.textWrapper.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: var(--fw-bold);
+  line-height: 1.3;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-component-md);
+}
+
+.titleLine {
+  display: block;
+}
+
+.highlight {
+  color: var(--color-coral);
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-coral);
+  opacity: 0.3;
+}
+
+.description {
+  font-size: clamp(15px, 1.5vw, 18px);
+  line-height: 2;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+}
+
+/* スクロールインジケーター */
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.scrollText {
+  font-size: var(--fz-xsmall);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-tertiary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 60px;
+  background-color: var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollDot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 10px;
+  background-color: var(--color-coral);
+  border-radius: var(--radius-full);
+  animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+  0% {
+    top: 0;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+/* レスポンシブ */
+@media (max-width: 767px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .content {
+    padding-top: var(--header-height-mobile);
+  }
+
+  .gradientCircle {
+    top: -10%;
+    right: -30%;
+    width: 120vw;
+    height: 120vw;
+  }
+
+  .title {
+    margin-bottom: var(--space-element-lg);
+  }
+
+  .description {
+    line-height: 1.8;
+  }
+
+  .scrollIndicator {
+    bottom: 24px;
+  }
+
+  .scrollLine {
+    height: 40px;
+  }
+}

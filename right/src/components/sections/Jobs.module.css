@@ -1,0 +1,105 @@
+/* Jobs セクション */
+
+.jobs {
+  padding: var(--space-section-lg) 0;
+  background-color: var(--color-bg-main);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-component-lg);
+}
+
+.label {
+  display: inline-block;
+  font-size: var(--fz-xsmall);
+  font-weight: var(--fw-medium);
+  color: var(--color-coral);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-element-md);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--fz-h2);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-element-lg);
+}
+
+.description {
+  font-size: var(--fz-body);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--grid-gap);
+  margin-bottom: var(--space-component-lg);
+}
+
+.card {
+  min-height: 270px;
+}
+
+/* 5つ目のカードを中央に配置 */
+.grid > *:nth-child(4) {
+  grid-column: 1 / 2;
+}
+
+.grid > *:nth-child(5) {
+  grid-column: 2 / 3;
+}
+
+.action {
+  text-align: center;
+}
+
+/* レスポンシブ */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid > *:nth-child(4),
+  .grid > *:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .grid > *:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .jobs {
+    padding: var(--space-section-md) 0;
+  }
+
+  .header {
+    margin-bottom: var(--space-component-md);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-element-md);
+  }
+
+  .grid > *:last-child {
+    grid-column: span 1;
+  }
+
+  .card {
+    min-height: auto;
+  }
+}

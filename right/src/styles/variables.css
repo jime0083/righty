@@ -1,0 +1,192 @@
+/* ライティ採用サイト - CSS変数定義 */
+
+:root {
+  /* ========================================
+     色定義
+     ======================================== */
+
+  /* プライマリカラー */
+  --color-coral: #e76746;
+  --color-coral-hover: #d55a3a;
+  --color-dark-brown: #341103;
+
+  /* 背景色 */
+  --color-bg-main: #f5f0e8;
+  --color-bg-cream: #faf7f2;
+  --color-white: #ffffff;
+  --color-white-40: rgba(255, 255, 255, 0.4);
+  --color-white-60: rgba(255, 255, 255, 0.6);
+  --color-white-80: rgba(255, 255, 255, 0.8);
+
+  /* セピア系 */
+  --color-sepia-10: rgba(112, 66, 20, 0.1);
+  --color-sepia-20: rgba(112, 66, 20, 0.2);
+
+  /* テキストカラー */
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #333333;
+  --color-text-tertiary: #666666;
+  --color-text-light: #999999;
+
+  /* ボーダーカラー */
+  --color-border: rgba(0, 0, 0, 0.1);
+  --color-border-hover: var(--color-coral);
+
+  /* ========================================
+     フォント定義
+     ======================================== */
+
+  --font-heading: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  --font-body: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+
+  /* フォントサイズ */
+  --fz-h1: 48px;
+  --fz-h2: 36px;
+  --fz-h3: 24px;
+  --fz-h4: 20px;
+  --fz-body: 16px;
+  --fz-small: 14px;
+  --fz-xsmall: 12px;
+
+  /* フォントウェイト */
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* 行間 */
+  --lh-tight: 1.4;
+  --lh-normal: 1.6;
+  --lh-loose: 1.8;
+
+  /* ========================================
+     スペーシング
+     ======================================== */
+
+  /* セクション間 */
+  --space-section-lg: 120px;
+  --space-section-md: 80px;
+  --space-section-sm: 60px;
+
+  /* コンポーネント間 */
+  --space-component-lg: 60px;
+  --space-component-md: 40px;
+  --space-component-sm: 24px;
+
+  /* 要素間 */
+  --space-element-lg: 24px;
+  --space-element-md: 16px;
+  --space-element-sm: 8px;
+  --space-element-xs: 4px;
+
+  /* パディング */
+  --padding-card: 30px;
+  --padding-button-x: 32px;
+  --padding-button-y: 16px;
+
+  /* グリッドギャップ */
+  --grid-gap: 20px;
+
+  /* ========================================
+     レイアウト
+     ======================================== */
+
+  /* コンテナ幅 */
+  --container-max: 1400px;
+  --container-padding: 40px;
+
+  /* グリッド */
+  --grid-columns-desktop: 14;
+  --grid-columns-mobile: 6;
+
+  /* ヘッダー */
+  --header-height: 80px;
+  --header-height-mobile: 60px;
+
+  /* ========================================
+     ボーダー
+     ======================================== */
+
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* ========================================
+     シャドウ
+     ======================================== */
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+  /* ========================================
+     トランジション
+     ======================================== */
+
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 600ms;
+
+  --easing-smooth: cubic-bezier(0.19, 1, 0.22, 1);
+  --easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* ========================================
+     ブラー
+     ======================================== */
+
+  --blur-sm: blur(10px);
+  --blur-md: blur(20px);
+  --blur-lg: blur(40px);
+  --blur-xl: blur(60px);
+
+  /* ========================================
+     z-index
+     ======================================== */
+
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-tooltip: 600;
+}
+
+/* ========================================
+   レスポンシブ変数（モバイル）
+   ======================================== */
+
+@media (max-width: 767px) {
+  :root {
+    --fz-h1: 32px;
+    --fz-h2: 24px;
+    --fz-h3: 20px;
+    --fz-h4: 18px;
+    --fz-body: 15px;
+
+    --space-section-lg: 80px;
+    --space-section-md: 60px;
+    --space-section-sm: 40px;
+
+    --container-padding: 20px;
+    --padding-card: 20px;
+    --grid-gap: 16px;
+  }
+}
+
+/* ========================================
+   レスポンシブ変数（タブレット）
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    --fz-h1: 40px;
+    --fz-h2: 30px;
+    --fz-h3: 22px;
+
+    --space-section-lg: 100px;
+    --space-section-md: 70px;
+
+    --container-padding: 30px;
+  }
+}

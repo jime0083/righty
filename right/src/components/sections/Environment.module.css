@@ -1,0 +1,233 @@
+/* Environment セクション */
+
+.environment {
+  padding: var(--space-section-lg) 0;
+  background-color: var(--color-bg-cream);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-component-lg);
+}
+
+.label {
+  display: inline-block;
+  font-size: var(--fz-xsmall);
+  font-weight: var(--fw-medium);
+  color: var(--color-coral);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-element-md);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--fz-h2);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-element-lg);
+}
+
+.description {
+  font-size: var(--fz-body);
+  line-height: var(--lh-loose);
+  color: var(--color-text-secondary);
+}
+
+/* 統計データ */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--grid-gap);
+  margin-bottom: var(--space-component-lg);
+  padding: var(--space-component-md);
+  background-color: var(--color-white-60);
+  backdrop-filter: var(--blur-md);
+  border-radius: var(--radius-lg);
+}
+
+.statItem {
+  text-align: center;
+  padding: var(--space-element-lg);
+}
+
+.statNumber {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin-bottom: var(--space-element-sm);
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  font-weight: var(--fw-bold);
+  color: var(--color-coral);
+  line-height: 1;
+}
+
+.statUnit {
+  font-size: var(--fz-body);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-secondary);
+  margin-left: 4px;
+}
+
+.statLabel {
+  font-size: var(--fz-small);
+  color: var(--color-text-tertiary);
+  margin-bottom: 0;
+}
+
+/* 福利厚生 */
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--grid-gap);
+  margin-bottom: var(--space-component-lg);
+}
+
+.benefitItem {
+  padding: var(--padding-card);
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: transform var(--duration-base) var(--easing-smooth),
+              box-shadow var(--duration-base) var(--easing-smooth);
+}
+
+.benefitItem:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.benefitIcon {
+  font-size: 32px;
+  margin-bottom: var(--space-element-md);
+}
+
+.benefitTitle {
+  font-family: var(--font-heading);
+  font-size: var(--fz-h4);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-element-sm);
+}
+
+.benefitDescription {
+  font-size: var(--fz-small);
+  color: var(--color-text-tertiary);
+  line-height: var(--lh-normal);
+  margin-bottom: 0;
+}
+
+/* オフィス */
+.office {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-component-md);
+  align-items: center;
+  margin-bottom: var(--space-component-lg);
+}
+
+.officeImageWrapper {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.officeImage {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform var(--duration-base) var(--easing-smooth);
+}
+
+.officeImageWrapper:hover .officeImage {
+  transform: scale(1.05);
+}
+
+.officeContent {
+  padding: var(--space-component-md);
+}
+
+.officeTitle {
+  font-family: var(--font-heading);
+  font-size: var(--fz-h3);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-element-md);
+}
+
+.officeDescription {
+  font-size: var(--fz-body);
+  color: var(--color-text-secondary);
+  line-height: var(--lh-loose);
+  margin-bottom: 0;
+}
+
+.action {
+  text-align: center;
+}
+
+/* レスポンシブ */
+@media (max-width: 1024px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .office {
+    grid-template-columns: 1fr;
+  }
+
+  .officeImage {
+    height: 300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .environment {
+    padding: var(--space-section-md) 0;
+  }
+
+  .header {
+    margin-bottom: var(--space-component-md);
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    padding: var(--space-element-lg);
+    gap: var(--space-element-md);
+  }
+
+  .statItem {
+    padding: var(--space-element-md);
+  }
+
+  .statValue {
+    font-size: 36px;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+    gap: var(--space-element-md);
+  }
+
+  .officeImage {
+    height: 250px;
+  }
+
+  .officeContent {
+    padding: var(--space-element-lg) 0;
+  }
+}
