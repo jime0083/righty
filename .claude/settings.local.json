@@ -6,7 +6,18 @@
       "Bash(npm install:*)",
       "Bash(npx tsc --noEmit)",
       "Bash(npm run build:*)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeat: Initial commit - ライティ採用サイト トップページ\n\n- Vite + React + TypeScript + CSS Modules で構築\n- 共通コンポーネント: Header, Footer, Button, Card\n- セクション: Hero, About, Culture, Jobs, Environment, NewGraduate, Blog\n- レスポンシブ対応 \\(モバイル/タブレット/デスクトップ\\)\n- ダミー画像を配置\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(gh auth status:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh api:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh run watch:*)",
+      "Bash(curl:*)"
     ]
   }
 }

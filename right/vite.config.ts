@@ -8,5 +8,5 @@ export default defineConfig({
   // リポジトリ名に合わせてbaseを設定してください
   // 例: base: '/right/' (リポジトリ名が 'right' の場合)
   // ユーザーサイト(username.github.io)の場合は base: '/' のままでOK
-  base: '/',
+  base: '/right/',
 })

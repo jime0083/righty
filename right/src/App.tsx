@@ -4,7 +4,7 @@ import './styles/global.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/right">
       <Routes>
         <Route path="/" element={<HomePage />} />
         {/* 今後追加予定のページ */}

@@ -1,97 +1,142 @@
 /* Header コンポーネント */
 
-.header {
+/* ========================================
+   サイドナビゲーション（左側）
+   ======================================== */
+
+.sideNav {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: var(--header-height);
+  top: 40px;
+  left: 40px;
   z-index: var(--z-sticky);
-  transition: background-color var(--duration-base) var(--easing-smooth),
-              backdrop-filter var(--duration-base) var(--easing-smooth);
+  transition: opacity var(--duration-base) var(--easing-smooth),
+              visibility var(--duration-base) var(--easing-smooth);
 }
 
-.header.scrolled {
-  background-color: var(--color-white-80);
-  backdrop-filter: var(--blur-md);
+.sideNav.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 var(--container-padding);
-}
-
-/* ロゴ */
 .logo {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: var(--color-text-primary);
-  transition: opacity var(--duration-fast) ease;
-}
-
-.logo:hover {
-  opacity: 0.7;
-}
-
-.logoText {
-  font-family: var(--font-heading);
-  font-size: 24px;
+  display: block;
+  font-size: 22px;
   font-weight: var(--fw-bold);
-  letter-spacing: 0.05em;
-  color: var(--color-dark-brown);
-}
-
-.logoSub {
-  font-size: 10px;
-  font-weight: var(--fw-medium);
-  letter-spacing: 0.2em;
-  color: var(--color-text-tertiary);
-  margin-top: -2px;
-}
-
-/* プライマリナビゲーション */
-.primaryNav {
-  display: flex;
-  align-items: center;
-  gap: var(--space-element-lg);
-}
-
-.primaryNavLink {
-  position: relative;
-  font-size: var(--fz-small);
-  font-weight: var(--fw-medium);
-  color: var(--color-text-primary);
   text-decoration: none;
-  padding: 8px 0;
-  transition: color var(--duration-fast) ease;
+  color: var(--color-text-primary);
+  margin-bottom: 24px;
 }
 
-.primaryNavLink::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--color-coral);
-  transition: width var(--duration-base) var(--easing-smooth);
-}
-
-.primaryNavLink:hover {
+.logoAccent {
   color: var(--color-coral);
 }
 
-.primaryNavLink:hover::after {
-  width: 100%;
+.logoText {
+  color: var(--color-text-primary);
 }
 
-/* メニュートグルボタン */
+.sideNavList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sideNavLink {
+  font-size: 14px;
+  font-weight: var(--fw-regular);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+.sideNavLink:hover {
+  color: var(--color-coral);
+}
+
+/* ========================================
+   固定ヘッダー（右側）
+   ======================================== */
+
+.header {
+  position: fixed;
+  top: 32px;
+  right: 40px;
+  z-index: var(--z-sticky);
+  display: flex;
+  align-items: center;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 募集職種ボタン */
+.recruitButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: var(--fw-medium);
+  color: var(--color-white);
+  background-color: var(--color-coral);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all var(--duration-fast) ease;
+}
+
+.recruitButton:hover {
+  background-color: var(--color-coral-hover);
+  color: var(--color-white);
+}
+
+.buttonArrow {
+  font-size: 16px;
+  transition: transform var(--duration-fast) ease;
+}
+
+.recruitButton:hover .buttonArrow {
+  transform: translateX(4px);
+}
+
+/* 新卒採用リンク */
+.newGradLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: var(--fw-medium);
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all var(--duration-fast) ease;
+}
+
+.newGradLink:hover {
+  border-color: var(--color-coral);
+  color: var(--color-coral);
+}
+
+.linkArrow {
+  font-size: 14px;
+  color: var(--color-coral);
+  transition: transform var(--duration-fast) ease;
+}
+
+.newGradLink:hover .linkArrow {
+  transform: translateX(4px);
+}
+
+/* メニュートグルボタン（二点リーダー/ハンバーガー） */
 .menuToggle {
   display: flex;
   flex-direction: column;
@@ -99,37 +144,41 @@
   align-items: center;
   width: 48px;
   height: 48px;
+  gap: 6px;
   padding: 12px;
   cursor: pointer;
-  background: transparent;
-  border: none;
-  z-index: calc(var(--z-modal) + 1);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--duration-fast) ease;
+}
+
+.menuToggle:hover {
+  border-color: var(--color-text-tertiary);
 }
 
 .menuToggleLine {
   display: block;
-  width: 24px;
+  width: 18px;
   height: 2px;
   background-color: var(--color-text-primary);
   transition: transform var(--duration-base) var(--easing-smooth),
               opacity var(--duration-fast) ease;
-  margin: 3px 0;
 }
 
-.menuToggle.active .menuToggleLine:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+.menuToggle.active .menuToggleLine:first-child {
+  transform: translateY(4px) rotate(45deg);
 }
 
-.menuToggle.active .menuToggleLine:nth-child(2) {
-  opacity: 0;
+.menuToggle.active .menuToggleLine:last-child {
+  transform: translateY(-4px) rotate(-45deg);
 }
 
-.menuToggle.active .menuToggleLine:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
+/* ========================================
+   メニューオーバーレイ
+   ======================================== */
 
-/* フルスクリーンメニュー */
-.fullscreenMenu {
+.menuOverlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -141,106 +190,273 @@
   visibility: hidden;
   transition: opacity var(--duration-base) var(--easing-smooth),
               visibility var(--duration-base) var(--easing-smooth);
+  overflow-y: auto;
 }
 
-.fullscreenMenu.open {
+.menuOverlay.open {
   opacity: 1;
   visibility: visible;
 }
 
-.menuContent {
+/* メニューヘッダー */
+.menuHeader {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100%;
-  padding: var(--header-height) var(--container-padding);
+  padding: 32px 40px;
 }
 
-.menuNav {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-element-lg);
-}
-
-.menuNavLink {
-  font-family: var(--font-heading);
-  font-size: 28px;
+.menuLogo {
+  font-size: 22px;
   font-weight: var(--fw-bold);
+  text-decoration: none;
   color: var(--color-text-primary);
-  text-decoration: none;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: color var(--duration-fast) ease;
 }
 
-.fullscreenMenu.open .menuNavLink {
-  animation: fadeInUp var(--duration-base) var(--easing-smooth) forwards;
-}
-
-.menuNavLink:hover {
-  color: var(--color-coral);
-}
-
-.menuFooter {
+.menuHeaderRight {
   display: flex;
-  gap: var(--space-component-sm);
-  margin-top: var(--space-component-lg);
-  padding-top: var(--space-component-md);
-  border-top: 1px solid var(--color-border);
+  align-items: center;
+  gap: 16px;
 }
 
-.menuFooterLink {
-  font-size: var(--fz-small);
+.menuNewGradLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
   font-weight: var(--fw-medium);
-  color: var(--color-text-tertiary);
-  text-decoration: none;
-  padding: 8px 16px;
+  color: var(--color-text-primary);
+  background-color: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
+  text-decoration: none;
   transition: all var(--duration-fast) ease;
 }
 
-.menuFooterLink:hover {
+.menuNewGradLink:hover {
+  border-color: var(--color-coral);
   color: var(--color-coral);
+}
+
+.menuRecruitButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: var(--fw-medium);
+  color: var(--color-white);
+  background-color: var(--color-coral);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all var(--duration-fast) ease;
+}
+
+.menuRecruitButton:hover {
+  background-color: var(--color-coral-hover);
+  color: var(--color-white);
+}
+
+/* 閉じるボタン */
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--duration-fast) ease;
+}
+
+.closeButton:hover {
   border-color: var(--color-coral);
 }
 
-/* レスポンシブ */
-@media (max-width: 767px) {
-  .header {
-    height: var(--header-height-mobile);
-  }
+.closeButton svg {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text-primary);
+}
 
-  .logoText {
-    font-size: 20px;
-  }
+.closeButton:hover svg {
+  color: var(--color-coral);
+}
 
-  .logoSub {
-    font-size: 8px;
-  }
+/* メニューコンテンツ */
+.menuContent {
+  padding: 40px 40px 80px;
+}
 
-  .primaryNav {
-    display: none;
-  }
+.menuGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .menuNavLink {
-    font-size: 24px;
-  }
+.menuColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 
-  .menuContent {
-    padding: var(--header-height-mobile) var(--container-padding);
+.menuColumn::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border);
+  margin-bottom: 20px;
+}
+
+.menuGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+/* メインリンク */
+.menuMainLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  padding-bottom: 16px;
+  border-bottom: 1px solid transparent;
+  transition: all var(--duration-fast) ease;
+}
+
+.menuMainLink:hover {
+  color: var(--color-coral);
+}
+
+.menuArrow {
+  font-size: 20px;
+  color: var(--color-coral);
+  transition: transform var(--duration-fast) ease;
+}
+
+.menuMainLink:hover .menuArrow {
+  transform: translateX(4px);
+}
+
+/* サブリンク */
+.menuSubList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.menuSubLink {
+  font-size: 15px;
+  font-weight: var(--fw-regular);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
+}
+
+.menuSubLink:hover {
+  color: var(--color-coral);
+}
+
+/* ========================================
+   レスポンシブ
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .menuGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
   }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+@media (max-width: 767px) {
+  .sideNav {
+    top: 20px;
+    left: 20px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .logo {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .sideNavList {
+    gap: 8px;
+  }
+
+  .sideNavLink {
+    font-size: 13px;
+  }
+
+  .header {
+    top: 20px;
+    right: 20px;
+  }
+
+  .recruitButton {
+    display: none;
+  }
+
+  .newGradLink {
+    display: none;
+  }
+
+  .menuHeader {
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .menuHeaderRight {
+    gap: 12px;
+  }
+
+  .menuNewGradLink {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .menuRecruitButton {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .closeButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .closeButton svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .menuContent {
+    padding: 20px 20px 60px;
+  }
+
+  .menuGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .menuMainLink {
+    font-size: 18px;
+  }
+
+  .menuSubLink {
+    font-size: 14px;
   }
 }
