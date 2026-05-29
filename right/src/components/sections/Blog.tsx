@@ -1,35 +1,49 @@
-import { Button, Card } from '../common';
 import styles from './Blog.module.css';
 
 const blogPosts = [
   {
     id: 1,
     title: 'エンジニアチームの開発文化について',
-    description:
-      'ライティのエンジニアチームがどのような開発文化を大切にしているか、具体的な取り組みとともにご紹介します。',
     date: '2024.03.15',
-    category: 'Tech',
-    image: '/images/blog-1.jpg',
+    image: '/images/meeting1.png',
     href: '#',
   },
   {
     id: 2,
     title: '新卒1年目社員が語る、入社後の成長',
-    description:
-      '2023年に入社した新卒社員に、1年間を振り返ってもらいました。成長できたことや大変だったことなど、リアルな声をお届けします。',
     date: '2024.03.10',
-    category: 'Interview',
-    image: '/images/blog-2.jpg',
+    image: '/images/meeting2.png',
     href: '#',
   },
   {
     id: 3,
     title: 'リモートワーク時代のチームビルディング',
-    description:
-      'オフィス出社とリモートワークを組み合わせたハイブリッドワークの中で、どのようにチームの一体感を醸成しているかをご紹介。',
     date: '2024.03.05',
-    category: 'Culture',
-    image: '/images/blog-3.jpg',
+    image: '/images/meeting3.png',
+    href: '#',
+  },
+];
+
+const techPosts = [
+  {
+    id: 1,
+    title: 'React Server Componentsを活用した開発',
+    date: '2024.03.12',
+    image: '/images/meeting4.png',
+    href: '#',
+  },
+  {
+    id: 2,
+    title: 'モノレポでのCI/CDパイプライン構築',
+    date: '2024.03.08',
+    image: '/images/desk1.png',
+    href: '#',
+  },
+  {
+    id: 3,
+    title: 'マイクロサービス移行の軌跡',
+    date: '2024.03.01',
+    image: '/images/meeting1.png',
     href: '#',
   },
 ];
@@ -38,35 +52,60 @@ const Blog = () => {
   return (
     <section className={styles.blog}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <span className={styles.label}>BLOG</span>
-          <h2 className={styles.title}>採用広報ブログ</h2>
-          <p className={styles.description}>
-            ライティの文化や働く環境、社員の声など、
-            採用に関する様々な情報を発信しています。
-          </p>
-        </div>
+        {/* 採用広報note */}
+        <div className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>採用広報note</h2>
+            <a href="#" className={styles.viewAllLink}>
+              <span>一覧を見る</span>
+              <span className={styles.viewAllArrow}>→</span>
+            </a>
+          </div>
 
-        <div className={styles.grid}>
-          {blogPosts.map((post) => (
-            <Card key={post.id} variant="default" href={post.href}>
-              <Card.Image src={post.image} alt={post.title} />
-              <Card.Content>
-                <div className={styles.postMeta}>
-                  <span className={styles.postCategory}>{post.category}</span>
-                  <span className={styles.postDate}>{post.date}</span>
+          <div className={styles.grid}>
+            {blogPosts.map((post) => (
+              <a key={post.id} href={post.href} className={styles.card}>
+                <div className={styles.cardImage}>
+                  <img src={post.image} alt={post.title} />
                 </div>
-                <Card.Title as="h3">{post.title}</Card.Title>
-                <Card.Description>{post.description}</Card.Description>
-              </Card.Content>
-            </Card>
-          ))}
+                <div className={styles.cardContent}>
+                  <time className={styles.cardDate}>{post.date}</time>
+                  <h3 className={styles.cardTitle}>
+                    {post.title}
+                    <span className={styles.cardArrow}>→</span>
+                  </h3>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
 
-        <div className={styles.action}>
-          <Button href="https://note.com/" target="_blank" variant="outline">
-            ブログをもっと見る
-          </Button>
+        {/* Tech Blog */}
+        <div className={styles.section}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Tech Blog</h2>
+            <a href="#" className={styles.viewAllLink}>
+              <span>一覧を見る</span>
+              <span className={styles.viewAllArrow}>→</span>
+            </a>
+          </div>
+
+          <div className={styles.grid}>
+            {techPosts.map((post) => (
+              <a key={post.id} href={post.href} className={styles.card}>
+                <div className={styles.cardImage}>
+                  <img src={post.image} alt={post.title} />
+                </div>
+                <div className={styles.cardContent}>
+                  <time className={styles.cardDate}>{post.date}</time>
+                  <h3 className={styles.cardTitle}>
+                    {post.title}
+                    <span className={styles.cardArrow}>→</span>
+                  </h3>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

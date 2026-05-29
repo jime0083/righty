@@ -11,97 +11,206 @@
   padding: 0 var(--container-padding);
 }
 
-.header {
-  text-align: center;
-  max-width: 700px;
-  margin: 0 auto var(--space-component-lg);
+/* ========================================
+   セクション
+   ======================================== */
+
+.section {
+  margin-bottom: 80px;
 }
 
-.label {
-  display: inline-block;
-  font-size: var(--fz-xsmall);
-  font-weight: var(--fw-medium);
-  color: var(--color-coral);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: var(--space-element-md);
+.section:last-child {
+  margin-bottom: 0;
 }
 
-.title {
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
   font-family: var(--font-heading);
-  font-size: var(--fz-h2);
+  font-size: clamp(24px, 3vw, 32px);
   font-weight: var(--fw-bold);
   color: var(--color-text-primary);
-  margin-bottom: var(--space-element-lg);
+  letter-spacing: 0.02em;
 }
 
-.description {
-  font-size: var(--fz-body);
-  line-height: var(--lh-loose);
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fz-small);
+  font-weight: var(--fw-medium);
   color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color var(--duration-fast) ease;
 }
+
+.viewAllLink:hover {
+  color: var(--color-coral);
+}
+
+.viewAllLink:hover .viewAllArrow {
+  transform: translateX(4px);
+}
+
+.viewAllArrow {
+  transition: transform var(--duration-base) var(--easing-smooth);
+}
+
+/* ========================================
+   カードグリッド
+   ======================================== */
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--grid-gap);
-  margin-bottom: var(--space-component-lg);
+  gap: 24px;
 }
 
-/* 記事メタ情報 */
-.postMeta {
-  display: flex;
-  align-items: center;
-  gap: var(--space-element-md);
-  margin-bottom: var(--space-element-sm);
+/* ========================================
+   カード
+   ======================================== */
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background-color: var(--color-white-60);
+  backdrop-filter: var(--blur-lg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition: all var(--duration-base) var(--easing-smooth);
 }
 
-.postCategory {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 10px;
-  font-size: var(--fz-xsmall);
-  font-weight: var(--fw-medium);
+.card:hover {
+  border-color: var(--color-coral);
+  transform: translateY(-4px);
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.1);
+}
+
+.card:hover .cardTitle {
   color: var(--color-coral);
-  background-color: rgba(231, 103, 70, 0.1);
-  border-radius: var(--radius-sm);
 }
 
-.postDate {
+.card:hover .cardArrow {
+  transform: translateX(4px) rotate(-45deg);
+  color: var(--color-coral);
+}
+
+/* ========================================
+   カード画像
+   ======================================== */
+
+.cardImage {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--easing-smooth);
+}
+
+/* ========================================
+   カードコンテンツ
+   ======================================== */
+
+.cardContent {
+  padding: 20px 24px 24px;
+}
+
+.cardDate {
+  display: block;
   font-size: var(--fz-xsmall);
-  color: var(--color-text-light);
+  color: var(--color-text-tertiary);
+  margin-bottom: 12px;
 }
 
-.action {
-  text-align: center;
+.cardTitle {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: var(--font-heading);
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  transition: color var(--duration-fast) ease;
 }
 
-/* レスポンシブ */
+.cardArrow {
+  flex-shrink: 0;
+  font-size: 14px;
+  color: var(--color-text-tertiary);
+  transform: rotate(-45deg);
+  transition: all var(--duration-base) var(--easing-smooth);
+}
+
+/* ========================================
+   レスポンシブ: タブレット (1024px以下)
+   ======================================== */
+
 @media (max-width: 1024px) {
+  .section {
+    margin-bottom: 60px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 32px;
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
-  .grid > *:last-child {
-    grid-column: span 2;
+  .grid > *:nth-child(3) {
+    display: none;
+  }
+
+  .cardContent {
+    padding: 16px 20px 20px;
   }
 }
+
+/* ========================================
+   レスポンシブ: モバイル (767px以下)
+   ======================================== */
 
 @media (max-width: 767px) {
   .blog {
     padding: var(--space-section-md) 0;
   }
 
-  .header {
-    margin-bottom: var(--space-component-md);
+  .section {
+    margin-bottom: 48px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 24px;
   }
 
   .grid {
     grid-template-columns: 1fr;
-    gap: var(--space-element-md);
+    gap: 16px;
   }
 
-  .grid > *:last-child {
-    grid-column: span 1;
+  .grid > *:nth-child(3) {
+    display: block;
+  }
+
+  .cardContent {
+    padding: 16px;
   }
 }

@@ -1,114 +1,122 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Hero.module.css';
 
+// 画像データ
+const heroImages = [
+  {
+    id: 1,
+    src: '/images/meeting1.png',
+    alt: 'ミーティング風景1',
+    delay: 0,
+  },
+  {
+    id: 2,
+    src: '/images/meeting2.png',
+    alt: 'ミーティング風景2',
+    delay: 200,
+  },
+  {
+    id: 3,
+    src: '/images/meeting3.png',
+    alt: 'ミーティング風景3',
+    delay: 400,
+  },
+  {
+    id: 4,
+    src: '/images/meeting4.png',
+    alt: 'ミーティング風景4',
+    delay: 600,
+  },
+  {
+    id: 5,
+    src: '/images/desk1.png',
+    alt: 'オフィス風景',
+    delay: 800,
+  },
+];
+
 const Hero = () => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState<boolean[]>(
+    new Array(heroImages.length).fill(false)
+  );
 
   useEffect(() => {
-    // ノイズアニメーションの初期化
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    // グラデーション背景を描画
-    const drawGradient = () => {
-      const gradient = ctx.createRadialGradient(
-        canvas.width * 0.7,
-        canvas.height * 0.3,
-        0,
-        canvas.width * 0.7,
-        canvas.height * 0.3,
-        canvas.width * 0.8
-      );
-      gradient.addColorStop(0, 'rgba(231, 103, 70, 0.3)');
-      gradient.addColorStop(0.5, 'rgba(231, 103, 70, 0.1)');
-      gradient.addColorStop(1, 'rgba(245, 240, 232, 0)');
-
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-    };
-
-    // ノイズエフェクト
-    const drawNoise = () => {
-      const imageData = ctx.createImageData(canvas.width, canvas.height);
-      const data = imageData.data;
-
-      for (let i = 0; i < data.length; i += 4) {
-        const noise = Math.random() * 15;
-        data[i] = noise;     // R
-        data[i + 1] = noise; // G
-        data[i + 2] = noise; // B
-        data[i + 3] = 8;     // A (透明度を低く)
-      }
-
-      ctx.putImageData(imageData, 0, 0);
-    };
-
-    let animationId: number;
-    let lastTime = 0;
-    const fps = 10; // ノイズのFPS
-
-    const animate = (time: number) => {
-      if (time - lastTime > 1000 / fps) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        drawGradient();
-        drawNoise();
-        lastTime = time;
-      }
-      animationId = requestAnimationFrame(animate);
-    };
-
     // 初期ロードアニメーション
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setIsLoaded(true);
-      animationId = requestAnimationFrame(animate);
     }, 300);
 
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      cancelAnimationFrame(animationId);
-    };
+    return () => clearTimeout(timer);
   }, []);
+
+  const handleImageLoad = (index: number) => {
+    setImagesLoaded((prev) => {
+      const newState = [...prev];
+      newState[index] = true;
+      return newState;
+    });
+  };
 
   return (
     <section className={styles.hero}>
-      <canvas ref={canvasRef} className={styles.canvas} />
+      {/* コンテンツエリア */}
+      <div className={styles.container}>
+        {/* テキストエリア（左側） */}
+        <div className={styles.textArea}>
+          <div
+            className={`${styles.textContent} ${isLoaded ? styles.loaded : ''}`}
+          >
+            <h1 className={styles.title}>
+              <span className={styles.titleLine}>つくりたいのは、</span>
+              <span className={styles.titleLine}>
+                <span className={styles.highlight}>「つながり」</span>の
+              </span>
+              <span className={styles.titleLine}>先にある価値</span>
+            </h1>
 
-      <div className={styles.gradientCircle} />
+            <div className={styles.description}>
+              <p>
+                ギフトは、社会のつながりを形づくる人間にとって根源的な営みです。
+                そんなギフトの意味や可能性について、改めて「問い」を立てていくこと。
+                それが私たちの使命です。
+              </p>
+              <p>
+                贈る人と受け取る人の間に生まれる「キモチの循環」。
+                その循環が、新しい関係性を生み、社会をより良くしていく。
+                私たちライティは、そんな未来を一緒につくる仲間を探しています。
+              </p>
+            </div>
 
-      <div className={styles.content}>
-        <div className={`${styles.textWrapper} ${isLoaded ? styles.loaded : ''}`}>
-          <h1 className={styles.title}>
-            <span className={styles.titleLine}>つくりたいのは、</span>
-            <span className={styles.titleLine}>
-              <span className={styles.highlight}>「つながり」</span>の先にある価値
-            </span>
-          </h1>
-
-          <p className={styles.description}>
-            私たちライティは、人と人、人と企業、企業と企業を
-            「つながり」で結び、その先にある新しい価値を創造しています。
-            テクノロジーの力で、日常に小さな喜びを届ける。
-            そんな未来を一緒につくりませんか。
-          </p>
+            <div className={styles.scrollHint}>
+              <span className={styles.scrollText}>SCROLL</span>
+              <div className={styles.scrollLine}>
+                <div className={styles.scrollDot}></div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div className={styles.scrollIndicator}>
-        <span className={styles.scrollText}>Scroll</span>
-        <div className={styles.scrollLine}>
-          <div className={styles.scrollDot} />
+        {/* 画像エリア（右側） */}
+        <div className={styles.imageArea}>
+          <div className={styles.imageGrid}>
+            {heroImages.map((image, index) => (
+              <div
+                key={image.id}
+                className={`${styles.imageWrapper} ${styles[`image${index + 1}`]} ${
+                  imagesLoaded[index] && isLoaded ? styles.imageLoaded : ''
+                }`}
+                style={{ transitionDelay: `${image.delay}ms` }}
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className={styles.image}
+                  onLoad={() => handleImageLoad(index)}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

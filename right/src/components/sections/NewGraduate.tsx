@@ -1,78 +1,63 @@
-import { Button } from '../common';
+import { Link } from 'react-router-dom';
 import styles from './NewGraduate.module.css';
 
-const positions = [
-  {
-    id: 1,
-    title: 'エンジニア職',
-    description: 'Webサービスの開発を通じて、技術力を磨きながら成長できる環境です。',
-  },
-  {
-    id: 2,
-    title: 'ビジネス職',
-    description: '企画、営業、マーケティングなど、幅広いフィールドで活躍できます。',
-  },
-  {
-    id: 3,
-    title: 'デザイナー職',
-    description: 'UI/UXデザインを通じて、ユーザー体験を創造していきます。',
-  },
+// カルーセル用画像
+const carouselImages = [
+  { id: 1, src: '/images/meeting1.png', alt: '新卒採用1' },
+  { id: 2, src: '/images/meeting2.png', alt: '新卒採用2' },
+  { id: 3, src: '/images/meeting3.png', alt: '新卒採用3' },
+  { id: 4, src: '/images/meeting4.png', alt: '新卒採用4' },
+  { id: 5, src: '/images/desk1.png', alt: '新卒採用5' },
 ];
 
 const NewGraduate = () => {
   return (
     <section className={styles.newGraduate}>
       <div className={styles.container}>
-        <div className={styles.content}>
-          <div className={styles.textSection}>
-            <span className={styles.label}>NEW GRADUATE</span>
-            <h2 className={styles.title}>新卒採用</h2>
-            <p className={styles.description}>
-              2026年卒業予定の方を対象とした新卒採用を行っています。
-              未来を一緒につくる仲間を募集しています。
-            </p>
+        {/* ヘッダー */}
+        <div className={styles.header}>
+          <h2 className={styles.sectionTitle}>新卒採用</h2>
+          <p className={styles.sectionDescription}>
+            ライティのミッション・カルチャーに共感し、
+            <br className={styles.brDesktop} />
+            事業成長を一緒に牽引してくれる仲間を募集しています。
+          </p>
+        </div>
 
-            <div className={styles.positions}>
-              {positions.map((position) => (
-                <div key={position.id} className={styles.positionItem}>
-                  <h3 className={styles.positionTitle}>{position.title}</h3>
-                  <p className={styles.positionDescription}>{position.description}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className={styles.action}>
-              <Button to="/new-graduate" variant="primary" size="lg">
-                新卒採用について
-              </Button>
-            </div>
+        {/* カルーセル */}
+        <div className={styles.carousel}>
+          <div className={styles.carouselTrack}>
+            {/* 無限スクロール用に2倍配置 */}
+            {[...carouselImages, ...carouselImages].map((image, index) => (
+              <div key={`${image.id}-${index}`} className={styles.carouselItem}>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className={styles.carouselImage}
+                />
+              </div>
+            ))}
           </div>
+        </div>
 
-          <div className={styles.imageSection}>
-            <div className={styles.imageGrid}>
-              <div className={styles.imageItem}>
-                <img
-                  src="/images/new-graduate-1.jpg"
-                  alt="若手社員の様子"
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.imageItem}>
-                <img
-                  src="/images/new-graduate-2.jpg"
-                  alt="研修の様子"
-                  className={styles.image}
-                />
-              </div>
-              <div className={styles.imageItem}>
-                <img
-                  src="/images/new-graduate-3.jpg"
-                  alt="チームミーティング"
-                  className={styles.image}
-                />
-              </div>
-            </div>
-          </div>
+        {/* 職種リンク */}
+        <div className={styles.positionLinks}>
+          <Link to="/newgrads/business" className={styles.positionCard}>
+            <span className={styles.positionTitle}>ビジネス職</span>
+            <span className={styles.positionArrow}>→</span>
+          </Link>
+          <Link to="/newgrads/engineer" className={styles.positionCard}>
+            <span className={styles.positionTitle}>エンジニア職</span>
+            <span className={styles.positionArrow}>→</span>
+          </Link>
+        </div>
+
+        {/* もっと見るリンク */}
+        <div className={styles.moreLink}>
+          <Link to="/newgrads" className={styles.moreButton}>
+            <span>新卒採用を見る</span>
+            <span className={styles.moreArrow}>→</span>
+          </Link>
         </div>
       </div>
     </section>

@@ -3,6 +3,7 @@
 .about {
   padding: var(--space-section-lg) 0;
   background-color: var(--color-bg-main);
+  position: relative;
 }
 
 .container {
@@ -11,57 +12,143 @@
   padding: 0 var(--container-padding);
 }
 
+/* ========================================
+   セクションヘッダー
+   ======================================== */
+
 .header {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto var(--space-component-lg);
+  margin-bottom: 60px;
 }
 
-.label {
-  display: inline-block;
-  font-size: var(--fz-xsmall);
-  font-weight: var(--fw-medium);
-  color: var(--color-coral);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: var(--space-element-md);
-}
-
-.title {
+.sectionTitle {
   font-family: var(--font-heading);
-  font-size: var(--fz-h2);
+  font-size: clamp(28px, 4vw, 40px);
   font-weight: var(--fw-bold);
   color: var(--color-text-primary);
-  margin-bottom: var(--space-element-lg);
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
 }
 
-.description {
-  font-size: var(--fz-body);
+.sectionDescription {
+  font-size: clamp(16px, 1.5vw, 20px);
   line-height: var(--lh-loose);
   color: var(--color-text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.cards {
+.highlight {
+  color: var(--color-coral);
+  font-weight: var(--fw-medium);
+}
+
+/* ========================================
+   リンクカード
+   ======================================== */
+
+.linkCards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--grid-gap);
-  margin-bottom: var(--space-component-lg);
+  gap: 24px;
+  margin-bottom: 60px;
 }
 
-.action {
-  text-align: center;
+.linkCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 40px;
+  background-color: var(--color-white-60);
+  backdrop-filter: var(--blur-lg);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid transparent;
+  transition: all var(--duration-base) var(--easing-smooth);
 }
 
-/* レスポンシブ */
+.linkCard:hover {
+  border-color: var(--color-coral);
+  transform: translateY(-4px);
+}
+
+.linkCard:hover .linkTitle {
+  color: var(--color-coral);
+}
+
+.linkCard:hover .linkArrow {
+  transform: translateX(8px);
+  color: var(--color-coral);
+}
+
+.linkTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(16px, 1.3vw, 20px);
+  font-weight: var(--fw-bold);
+  color: var(--color-text-primary);
+  transition: color var(--duration-fast) ease;
+}
+
+.linkArrow {
+  font-size: 24px;
+  color: var(--color-text-tertiary);
+  transition: all var(--duration-base) var(--easing-smooth);
+}
+
+/* ========================================
+   もっと見るリンク
+   ======================================== */
+
+.moreLink {
+  display: flex;
+  justify-content: center;
+}
+
+.moreButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  font-size: var(--fz-body);
+  font-weight: var(--fw-medium);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  border: 1px solid var(--color-sepia-20);
+  border-radius: var(--radius-full);
+  transition: all var(--duration-base) var(--easing-smooth);
+}
+
+.moreButton:hover {
+  border-color: var(--color-coral);
+  color: var(--color-coral);
+}
+
+.moreButton:hover .moreArrow {
+  transform: translateX(4px);
+}
+
+.moreArrow {
+  transition: transform var(--duration-base) var(--easing-smooth);
+}
+
+/* ========================================
+   レスポンシブ: タブレット (1024px以下)
+   ======================================== */
+
 @media (max-width: 1024px) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
+  .linkCards {
+    gap: 20px;
   }
 
-  .cards > *:last-child {
-    grid-column: span 2;
+  .linkCard {
+    padding: 24px 30px;
   }
 }
+
+/* ========================================
+   レスポンシブ: モバイル (767px以下)
+   ======================================== */
 
 @media (max-width: 767px) {
   .about {
@@ -69,15 +156,29 @@
   }
 
   .header {
-    margin-bottom: var(--space-component-md);
+    margin-bottom: 40px;
   }
 
-  .cards {
+  .sectionDescription {
+    text-align: left;
+  }
+
+  .linkCards {
     grid-template-columns: 1fr;
-    gap: var(--space-element-md);
+    gap: 16px;
+    margin-bottom: 40px;
   }
 
-  .cards > *:last-child {
-    grid-column: span 1;
+  .linkCard {
+    padding: 20px 24px;
+  }
+
+  .linkArrow {
+    font-size: 20px;
+  }
+
+  .moreButton {
+    width: 100%;
+    justify-content: center;
   }
 }

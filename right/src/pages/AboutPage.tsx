@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Header, Footer } from '../components/common';
+import { Header, Footer, BlobBackground } from '../components/common';
 import styles from './AboutPage.module.css';
 
 interface AboutCardProps {
@@ -57,6 +57,7 @@ const AboutCard = ({ title, description, image, to }: AboutCardProps) => {
 const AboutPage = () => {
   return (
     <div className={styles.page}>
+      <BlobBackground />
       <Header />
       <main className={styles.main}>
         {/* パンくずリスト */}

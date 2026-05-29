@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Header, Footer } from '../components/common';
+import { Header, Footer, BlobBackground } from '../components/common';
 import styles from './CulturePage.module.css';
 
 // Culture Codeデータ
@@ -169,6 +169,7 @@ const RelatedCard = ({
 const CulturePage = () => {
   return (
     <div className={styles.page}>
+      <BlobBackground />
       <Header />
       <main className={styles.main}>
         {/* ヒーローセクション */}

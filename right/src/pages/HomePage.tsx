@@ -1,4 +1,4 @@
-import { Header, Footer } from '../components/common';
+import { Header, Footer, BlobBackground } from '../components/common';
 import {
   Hero,
   About,
@@ -13,6 +13,7 @@ import styles from './HomePage.module.css';
 const HomePage = () => {
   return (
     <div className={styles.page}>
+      <BlobBackground />
       <Header />
       <main className={styles.main}>
         <Hero />

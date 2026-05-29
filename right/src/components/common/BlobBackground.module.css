@@ -1,0 +1,36 @@
+/* BlobBackground */
+
+.blobContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blobCanvas {
+  width: 100%;
+  height: 100%;
+  filter: blur(80px);
+  opacity: 0.6;
+}
+
+/* パフォーマンス最適化 */
+@media (prefers-reduced-motion: reduce) {
+  .blobCanvas {
+    animation: none;
+    filter: blur(100px);
+    opacity: 0.4;
+  }
+}
+
+/* モバイルでは少し軽量化 */
+@media (max-width: 767px) {
+  .blobCanvas {
+    filter: blur(60px);
+    opacity: 0.5;
+  }
+}
