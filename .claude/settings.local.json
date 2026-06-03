@@ -18,7 +18,8 @@
       "Bash(gh run list:*)",
       "Bash(gh run watch:*)",
       "Bash(curl:*)",
-      "Bash(npm run deploy:*)"
+      "Bash(npm run deploy:*)",
+      "WebFetch(domain:api.anthropic.com)"
     ]
   }
 }
