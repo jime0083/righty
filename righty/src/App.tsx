@@ -1,38 +1,52 @@
+import { useState, useEffect } from 'react'
 import './App.css'
+import { ScrollReveal } from './components/ScrollReveal'
 
 const BASE_URL = import.meta.env.BASE_URL
 
 function App() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 2
+      const y = (e.clientY / window.innerHeight - 0.5) * 2
+      setMousePos({ x, y })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
   const jobs = [
     {
       title: 'ブランドデザイナー',
       description: 'ブランドの価値を可視化し、ロゴやVIなどを通して一貫した体験を設計します。',
-      image: `${BASE_URL}assets/job_brand_crop.png`,
-      imagePosition: 'center 35%'
+      image: `${BASE_URL}assets/images/汎用1.png`,
+      imagePosition: 'center center'
     },
     {
       title: 'UI/UXデザイナー',
       description: 'ユーザー起点で体験を設計し、使いやすく、美しいデジタル体験をつくります。',
-      image: `${BASE_URL}assets/job_uiux_crop.png`,
-      imagePosition: '72% center'
+      image: `${BASE_URL}assets/images/汎用2.png`,
+      imagePosition: 'center center'
     },
     {
       title: 'フロントエンドエンジニア',
       description: 'デザインを正確に実装し、ユーザーにとって心地よいインターフェースを実現します。',
-      image: `${BASE_URL}assets/job_frontend_crop.png`,
-      imagePosition: '62% center'
+      image: `${BASE_URL}assets/images/汎用3.png`,
+      imagePosition: 'center center'
     },
     {
       title: 'バックエンドエンジニア',
       description: 'システムの設計・開発を通して、安定性・拡張性の高い基盤をつくります。',
-      image: `${BASE_URL}assets/job_backend_crop.png`,
+      image: `${BASE_URL}assets/images/汎用4.png`,
       imagePosition: 'center center'
     },
     {
       title: 'プロジェクトマネージャー',
       description: 'チームとクライアントをつなぎ、プロジェクトを成功へと導く推進役を担います。',
-      image: `${BASE_URL}assets/office_meeting.png`,
-      imagePosition: 'center 45%'
+      image: `${BASE_URL}assets/images/汎用5.png`,
+      imagePosition: 'center center'
     }
   ]
 
@@ -92,10 +106,35 @@ function App() {
 
       {/* Hero */}
       <section className="hero">
-        <span className="blob b-hero-1"></span>
-        <span className="blob b-hero-2"></span>
-        <span className="blob b-hero-3"></span>
+        <span
+          className="blob b-hero-1"
+          style={{
+            transform: `translate(${mousePos.x * 15}px, ${mousePos.y * 10}px)`,
+            borderRadius: `${50 + mousePos.x * 8}% ${50 - mousePos.x * 8}% ${50 + mousePos.y * 6}% ${50 - mousePos.y * 6}%`
+          }}
+        ></span>
+        <span
+          className="blob b-hero-2"
+          style={{
+            transform: `translate(${mousePos.x * -20}px, ${mousePos.y * 12}px)`,
+            borderRadius: `${46 + mousePos.y * 10}% ${54 - mousePos.y * 10}% ${60 + mousePos.x * 8}% ${40 - mousePos.x * 8}% / ${55 + mousePos.x * 6}% ${45 - mousePos.x * 6}% ${60 + mousePos.y * 8}% ${40 - mousePos.y * 8}%`
+          }}
+        ></span>
+        <span
+          className="blob b-hero-3"
+          style={{
+            transform: `translate(${mousePos.x * 12}px, ${mousePos.y * -8}px)`,
+            borderRadius: `${50 + mousePos.y * 10}% ${50 - mousePos.y * 10}% ${50 + mousePos.x * 8}% ${50 - mousePos.x * 8}%`
+          }}
+        ></span>
         <span className="dots-hero"></span>
+        <span
+          className="copy-circle"
+          style={{
+            transform: `translate(calc(-50% + ${mousePos.x * 50}px), calc(-50% + ${mousePos.y * 40}px))`,
+            borderRadius: `${50 + mousePos.x * 20}% ${50 - mousePos.x * 20}% ${50 + mousePos.y * 18}% ${50 - mousePos.y * 18}% / ${50 - mousePos.y * 15}% ${50 + mousePos.y * 15}% ${50 - mousePos.x * 18}% ${50 + mousePos.x * 18}%`
+          }}
+        ></span>
         <div className="wrap hero-grid">
           <nav className="side-nav">
             <a href="#about"><span className="dot"></span>ライティについて</a>
@@ -105,21 +144,12 @@ function App() {
             <a href="#recruit"><span className="dot"></span>採用</a>
           </nav>
           <div className="hero-photo-area">
-            <div className="hero-copy">
-              <span className="copy-circle"></span>
-              <h1>つくりたいのは、<br/><span className="q">"つながり"</span>の先にある価値</h1>
-              <p>ギフトは、社会のつながりを形づくる人間にとって根源的な営みです。<br/>
-              時代とともに "おくりかた" や "受け取りかた" が変わっていく中で、<br/>
-              この営みにはまだ大きな可能性が眠っていると信じています。<br/>
-              だからこそ、私たちは新たな「問い」を立て続けていく必要があります。<br/>
-              贈る人と受け取る人、その間に流れる気持ちのひとつひとつに目を向け、<br/>
-              テクノロジーとデザインの力で、より豊かな体験へとかたちを変えていく。<br/>
-              まだ誰も見たことのない価値を、私たちの手でつくり出していきたいと考えています。</p>
-              <div className="btn-row">
-                <a className="btn btn-fill" href="#jobs">募集職種を見る<span className="ar">→</span></a>
-                <a className="btn btn-out" href="#about">ライティについて<span className="ar">→</span></a>
-              </div>
-            </div>
+            <h1 className="vhead">
+              <span className="vhead-line vhead-line-1">つくりたいのは</span>
+              <span className="vhead-line vhead-line-2"><span className="accent">つながり</span></span>
+              <span className="vhead-line vhead-line-3">の先の価値</span>
+            </h1>
+            {/* 映像挿入エリア - 後で実装 */}
           </div>
         </div>
       </section>
@@ -151,41 +181,49 @@ function App() {
           pointerEvents: 'none'
         }}></span>
         <div className="wrap about-grid about-grid--single">
-          <div className="about-text">
-            <div className="eyebrow">About Righty</div>
-            <h2>デザインとテクノロジーの力で、<br/>人とビジネスの可能性をひらく。</h2>
-            <p>ライティは、ブランディングとUX設計を軸に、クライアントのビジネスの本質を捉え、価値ある体験をデザインする会社です。戦略から企画・デザイン・開発・グロースまでを一気通貫で行い、クライアントの伴走者として、共に未来をつくります。</p>
-            <a className="link-out" href="#">ライティについて詳しく見る<span className="ar">→</span></a>
-          </div>
+          <ScrollReveal animation="fadeUp">
+            <div className="about-text">
+              <div className="eyebrow">About Righty</div>
+              <h2>デザインとテクノロジーの力で、<br/>人とビジネスの可能性をひらく。</h2>
+              <p>ライティは、ブランディングとUX設計を軸に、クライアントのビジネスの本質を捉え、価値ある体験をデザインする会社です。戦略から企画・デザイン・開発・グロースまでを一気通貫で行い、クライアントの伴走者として、共に未来をつくります。</p>
+              <a className="link-out" href="#">ライティについて詳しく見る<span className="ar">→</span></a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Jobs */}
       <section className="jobs" id="jobs">
         <div className="wrap">
-          <div className="sec-title-c">Job Category</div>
-          <div className="sec-jp">職種紹介</div>
+          <ScrollReveal animation="fadeUp">
+            <div className="sec-title-c">Job Category</div>
+            <div className="sec-jp">職種紹介</div>
+          </ScrollReveal>
           <div className="job-grid">
             {jobs.map((job, index) => (
-              <article className="job-card" key={index}>
-                <div className="job-img">
-                  <img
-                    src={job.image}
-                    alt={job.title}
-                    style={{ objectPosition: job.imagePosition }}
-                  />
-                </div>
-                <div className="job-body">
-                  <h3>{job.title}</h3>
-                  <p>{job.description}</p>
-                  <a className="job-more" href="#">詳しく見る<span className="ar">→</span></a>
-                </div>
-              </article>
+              <ScrollReveal key={index} animation="fadeUp" delay={index * 0.1}>
+                <article className="job-card">
+                  <div className="job-img">
+                    <img
+                      src={job.image}
+                      alt={job.title}
+                      style={{ objectPosition: job.imagePosition }}
+                    />
+                  </div>
+                  <div className="job-body">
+                    <h3>{job.title}</h3>
+                    <p>{job.description}</p>
+                    <a className="job-more" href="#">詳しく見る<span className="ar">→</span></a>
+                  </div>
+                </article>
+              </ScrollReveal>
             ))}
           </div>
-          <div className="jobs-cta">
-            <a className="link-out" href="#">すべての職種を見る<span className="ar">→</span></a>
-          </div>
+          <ScrollReveal animation="fadeUp" delay={0.3}>
+            <div className="jobs-cta">
+              <a className="link-out" href="#">すべての職種を見る<span className="ar">→</span></a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -207,21 +245,25 @@ function App() {
           opacity: 0.55
         }}></span>
         <div className="wrap work-grid">
-          <div className="work-left">
-            <div className="eyebrow">Work Environment</div>
-            <h2>人の可能性が、<br/>チームの力になる。</h2>
-            <p>フラットでオープンな文化の中で、お互いを尊重し、挑戦を後押しし合う。ワークもライフも、あなたらしくデザインできる環境があります。</p>
-            <a className="link-out" href="#">働く環境を見る<span className="ar">→</span></a>
-          </div>
+          <ScrollReveal animation="fadeLeft">
+            <div className="work-left">
+              <div className="eyebrow">Work Environment</div>
+              <h2>人の可能性が、<br/>チームの力になる。</h2>
+              <p>フラットでオープンな文化の中で、お互いを尊重し、挑戦を後押しし合う。ワークもライフも、あなたらしくデザインできる環境があります。</p>
+              <a className="link-out" href="#">働く環境を見る<span className="ar">→</span></a>
+            </div>
+          </ScrollReveal>
           <div className="feat-grid">
             {features.map((feat, index) => (
-              <div className="feat" key={index}>
-                <div className="ic">{feat.icon}</div>
-                <div>
-                  <h4>{feat.title}</h4>
-                  <p>{feat.description}</p>
+              <ScrollReveal key={index} animation="fadeUp" delay={index * 0.1}>
+                <div className="feat">
+                  <div className="ic">{feat.icon}</div>
+                  <div>
+                    <h4>{feat.title}</h4>
+                    <p>{feat.description}</p>
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -239,25 +281,30 @@ function App() {
           opacity: 0.45
         }}></span>
         <div className="wrap recruit-grid">
-          <div className="recruit-text">
-            <div className="eyebrow">Recruit</div>
-            <h2>一緒に、未来の<br/>「<span className="q">あたりまえ</span>」をつくろう。</h2>
-            <p>デザインの力で、社会にポジティブな変化を。<br/>あなたの挑戦を、ライティは待っています。</p>
-            <a className="link-out" href="#">募集要項・エントリー<span className="ar">→</span></a>
-          </div>
-          <div className="recruit-visual">
-            <span className="rv-circle"></span>
-            <span className="rv-dots"></span>
-            <div className="rv-photo">
-              <img src={`${BASE_URL}assets/team.png`} alt="チームメンバー" />
+          <ScrollReveal animation="fadeRight">
+            <div className="recruit-text">
+              <div className="eyebrow">Recruit</div>
+              <h2>一緒に、未来の<br/>「<span className="q">あたりまえ</span>」をつくろう。</h2>
+              <p>デザインの力で、社会にポジティブな変化を。<br/>あなたの挑戦を、ライティは待っています。</p>
+              <a className="link-out" href="#">募集要項・エントリー<span className="ar">→</span></a>
             </div>
-          </div>
+          </ScrollReveal>
+          <ScrollReveal animation="scale" delay={0.2}>
+            <div className="recruit-visual">
+              <span className="rv-circle"></span>
+              <span className="rv-dots"></span>
+              <div className="rv-photo">
+                <img src={`${BASE_URL}assets/team.png`} alt="チームメンバー" />
+              </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="foot">
         <div className="wrap">
+          <ScrollReveal animation="fadeUp">
           <div className="foot-top">
             <div className="foot-brand">
               <div>
@@ -292,29 +339,31 @@ function App() {
             </div>
             <div className="foot-cta">
               <a className="fc-fill" href="#">エントリーする →</a>
-              <a className="fc-out" href="#">採用に関するお問い合わせ</a>
             </div>
           </div>
-          <div className="foot-bottom">
-            <span>© RIGHTY Inc. All Rights Reserved.</span>
-            <div className="links">
-              <a href="#">プライバシーポリシー</a>
-              <span>|</span>
-              <a href="#">サイトポリシー</a>
-              <div className="socials">
-                <a href="#" aria-label="Instagram">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.2 8.8 2.2 12 2.2zm0 3.65A6.15 6.15 0 1018.15 12 6.15 6.15 0 0012 5.85zm0 10.15A4 4 0 1116 12a4 4 0 01-4 4zm6.4-10.4a1.44 1.44 0 11-1.44-1.44 1.44 1.44 0 011.44 1.44z"/>
-                  </svg>
-                </a>
-                <a href="#" aria-label="X">
-                  <svg viewBox="0 0 24 24">
-                    <path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5.3-6.9L4.8 22H1.7l7.8-8.9L1 2h6.9l4.8 6.3L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/>
-                  </svg>
-                </a>
+          </ScrollReveal>
+          <ScrollReveal animation="fadeIn" delay={0.2}>
+            <div className="foot-bottom">
+              <span>© RIGHTY Inc. All Rights Reserved.</span>
+              <div className="links">
+                <a href="#">プライバシーポリシー</a>
+                <span>|</span>
+                <a href="#">サイトポリシー</a>
+                <div className="socials">
+                  <a href="#" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.2 8.8 2.2 12 2.2zm0 3.65A6.15 6.15 0 1018.15 12 6.15 6.15 0 0012 5.85zm0 10.15A4 4 0 1116 12a4 4 0 01-4 4zm6.4-10.4a1.44 1.44 0 11-1.44-1.44 1.44 1.44 0 011.44 1.44z"/>
+                    </svg>
+                  </a>
+                  <a href="#" aria-label="X">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5.3-6.9L4.8 22H1.7l7.8-8.9L1 2h6.9l4.8 6.3L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z"/>
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </footer>
     </>

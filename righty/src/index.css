@@ -29,7 +29,17 @@ body {
   background: var(--cream);
   line-height: 1.85;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+/* Body text (non-title) styles */
+p, li, td, th, label, input, textarea {
+  font-family: "Geist", "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.85;
 }
 
 img {
@@ -115,5 +125,78 @@ a {
 @media (max-width: 980px) {
   .wrap {
     padding: 0 28px;
+  }
+}
+
+/* ========== Scroll Reveal Animations ========== */
+.scroll-reveal {
+  will-change: opacity, transform;
+}
+
+/* Fade Up */
+.scroll-reveal.fadeUp {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.scroll-reveal.fadeUp.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade In */
+.scroll-reveal.fadeIn {
+  opacity: 0;
+}
+.scroll-reveal.fadeIn.is-visible {
+  opacity: 1;
+}
+
+/* Fade Left */
+.scroll-reveal.fadeLeft {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+.scroll-reveal.fadeLeft.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Fade Right */
+.scroll-reveal.fadeRight {
+  opacity: 0;
+  transform: translateX(40px);
+}
+.scroll-reveal.fadeRight.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale */
+.scroll-reveal.scale {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.scroll-reveal.scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Blur */
+.scroll-reveal.blur {
+  opacity: 0;
+  filter: blur(10px);
+}
+.scroll-reveal.blur.is-visible {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
   }
 }
