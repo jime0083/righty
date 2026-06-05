@@ -1,35 +1,37 @@
 import './App.css'
 
+const BASE_URL = import.meta.env.BASE_URL
+
 function App() {
   const jobs = [
     {
       title: 'ブランドデザイナー',
       description: 'ブランドの価値を可視化し、ロゴやVIなどを通して一貫した体験を設計します。',
-      image: '/assets/job_brand_crop.png',
+      image: `${BASE_URL}assets/job_brand_crop.png`,
       imagePosition: 'center 35%'
     },
     {
       title: 'UI/UXデザイナー',
       description: 'ユーザー起点で体験を設計し、使いやすく、美しいデジタル体験をつくります。',
-      image: '/assets/job_uiux_crop.png',
+      image: `${BASE_URL}assets/job_uiux_crop.png`,
       imagePosition: '72% center'
     },
     {
       title: 'フロントエンドエンジニア',
       description: 'デザインを正確に実装し、ユーザーにとって心地よいインターフェースを実現します。',
-      image: '/assets/job_frontend_crop.png',
+      image: `${BASE_URL}assets/job_frontend_crop.png`,
       imagePosition: '62% center'
     },
     {
       title: 'バックエンドエンジニア',
       description: 'システムの設計・開発を通して、安定性・拡張性の高い基盤をつくります。',
-      image: '/assets/job_backend_crop.png',
+      image: `${BASE_URL}assets/job_backend_crop.png`,
       imagePosition: 'center center'
     },
     {
       title: 'プロジェクトマネージャー',
       description: 'チームとクライアントをつなぎ、プロジェクトを成功へと導く推進役を担います。',
-      image: '/assets/office_meeting.png',
+      image: `${BASE_URL}assets/office_meeting.png`,
       imagePosition: 'center 45%'
     }
   ]
@@ -247,7 +249,7 @@ function App() {
             <span className="rv-circle"></span>
             <span className="rv-dots"></span>
             <div className="rv-photo">
-              <img src="/assets/team.png" alt="チームメンバー" />
+              <img src={`${BASE_URL}assets/team.png`} alt="チームメンバー" />
             </div>
           </div>
         </div>
