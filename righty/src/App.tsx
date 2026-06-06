@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './App.css'
 import { ScrollReveal } from './components/ScrollReveal'
 
@@ -137,7 +138,7 @@ function App() {
         ></span>
         <div className="wrap hero-grid">
           <nav className="side-nav">
-            <a href="#about"><span className="dot"></span>ライティについて</a>
+            <Link to="/about"><span className="dot"></span>ライティについて</Link>
             <a href="#"><span className="dot"></span>カルチャー</a>
             <a href="#jobs"><span className="dot"></span>職種紹介</a>
             <a href="#work"><span className="dot"></span>働く環境</a>
@@ -186,7 +187,7 @@ function App() {
               <div className="eyebrow">About Righty</div>
               <h2>デザインとテクノロジーの力で、<br/>人とビジネスの可能性をひらく。</h2>
               <p>ライティは、ブランディングとUX設計を軸に、クライアントのビジネスの本質を捉え、価値ある体験をデザインする会社です。戦略から企画・デザイン・開発・グロースまでを一気通貫で行い、クライアントの伴走者として、共に未来をつくります。</p>
-              <a className="link-out" href="#">ライティについて詳しく見る<span className="ar">→</span></a>
+              <Link className="link-out" to="/about">ライティについて詳しく見る<span className="ar">→</span></Link>
             </div>
           </ScrollReveal>
         </div>
@@ -315,9 +316,9 @@ function App() {
             </div>
             <div className="foot-col">
               <h5>ライティについて</h5>
-              <a href="#">私たちの想い</a>
-              <a href="#">事業内容</a>
-              <a href="#">プロジェクト</a>
+              <Link to="/about">私たちの想い</Link>
+              <Link to="/about">事業内容</Link>
+              <Link to="/about">プロジェクト</Link>
             </div>
             <div className="foot-col">
               <h5>職種紹介</h5>

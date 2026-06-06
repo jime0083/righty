@@ -1,0 +1,337 @@
+/* ---------- About Page Styles ---------- */
+
+/* Header actions for about page */
+.head-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.head-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 34px;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 14px 26px;
+  border-radius: 40px;
+  transition: 0.28s;
+  white-space: nowrap;
+}
+
+.head-btn .ar {
+  transition: transform 0.28s;
+}
+
+.head-btn:hover .ar {
+  transform: translateX(5px);
+}
+
+.head-btn--dark {
+  background: #2b1a12;
+  color: #fff;
+}
+
+.head-btn--dark:hover {
+  background: #3a2418;
+  transform: translateY(-2px);
+}
+
+.head-btn--out {
+  border: 1.5px solid var(--orange);
+  color: var(--orange-deep);
+}
+
+.head-btn--out:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.head-menu {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #2b1a12;
+  display: grid;
+  place-items: center;
+  flex: none;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.head-menu:hover {
+  transform: scale(1.06);
+}
+
+.head-menu span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  margin: 3px 0;
+  border-radius: 2px;
+}
+
+/* ---------- Page Hero ---------- */
+.page-hero {
+  position: relative;
+  padding: 158px 0 70px;
+  overflow: hidden;
+}
+
+.page-hero .hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+  z-index: 5;
+}
+
+.page-hero .side-nav {
+  padding-top: 6px;
+}
+
+.hero-head {
+  position: relative;
+  padding-top: 4px;
+}
+
+.hero-head h1 {
+  font-size: 46px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.hero-head p {
+  margin-top: 22px;
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 2;
+}
+
+.hero-dots {
+  position: absolute;
+  top: -6px;
+  right: 30px;
+  width: 230px;
+  height: 150px;
+  opacity: 0.85;
+  z-index: -1;
+  pointer-events: none;
+  background-image: radial-gradient(var(--orange) 2px, transparent 2px);
+  background-size: 16px 16px;
+  -webkit-mask-image: radial-gradient(circle, #000, transparent 70%);
+  mask-image: radial-gradient(circle, #000, transparent 70%);
+}
+
+.hero-blob {
+  position: absolute;
+  top: -90px;
+  right: -140px;
+  width: 600px;
+  height: 440px;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(120% 120% at 70% 30%, #fbcdb0 0%, #fbd9c4 45%, #fde7d8 72%, rgba(253, 246, 240, 0) 100%);
+  border-radius: 50% 50% 46% 54% / 60% 56% 44% 40%;
+  transform: rotate(-8deg);
+}
+
+/* ---------- Features Section ---------- */
+.features {
+  position: relative;
+  padding: 40px 0 80px;
+  background: var(--paper);
+}
+
+.feature-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  padding: 64px 0;
+}
+
+.feature-row .media {
+  position: relative;
+}
+
+.feature-row .media img.photo {
+  width: 108%;
+  max-width: none;
+  object-fit: cover;
+  filter: drop-shadow(0 24px 46px rgba(214, 120, 70, 0.2));
+  border-radius: 63% 37% 47% 53% / 58% 52% 48% 42%;
+}
+
+.feature-row.reverse .media img.photo {
+  margin-left: -8%;
+  border-radius: 42% 58% 60% 40% / 53% 44% 56% 47%;
+}
+
+.feature-row.biz .media img.photo {
+  border-radius: 57% 43% 53% 47% / 47% 57% 43% 53%;
+}
+
+.feature-row .copy {
+  position: relative;
+  z-index: 3;
+}
+
+.feature-row.reverse .copy {
+  order: -1;
+}
+
+.f-eyebrow {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  color: var(--orange-deep);
+  text-transform: uppercase;
+}
+
+.f-title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+.f-body {
+  margin-top: 22px;
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 2.1;
+  max-width: 380px;
+}
+
+.circ-btn {
+  margin-top: 38px;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  font-size: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.circ-btn .ar {
+  transition: transform 0.3s;
+}
+
+.circ-btn:hover .ar {
+  transform: translateX(5px);
+}
+
+.circ-fill {
+  background: var(--orange-grad);
+  color: #fff;
+  box-shadow: 0 16px 30px rgba(238, 108, 58, 0.32);
+}
+
+.circ-fill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 38px rgba(238, 108, 58, 0.42);
+}
+
+.circ-out {
+  border: 1.6px solid var(--orange);
+  color: var(--orange-deep);
+  background: #fff;
+}
+
+.circ-out:hover {
+  background: var(--orange);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Decorative accents */
+.deco {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.deco.circ-lg {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 38% 36%, #fcdcc8, #f6bd9b);
+  opacity: 0.85;
+}
+
+.deco.circ-sm {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 38%, #fde2d2, #f7c4a6);
+  opacity: 0.8;
+}
+
+.deco.dots {
+  opacity: 0.6;
+  background-image: radial-gradient(var(--orange) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  -webkit-mask-image: radial-gradient(circle, #000, transparent 72%);
+  mask-image: radial-gradient(circle, #000, transparent 72%);
+}
+
+/* About page footer adjustments */
+.about-foot {
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .page-hero .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero .side-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin-bottom: 26px;
+  }
+
+  .page-hero .side-nav a {
+    border-bottom: none;
+    padding: 6px 0;
+    max-width: none;
+  }
+
+  .hero-head h1 {
+    font-size: 38px;
+  }
+
+  .head-btn {
+    display: none;
+  }
+
+  .feature-row {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 48px 0;
+  }
+
+  .feature-row.reverse .copy {
+    order: 0;
+  }
+
+  .feature-row .media img.photo {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .feature-row.reverse .media img.photo {
+    margin: 0 auto;
+  }
+}
