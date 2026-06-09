@@ -21,7 +21,8 @@
       "Bash(npm run deploy:*)",
       "WebFetch(domain:api.anthropic.com)",
       "Bash(npm run dev:*)",
-      "Bash(git remote add:*)"
+      "Bash(git remote add:*)",
+      "Bash(ls:*)"
     ]
   }
 }

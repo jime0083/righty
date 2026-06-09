@@ -48,9 +48,7 @@ function About() {
             <Link className="head-btn head-btn--dark" to="/#jobs">募集職種一覧<span className="ar">→</span></Link>
             <a className="head-btn head-btn--out" href="#">新卒採用<span className="ar">→</span></a>
             <div className="head-menu" role="button" aria-label="メニュー">
-              <span></span>
-              <span></span>
-              <span></span>
+              <img src={`${BASE_URL}assets/images/三点リーダー.png`} alt="メニュー" />
             </div>
           </div>
         </div>
@@ -62,7 +60,7 @@ function About() {
         <div className="wrap hero-grid">
           <nav className="side-nav">
             <Link className="active" to="/about"><span className="dot"></span>ライティについて</Link>
-            <a href="#"><span className="dot"></span>カルチャー</a>
+            <Link to="/culture"><span className="dot"></span>カルチャー</Link>
             <Link to="/#jobs"><span className="dot"></span>職種紹介</Link>
             <Link to="/#work"><span className="dot"></span>働く環境</Link>
             <Link to="/#recruit"><span className="dot"></span>採用</Link>
