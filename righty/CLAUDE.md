@@ -5,6 +5,28 @@ RIGHTY Careersは採用サイトのフロントエンドプロジェクトです
 - フレームワーク: React + TypeScript + Vite
 - デプロイ先: GitHub Pages (https://jime0083.github.io/righty/)
 
+## デプロイルール（必須）
+
+**新規ページの実装や修正を行った場合は、必ずGitHub Pagesにデプロイすること。**
+
+### デプロイが必要なタイミング
+- 新しいページを実装した時
+- 既存ページのUI/機能を修正した時
+- スタイル（CSS）を変更した時
+- 画像やアセットを追加・変更した時
+
+### デプロイコマンド
+```bash
+npm run deploy
+```
+
+### デプロイ後の確認
+デプロイ完了後、以下のURLで動作確認を行うこと:
+- トップページ: https://jime0083.github.io/righty/
+- Aboutページ: https://jime0083.github.io/righty/#/about
+- Cultureページ: https://jime0083.github.io/righty/#/culture
+- Jobsページ: https://jime0083.github.io/righty/#/jobs
+
 ## デザインルール
 
 ### スクロールアニメーション（必須）

@@ -61,7 +61,7 @@ function About() {
           <nav className="side-nav">
             <Link className="active" to="/about"><span className="dot"></span>ライティについて</Link>
             <Link to="/culture"><span className="dot"></span>カルチャー</Link>
-            <Link to="/#jobs"><span className="dot"></span>職種紹介</Link>
+            <Link to="/jobs"><span className="dot"></span>職種紹介</Link>
             <Link to="/#work"><span className="dot"></span>働く環境</Link>
             <Link to="/#recruit"><span className="dot"></span>採用</Link>
           </nav>

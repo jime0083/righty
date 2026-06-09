@@ -1,0 +1,311 @@
+/* ---------- Jobs Page Styles ---------- */
+
+/* ---------- Jobs Intro ---------- */
+.jobs-intro {
+  position: relative;
+  padding: 30px 0 18px;
+  background: var(--paper);
+}
+
+.jobs-intro h2 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.jobs-intro p {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 2.05;
+}
+
+/* ---------- Job Cards ---------- */
+.jobs-sec {
+  position: relative;
+  padding: 30px 0 90px;
+  background: var(--paper);
+}
+
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.job-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(193, 128, 93, 0.12);
+  transition: 0.3s;
+}
+
+.job-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 54px rgba(193, 128, 93, 0.2);
+}
+
+.job-img {
+  position: relative;
+  height: 172px;
+  overflow: visible;
+  background: var(--cream-2);
+}
+
+.job-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.job-ic {
+  position: absolute;
+  left: 22px;
+  bottom: -26px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 20px rgba(193, 128, 93, 0.22);
+  z-index: 10;
+}
+
+.job-ic svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--orange-deep);
+  stroke-width: 1.7;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.job-body {
+  padding: 40px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.job-body h3 {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.job-body .desc {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  min-height: 48px;
+  margin-bottom: 18px;
+}
+
+.job-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.job-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding: 8px 16px;
+  border: 1px solid var(--peach);
+  border-radius: 30px;
+  background: #fffdfb;
+}
+
+.job-tag svg {
+  width: 15px;
+  height: 15px;
+  stroke: var(--orange-deep);
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
+.job-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  margin-top: auto;
+  transition: 0.25s;
+}
+
+.job-more .ar {
+  transition: transform 0.25s;
+}
+
+.job-card:hover .job-more .ar {
+  transform: translateX(5px);
+}
+
+.jobs-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 54px;
+}
+
+.jobs-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  border: 1.5px solid var(--orange);
+  border-radius: 40px;
+  padding: 18px 40px;
+  transition: 0.28s;
+  white-space: nowrap;
+}
+
+.jobs-cta a .ar {
+  transition: transform 0.28s;
+}
+
+.jobs-cta a:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.jobs-cta a:hover .ar {
+  transform: translateX(5px);
+}
+
+/* ---------- FAQ ---------- */
+.faq {
+  position: relative;
+  padding: 70px 0 90px;
+  background: var(--cream-2);
+}
+
+.faq .f-eyebrow {
+  margin-bottom: 8px;
+}
+
+.faq h2 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 34px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0 8px 22px rgba(193, 128, 93, 0.08);
+  overflow: hidden;
+  transition: border-radius 0.3s;
+}
+
+.faq-item.open {
+  border-radius: 24px;
+}
+
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 22px 32px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+}
+
+.faq-q .pm {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.faq-q .pm::before,
+.faq-q .pm::after {
+  content: "";
+  position: absolute;
+  background: var(--orange-deep);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.faq-q .pm::before {
+  left: 0;
+  top: 11px;
+  width: 24px;
+  height: 2px;
+}
+
+.faq-q .pm::after {
+  left: 11px;
+  top: 0;
+  width: 2px;
+  height: 24px;
+}
+
+.faq-item.open .faq-q .pm::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.faq-a-inner {
+  padding: 0 32px 26px;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 2;
+}
+
+/* Jobs page footer adjustments */
+.jobs-foot {
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .job-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .job-grid {
+    grid-template-columns: 1fr;
+  }
+}
