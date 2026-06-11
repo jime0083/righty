@@ -6,6 +6,7 @@ import App from './App.tsx'
 import About from './pages/About.tsx'
 import Culture from './pages/Culture.tsx'
 import Jobs from './pages/Jobs.tsx'
+import Work from './pages/Work.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/about" element={<About />} />
         <Route path="/culture" element={<Culture />} />
         <Route path="/jobs" element={<Jobs />} />
+        <Route path="/work" element={<Work />} />
       </Routes>
     </HashRouter>
   </StrictMode>,

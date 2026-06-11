@@ -150,7 +150,7 @@ function Jobs() {
             <Link to="/about"><span className="dot"></span>ライティについて</Link>
             <Link to="/culture"><span className="dot"></span>カルチャー</Link>
             <Link className="active" to="/jobs"><span className="dot"></span>職種紹介</Link>
-            <Link to="/#work"><span className="dot"></span>働く環境</Link>
+            <Link to="/work"><span className="dot"></span>働く環境</Link>
             <Link to="/#recruit"><span className="dot"></span>採用</Link>
           </nav>
           <div className="hero-head">
@@ -268,9 +268,9 @@ function Jobs() {
               </div>
               <div className="foot-col">
                 <h5>働く環境</h5>
-                <Link to="/#work">制度・福利厚生</Link>
-                <Link to="/#work">チーム・文化</Link>
-                <Link to="/#work">メンバーインタビュー</Link>
+                <Link to="/work">制度・福利厚生</Link>
+                <Link to="/work">チーム・文化</Link>
+                <Link to="/work">メンバーインタビュー</Link>
               </div>
               <div className="foot-col">
                 <h5>採用</h5>
