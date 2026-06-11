@@ -104,7 +104,7 @@
 .interview {
   position: relative;
   padding: 74px 0 84px;
-  background: var(--cream);
+  background: var(--paper);
 }
 
 .intv-head {
@@ -267,7 +267,7 @@
 .jobs-sec {
   position: relative;
   padding: 74px 0 84px;
-  background: var(--paper);
+  background: var(--cream);
 }
 
 .jobs-sec .intv-head {
@@ -278,6 +278,11 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 20px;
+  align-items: stretch;
+}
+
+.job-grid > div {
+  height: 100%;
 }
 
 .job-card {
@@ -288,6 +293,7 @@
   overflow: hidden;
   box-shadow: 0 16px 40px rgba(193, 128, 93, 0.12);
   transition: 0.3s;
+  height: 100%;
 }
 
 .job-card:hover {
@@ -308,32 +314,8 @@
   object-fit: cover;
 }
 
-.job-ic {
-  position: absolute;
-  left: 18px;
-  bottom: -24px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: #fff;
-  display: grid;
-  place-items: center;
-  box-shadow: 0 8px 20px rgba(193, 128, 93, 0.22);
-  z-index: 2;
-}
-
-.job-ic svg {
-  width: 26px;
-  height: 26px;
-  stroke: var(--orange-deep);
-  stroke-width: 1.7;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
 .job-body {
-  padding: 36px 20px 22px;
+  padding: 20px 20px 22px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -350,39 +332,6 @@
   font-size: 11.5px;
   color: var(--ink-soft);
   line-height: 1.9;
-  margin-bottom: 16px;
-}
-
-.job-tags {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-bottom: 18px;
-}
-
-.job-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  align-self: flex-start;
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--ink-soft);
-  padding: 7px 12px;
-  border: 1px solid var(--peach);
-  border-radius: 30px;
-  background: #fffdfb;
-}
-
-.job-tag svg {
-  width: 13px;
-  height: 13px;
-  stroke: var(--orange-deep);
-  stroke-width: 1.6;
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  flex: none;
 }
 
 .job-more {
