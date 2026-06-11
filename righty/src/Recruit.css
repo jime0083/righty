@@ -1,0 +1,555 @@
+/* ========== RECRUIT PAGE STYLES ========== */
+
+/* ---------- MESSAGE ---------- */
+.message {
+  position: relative;
+  padding: 50px 0 80px;
+  background: var(--paper);
+  overflow: hidden;
+}
+
+.message-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.message-left .f-eyebrow {
+  margin-bottom: 14px;
+}
+
+.message-left h2 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  margin-bottom: 24px;
+}
+
+.message-left p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 2.1;
+}
+
+.message-left p + p {
+  margin-top: 20px;
+}
+
+.msg-sign {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.msg-sign .role {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.msg-sign .role b {
+  font-weight: 700;
+  color: var(--ink);
+  margin-left: 10px;
+}
+
+.msg-sign .name {
+  font-family: "Poppins", cursive;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.msg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  border: 1.5px solid var(--orange);
+  border-radius: 40px;
+  padding: 15px 28px;
+  transition: 0.28s;
+  margin-top: 34px;
+  white-space: nowrap;
+}
+
+.msg-btn .ar {
+  transition: transform 0.28s;
+}
+
+.msg-btn:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.msg-btn:hover .ar {
+  transform: translateX(5px);
+}
+
+.message-photo {
+  position: relative;
+}
+
+.message-photo img {
+  width: 100%;
+  filter: drop-shadow(0 22px 46px rgba(214, 120, 70, 0.18));
+}
+
+/* ---------- INTERVIEW ---------- */
+.interview {
+  position: relative;
+  padding: 74px 0 84px;
+  background: var(--cream);
+}
+
+.intv-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.intv-head .f-eyebrow {
+  margin-bottom: 10px;
+}
+
+.intv-head h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}
+
+.intv-head p {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 2;
+}
+
+.link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  border: 1.5px solid var(--orange);
+  border-radius: 40px;
+  padding: 13px 24px;
+  transition: 0.28s;
+  white-space: nowrap;
+  flex: none;
+}
+
+.link-pill .ar {
+  transition: transform 0.28s;
+}
+
+.link-pill:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.link-pill:hover .ar {
+  transform: translateX(5px);
+}
+
+.intv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.icard {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(193, 128, 93, 0.12);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.icard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 54px rgba(193, 128, 93, 0.2);
+}
+
+.icard .img {
+  height: 165px;
+  overflow: hidden;
+  background: var(--cream-2);
+}
+
+.icard .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icard .body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.icard .role {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.icard h3 {
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  margin-bottom: 13px;
+}
+
+.icard .desc {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  flex: 1;
+}
+
+.icard .more {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  margin-top: 16px;
+  transition: 0.25s;
+}
+
+.icard .more .ar {
+  transition: transform 0.25s;
+}
+
+.icard:hover .more .ar {
+  transform: translateX(5px);
+}
+
+.intv-dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 34px;
+}
+
+.intv-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e3cdbe;
+  transition: 0.25s;
+}
+
+.intv-dots span.on {
+  background: var(--orange);
+  width: 22px;
+  border-radius: 5px;
+}
+
+/* ---------- JOBS Section ---------- */
+.jobs-sec {
+  position: relative;
+  padding: 74px 0 84px;
+  background: var(--paper);
+}
+
+.jobs-sec .intv-head {
+  margin-bottom: 40px;
+}
+
+.job-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.job-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(193, 128, 93, 0.12);
+  transition: 0.3s;
+}
+
+.job-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 54px rgba(193, 128, 93, 0.2);
+}
+
+.job-img {
+  position: relative;
+  height: 128px;
+  overflow: hidden;
+  background: var(--cream-2);
+}
+
+.job-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.job-ic {
+  position: absolute;
+  left: 18px;
+  bottom: -24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 20px rgba(193, 128, 93, 0.22);
+  z-index: 2;
+}
+
+.job-ic svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--orange-deep);
+  stroke-width: 1.7;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.job-body {
+  padding: 36px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.job-body h3 {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 11px;
+}
+
+.job-body .desc {
+  font-size: 11.5px;
+  color: var(--ink-soft);
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+.job-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.job-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-soft);
+  padding: 7px 12px;
+  border: 1px solid var(--peach);
+  border-radius: 30px;
+  background: #fffdfb;
+}
+
+.job-tag svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--orange-deep);
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
+.job-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  margin-top: auto;
+  transition: 0.25s;
+}
+
+.job-more .ar {
+  transition: transform 0.25s;
+}
+
+.job-card:hover .job-more .ar {
+  transform: translateX(5px);
+}
+
+/* ---------- RECRUIT INFO ---------- */
+.recruit-sec {
+  position: relative;
+  padding: 74px 0 96px;
+  background: var(--cream);
+}
+
+.recruit-sec .intv-head {
+  margin-bottom: 36px;
+}
+
+.recruit-panel {
+  background: var(--cream-2);
+  border-radius: 26px;
+  padding: 44px 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.rcard {
+  padding: 8px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.rcard:not(:last-child) {
+  border-right: 1px solid var(--peach);
+}
+
+.rcard .rc-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.rcard .ic {
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 16px rgba(193, 128, 93, 0.14);
+}
+
+.rcard .ic svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--orange-deep);
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.rcard h4 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.rcard p {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  flex: 1;
+}
+
+.rcard .more {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  margin-top: 18px;
+  transition: 0.25s;
+}
+
+.rcard .more .ar {
+  transition: transform 0.25s;
+}
+
+.rcard:hover .more .ar {
+  transform: translateX(5px);
+}
+
+/* ---------- FOOTER ---------- */
+.recruit-foot {
+  background: var(--cream);
+  padding: 72px 0 34px;
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 980px) {
+  .message-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .message-photo {
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .intv-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .intv-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .job-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .recruit-panel {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 36px 30px;
+  }
+
+  .rcard {
+    padding: 8px 0;
+  }
+
+  .rcard:not(:last-child) {
+    border-right: none;
+    border-bottom: 1px solid var(--peach);
+    padding-bottom: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .intv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .job-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -27,6 +27,7 @@ npm run deploy
 - Cultureページ: https://jime0083.github.io/righty/#/culture
 - Jobsページ: https://jime0083.github.io/righty/#/jobs
 - Workページ: https://jime0083.github.io/righty/#/work
+- Recruitページ: https://jime0083.github.io/righty/#/recruit
 
 ## デザインルール
 

@@ -151,7 +151,7 @@ function Jobs() {
             <Link to="/culture"><span className="dot"></span>カルチャー</Link>
             <Link className="active" to="/jobs"><span className="dot"></span>職種紹介</Link>
             <Link to="/work"><span className="dot"></span>働く環境</Link>
-            <Link to="/#recruit"><span className="dot"></span>採用</Link>
+            <Link to="/recruit"><span className="dot"></span>採用</Link>
           </nav>
           <div className="hero-head">
             <img className="hero-dots" src={`${BASE_URL}assets/images/deco_dots_scatter.png`} alt="" />
@@ -275,7 +275,7 @@ function Jobs() {
               <div className="foot-col">
                 <h5>採用</h5>
                 <Link to="/jobs">募集職種一覧</Link>
-                <Link to="/#recruit">選考フロー</Link>
+                <Link to="/recruit">選考フロー</Link>
                 <a href="#">よくある質問</a>
               </div>
               <div className="foot-cta">

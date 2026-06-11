@@ -1,0 +1,441 @@
+import { Link } from 'react-router-dom'
+import { ScrollReveal } from '../components/ScrollReveal'
+import '../Recruit.css'
+
+const BASE_URL = import.meta.env.BASE_URL
+
+function Recruit() {
+  const interviews = [
+    {
+      role: 'UI/UXデザイナー',
+      title: 'ユーザーの心を動かす体験を\nデザインしたい',
+      description: 'ユーザーの声に向き合い、課題を解決するプロセスにやりがいを感じています。',
+      image: `${BASE_URL}assets/images/job_uiux_crop.png`,
+      imagePosition: '72% center'
+    },
+    {
+      role: 'フロントエンドエンジニア',
+      title: '技術でサービスの価値を\n最大化する',
+      description: '新しい挑戦を学び合うから、チームでより良いプロダクトをつくっています。',
+      image: `${BASE_URL}assets/images/job_frontend_crop.png`,
+      imagePosition: '60% center'
+    },
+    {
+      role: 'プロジェクトマネージャー',
+      title: 'チームの力を引き出し、\n最高の成果へ',
+      description: 'メンバーの強みを活かし、クライアントの成功に繋げることが喜びです。',
+      image: `${BASE_URL}assets/images/job_pm_crop.png`,
+      imagePosition: 'center 28%'
+    }
+  ]
+
+  const jobs = [
+    {
+      title: 'UI/UXデザイナー',
+      description: 'ユーザー体験の設計からUIデザインまで、プロダクトの価値を最大化します。',
+      image: `${BASE_URL}assets/images/job_uiux_crop.png`,
+      imagePosition: '72% center',
+      iconPath: 'M5 19l1-4L17 4l3 3L9 18l-4 1z',
+      iconPath2: 'M14.5 6.5l3 3',
+      tags: [
+        { icon: 'user', label: 'ユーザーリサーチ' },
+        { icon: 'monitor', label: 'UI設計・デザイン' },
+        { icon: 'code', label: 'プロトタイピング' }
+      ]
+    },
+    {
+      title: 'フロントエンドエンジニア',
+      description: 'Webサイトやサービスのフロントエンド開発で、魅力的な体験をつくります。',
+      image: `${BASE_URL}assets/images/job_frontend_crop.png`,
+      imagePosition: '62% center',
+      iconPath: 'M9 8l-5 4 5 4M15 8l5 4-5 4',
+      tags: [
+        { icon: 'globe', label: 'Webアプリ開発' },
+        { icon: 'hash', label: 'UI実装・パフォーマンス改善' },
+        { icon: 'image', label: 'デザインとの連携' }
+      ]
+    },
+    {
+      title: 'バックエンドエンジニア',
+      description: '安定したシステム基盤を構築し、サービスの成長を支えます。',
+      image: `${BASE_URL}assets/images/job_backend_crop.png`,
+      imagePosition: 'center center',
+      iconPath: 'M12 4v2M12 18v2M4 12h2M18 12h2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M17.7 6.3l-1.4 1.4M7.7 16.3l-1.4 1.4',
+      iconCircle: true,
+      tags: [
+        { icon: 'server', label: 'API・サーバー開発' },
+        { icon: 'database', label: 'データベース設計・運用' },
+        { icon: 'shield', label: 'インフラ・セキュリティ' }
+      ]
+    },
+    {
+      title: 'ブランドデザイナー',
+      description: 'ブランドの想いや価値を可視化し、心を動かすデザインをつくります。',
+      image: `${BASE_URL}assets/images/job_brand_crop.png`,
+      imagePosition: 'center 35%',
+      iconPath: 'M4 20s1-4 4-7l8-8 3 3-8 8c-3 3-7 4-7 4z',
+      iconPath2: 'M14 6l4 4',
+      tags: [
+        { icon: 'star', label: 'ブランド戦略・設計' },
+        { icon: 'target', label: 'ロゴ・VI・グラフィック制作' },
+        { icon: 'text', label: 'トーン&マナー開発' }
+      ]
+    },
+    {
+      title: 'プロジェクトマネージャー',
+      description: 'プロジェクト全体をリードし、チームの力を最大限に引き出します。',
+      image: `${BASE_URL}assets/images/job_pm_crop.png`,
+      imagePosition: 'center 30%',
+      iconPath: '',
+      iconCircles: true,
+      tags: [
+        { icon: 'file', label: '要件定義・スケジュール管理' },
+        { icon: 'chat', label: 'チームコミュニケーション' },
+        { icon: 'check', label: '品質管理・課題解決' }
+      ]
+    }
+  ]
+
+  const recruitCards = [
+    {
+      title: '新卒採用',
+      description: '未来のライティを担う新しい仲間を募集しています。',
+      iconPath: 'M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6',
+      iconCircle: { cx: 12, cy: 8, r: 3.4 }
+    },
+    {
+      title: '中途採用',
+      description: 'これまでの経験を活かし、ライティで新たな挑戦を。',
+      iconPath: 'M3 19c0-2.8 2.2-4.6 5-4.6s5 1.8 5 4.6M13 19c.2-2.6 2-4 4-4s3.8 1.4 4 4',
+      iconCircles: [
+        { cx: 8, cy: 8, r: 2.8 },
+        { cx: 16, cy: 8, r: 2.8 }
+      ]
+    },
+    {
+      title: '募集要項・選考フロー',
+      description: '応募から内定までの流れや選考基準についてご案内します。',
+      iconPath: 'M6 3h8l4 4v14H6zM14 3v4h4M9 13h6M9 17h6M9 9h2'
+    }
+  ]
+
+  const renderTagIcon = (type: string) => {
+    switch (type) {
+      case 'user':
+        return <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/></svg>
+      case 'monitor':
+        return <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg>
+      case 'code':
+        return <svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg>
+      case 'globe':
+        return <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>
+      case 'hash':
+        return <svg viewBox="0 0 24 24"><path d="M4 18l4-12M10 18l4-12M3 10h12M2 14h12"/></svg>
+      case 'image':
+        return <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8" cy="10" r="1.6"/><path d="M5 17l4-4 3 2.5L16 11l3 3"/></svg>
+      case 'server':
+        return <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="5" rx="1.5"/><rect x="3" y="11" width="18" height="5" rx="1.5"/><path d="M7 6.5h.01M7 13.5h.01"/></svg>
+      case 'database':
+        return <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>
+      case 'shield':
+        return <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/></svg>
+      case 'star':
+        return <svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>
+      case 'target':
+        return <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5"/></svg>
+      case 'text':
+        return <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h13"/></svg>
+      case 'file':
+        return <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+      case 'chat':
+        return <svg viewBox="0 0 24 24"><path d="M4 5h12v9H8l-4 3z"/><path d="M9 18h7l4 3v-9h-3"/></svg>
+      case 'check':
+        return <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-5"/><circle cx="12" cy="12" r="9"/></svg>
+      default:
+        return null
+    }
+  }
+
+  return (
+    <>
+      {/* Header */}
+      <header className="site-head">
+        <div className="wrap head-row">
+          <Link className="logo" to="/">
+            <span className="mark">RIGHTY<sup>®</sup></span>
+            <span className="sub">Careers</span>
+          </Link>
+          <div className="head-actions">
+            <Link className="head-btn head-btn--dark" to="/jobs">募集職種一覧<span className="ar">→</span></Link>
+            <a className="head-btn head-btn--out" href="#">新卒採用<span className="ar">→</span></a>
+            <div className="head-menu" role="button" aria-label="メニュー">
+              <img src={`${BASE_URL}assets/images/三点リーダー.png`} alt="メニュー" />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Page Hero */}
+      <section className="page-hero">
+        <span className="hero-blob"></span>
+        <div className="wrap hero-grid">
+          <nav className="side-nav">
+            <Link to="/about"><span className="dot"></span>ライティについて</Link>
+            <Link to="/culture"><span className="dot"></span>カルチャー</Link>
+            <Link to="/jobs"><span className="dot"></span>職種紹介</Link>
+            <Link to="/work"><span className="dot"></span>働く環境</Link>
+            <Link className="active" to="/recruit"><span className="dot"></span>採用</Link>
+          </nav>
+          <div className="hero-head">
+            <img className="hero-dots" src={`${BASE_URL}assets/images/deco_dots_scatter.png`} alt="" />
+            <ScrollReveal animation="fadeUp">
+              <div className="f-eyebrow" style={{ marginBottom: '14px' }}>Recruit</div>
+              <h1>採用</h1>
+            </ScrollReveal>
+            <ScrollReveal animation="fadeUp" delay={0.1}>
+              <p>ライティの想いや目指す未来、<br />働く環境や仲間についてご紹介します。</p>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Message Section */}
+      <section className="message">
+        <div className="wrap message-grid">
+          <div className="message-left">
+            <ScrollReveal animation="fadeUp">
+              <div className="f-eyebrow">Message</div>
+              <h2>デザインとテクノロジーで、<br />心を動かし、未来をつくる。</h2>
+            </ScrollReveal>
+            <ScrollReveal animation="fadeUp" delay={0.1}>
+              <p>ライティは、デザインとテクノロジーの力で、人と企業の想いをカタチにする会社です。本質を見つめ、価値を生み、未来につながる体験をつくること。それが、私たちの使命であり、喜びです。</p>
+              <p>変化の速い時代だからこそ、信じるのは「人の力」。個性を尊重し、挑戦を後押しし、チームで最高の未来をつくっていく。そんな仲間と出会えることを、楽しみにしています。</p>
+              <div className="msg-sign">
+                <span className="role">代表取締役<b>太田 健一</b></span>
+                <span className="name">Kenichi Ota</span>
+              </div>
+              <a className="msg-btn" href="#">メッセージを読む<span className="ar">→</span></a>
+            </ScrollReveal>
+          </div>
+          <div className="message-photo">
+            <ScrollReveal animation="scale">
+              <img src={`${BASE_URL}assets/images/ceo_blob.png`} alt="代表取締役 太田健一" />
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Interview Section */}
+      <section className="interview">
+        <div className="wrap">
+          <div className="intv-head">
+            <div>
+              <ScrollReveal animation="fadeUp">
+                <div className="f-eyebrow">Interview</div>
+                <h2>インタビュー</h2>
+                <p>ライティで働くメンバーに、<br />仕事のやりがいやチームの雰囲気について聞きました。</p>
+              </ScrollReveal>
+            </div>
+            <ScrollReveal animation="fadeUp" delay={0.1}>
+              <a className="link-pill" href="#">すべてのインタビューを見る<span className="ar">→</span></a>
+            </ScrollReveal>
+          </div>
+          <div className="intv-grid">
+            {interviews.map((interview, index) => (
+              <ScrollReveal key={index} animation="fadeUp" delay={index * 0.1}>
+                <article className="icard">
+                  <div className="img">
+                    <img src={interview.image} alt={interview.role} style={{ objectPosition: interview.imagePosition }} />
+                  </div>
+                  <div className="body">
+                    <div className="role">{interview.role}</div>
+                    <h3>{interview.title.split('\n').map((line, i) => (
+                      <span key={i}>{line}{i === 0 && <br />}</span>
+                    ))}</h3>
+                    <p className="desc">{interview.description}</p>
+                    <a className="more" href="#">詳しく見る<span className="ar">→</span></a>
+                  </div>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+          <div className="intv-dots">
+            <span className="on"></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </section>
+
+      {/* Jobs Section */}
+      <section className="jobs-sec">
+        <div className="wrap">
+          <div className="intv-head">
+            <div>
+              <ScrollReveal animation="fadeUp">
+                <div className="f-eyebrow">Jobs</div>
+                <h2>職種紹介</h2>
+                <p>デザインとテクノロジーを軸に、<br />多様な専門性を持つプロフェッショナルが集まっています。</p>
+              </ScrollReveal>
+            </div>
+            <ScrollReveal animation="fadeUp" delay={0.1}>
+              <Link className="link-pill" to="/jobs">すべての職種を見る<span className="ar">→</span></Link>
+            </ScrollReveal>
+          </div>
+          <div className="job-grid">
+            {jobs.map((job, index) => (
+              <ScrollReveal key={index} animation="fadeUp" delay={index * 0.08}>
+                <article className="job-card">
+                  <div className="job-img">
+                    <img src={job.image} alt={job.title} style={{ objectPosition: job.imagePosition }} />
+                    <span className="job-ic">
+                      <svg viewBox="0 0 24 24">
+                        {job.iconCircles ? (
+                          <>
+                            <circle cx="12" cy="12" r="9" />
+                            <circle cx="12" cy="12" r="5" />
+                            <circle cx="12" cy="12" r="1.4" />
+                          </>
+                        ) : job.iconCircle ? (
+                          <>
+                            <circle cx="12" cy="12" r="3" />
+                            <path d={job.iconPath} />
+                          </>
+                        ) : (
+                          <>
+                            <path d={job.iconPath} />
+                            {job.iconPath2 && <path d={job.iconPath2} />}
+                          </>
+                        )}
+                      </svg>
+                    </span>
+                  </div>
+                  <div className="job-body">
+                    <h3>{job.title}</h3>
+                    <p className="desc">{job.description}</p>
+                    <div className="job-tags">
+                      {job.tags.map((tag, tagIndex) => (
+                        <span key={tagIndex} className="job-tag">
+                          {renderTagIcon(tag.icon)}
+                          {tag.label}
+                        </span>
+                      ))}
+                    </div>
+                    <a className="job-more" href="#">詳しく見る<span className="ar">→</span></a>
+                  </div>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recruit Info Section */}
+      <section className="recruit-sec">
+        <div className="wrap">
+          <div className="intv-head">
+            <div>
+              <ScrollReveal animation="fadeUp">
+                <div className="f-eyebrow">Recruit</div>
+                <h2>募集要項</h2>
+                <p>ライティでは、共に未来をつくる仲間を募集しています。<br />各職種の詳細や応募方法についてご確認いただけます。</p>
+              </ScrollReveal>
+            </div>
+            <ScrollReveal animation="fadeUp" delay={0.1}>
+              <Link className="link-pill" to="/jobs">募集職種一覧を見る<span className="ar">→</span></Link>
+            </ScrollReveal>
+          </div>
+          <ScrollReveal animation="fadeUp" delay={0.2}>
+            <div className="recruit-panel">
+              {recruitCards.map((card, index) => (
+                <div key={index} className="rcard">
+                  <div className="rc-head">
+                    <span className="ic">
+                      <svg viewBox="0 0 24 24">
+                        {card.iconCircle && <circle cx={card.iconCircle.cx} cy={card.iconCircle.cy} r={card.iconCircle.r} />}
+                        {card.iconCircles && card.iconCircles.map((circle, i) => (
+                          <circle key={i} cx={circle.cx} cy={circle.cy} r={circle.r} />
+                        ))}
+                        <path d={card.iconPath} />
+                      </svg>
+                    </span>
+                    <h4>{card.title}</h4>
+                  </div>
+                  <p>{card.description}</p>
+                  <a className="more" href="#">詳しく見る<span className="ar">→</span></a>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="foot recruit-foot">
+        <div className="wrap">
+          <ScrollReveal animation="fadeUp">
+            <div className="foot-top">
+              <div className="foot-brand">
+                <div>
+                  <span className="mark">RIGHTY<sup>®</sup></span>
+                  <span className="sub">Careers</span>
+                </div>
+                <div className="tag">More value.<br />Better together.</div>
+              </div>
+              <div className="foot-col">
+                <h5>ライティについて</h5>
+                <Link to="/about">私たちの想い</Link>
+                <Link to="/about">事業内容</Link>
+                <Link to="/about">プロジェクト</Link>
+              </div>
+              <div className="foot-col">
+                <h5>職種紹介</h5>
+                <Link to="/jobs">デザイナー</Link>
+                <Link to="/jobs">エンジニア</Link>
+                <Link to="/jobs">その他職種</Link>
+              </div>
+              <div className="foot-col">
+                <h5>働く環境</h5>
+                <Link to="/work">制度・福利厚生</Link>
+                <Link to="/work">チーム・文化</Link>
+                <Link to="/work">メンバーインタビュー</Link>
+              </div>
+              <div className="foot-col">
+                <h5>採用</h5>
+                <Link to="/jobs">募集職種一覧</Link>
+                <Link to="/recruit">選考フロー</Link>
+                <Link to="/recruit">よくある質問</Link>
+              </div>
+              <div className="foot-cta">
+                <a className="fc-fill" href="#">エントリーする →</a>
+                <a className="fc-out" href="#">採用に関するお問い合わせ</a>
+              </div>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal animation="fadeIn" delay={0.2}>
+            <div className="foot-bottom">
+              <span>© RIGHTY Inc. All Rights Reserved.</span>
+              <div className="links">
+                <a href="#">プライバシーポリシー</a>
+                <span>|</span>
+                <a href="#">サイトポリシー</a>
+                <div className="socials">
+                  <a href="#" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.2 8.8 2.2 12 2.2zm0 3.65A6.15 6.15 0 1018.15 12 6.15 6.15 0 0012 5.85zm0 10.15A4 4 0 1116 12a4 4 0 01-4 4zm6.4-10.4a1.44 1.44 0 11-1.44-1.44 1.44 1.44 0 011.44 1.44z" />
+                    </svg>
+                  </a>
+                  <a href="#" aria-label="X">
+                    <svg viewBox="0 0 24 24">
+                      <path d="M18.9 2H22l-7.3 8.3L23 22h-6.8l-5.3-6.9L4.8 22H1.7l7.8-8.9L1 2h6.9l4.8 6.3L18.9 2zm-2.4 18h1.9L7.6 4H5.6l10.9 16z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </footer>
+    </>
+  )
+}
+
+export default Recruit
