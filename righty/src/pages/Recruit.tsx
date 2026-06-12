@@ -92,6 +92,7 @@ function Recruit() {
             <Link to="/jobs"><span className="dot"></span>職種紹介</Link>
             <Link to="/work"><span className="dot"></span>働く環境</Link>
             <Link className="active" to="/recruit"><span className="dot"></span>採用</Link>
+            <Link to="/message"><span className="dot"></span>採用メッセージ</Link>
           </nav>
           <div className="hero-head">
             <img className="hero-dots" src={`${BASE_URL}assets/images/deco_dots_scatter.png`} alt="" />
