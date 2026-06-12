@@ -1,0 +1,578 @@
+/* ---------- Shinsotsu Page Styles ---------- */
+
+/* Side nav for Shinsotsu (internal page links) */
+.shin-nav a {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  max-width: 152px;
+  transition: 0.25s;
+}
+
+.shin-nav a .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d8cabf;
+  flex: none;
+  transition: 0.25s;
+}
+
+.shin-nav a:hover {
+  color: var(--orange-deep);
+  transform: translateX(4px);
+}
+
+.shin-nav a:hover .dot {
+  background: var(--orange);
+}
+
+/* ---------- MESSAGE ---------- */
+.shin-message {
+  position: relative;
+  padding: 50px 0 80px;
+  background: var(--paper);
+  overflow: hidden;
+}
+
+.message-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.message-left .f-eyebrow {
+  margin-bottom: 14px;
+}
+
+.message-left h2 {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  margin-bottom: 24px;
+}
+
+.message-left p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 2.1;
+}
+
+.message-left p + p {
+  margin-top: 20px;
+}
+
+.message-photo {
+  position: relative;
+}
+
+.message-photo img {
+  width: 100%;
+  filter: drop-shadow(0 22px 46px rgba(214, 120, 70, 0.18));
+}
+
+/* ---------- INTERVIEW ---------- */
+.shin-interview {
+  position: relative;
+  padding: 74px 0 84px;
+  background: var(--cream);
+}
+
+.intv-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.intv-head .f-eyebrow {
+  margin-bottom: 10px;
+}
+
+.intv-head h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}
+
+.intv-head p {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 2;
+}
+
+.link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  border: 1.5px solid var(--orange);
+  border-radius: 40px;
+  padding: 13px 24px;
+  transition: 0.28s;
+  white-space: nowrap;
+  flex: none;
+}
+
+.link-pill .ar {
+  transition: transform 0.28s;
+}
+
+.link-pill:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.link-pill:hover .ar {
+  transform: translateX(5px);
+}
+
+.intv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.icard {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(193, 128, 93, 0.12);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.icard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 54px rgba(193, 128, 93, 0.2);
+}
+
+.icard .img {
+  height: 165px;
+  overflow: hidden;
+  background: var(--cream-2);
+}
+
+.icard .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icard .body {
+  padding: 22px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.icard .role {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.icard .who {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.icard .who span {
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--ink-faint);
+  margin-left: 8px;
+}
+
+.icard h3 {
+  font-size: 16.5px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  margin-bottom: 13px;
+}
+
+.icard .desc {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  flex: 1;
+}
+
+.icard .more {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  margin-top: 16px;
+  transition: 0.25s;
+}
+
+.icard .more .ar {
+  transition: transform 0.25s;
+}
+
+.icard:hover .more .ar {
+  transform: translateX(5px);
+}
+
+.intv-dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 34px;
+}
+
+.intv-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e3cdbe;
+  transition: 0.25s;
+}
+
+.intv-dots span.on {
+  background: var(--orange);
+  width: 22px;
+  border-radius: 5px;
+}
+
+/* ---------- JOBS simple cards ---------- */
+.shin-jobs {
+  position: relative;
+  padding: 74px 0 84px;
+  background: var(--paper);
+}
+
+.shin-jobs .intv-head {
+  margin-bottom: 40px;
+}
+
+.jobs4-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.jcard {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 26px 28px;
+  box-shadow: 0 16px 40px rgba(193, 128, 93, 0.12);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.jcard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 54px rgba(193, 128, 93, 0.2);
+}
+
+.jcard .ic {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--peach-soft);
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+}
+
+.jcard .ic svg {
+  width: 28px;
+  height: 28px;
+  stroke: var(--orange-deep);
+  stroke-width: 1.7;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.jcard h3 {
+  font-size: 16.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 13px;
+}
+
+.jcard p {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.95;
+  flex: 1;
+  margin-bottom: 18px;
+}
+
+.jcard .more {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  transition: 0.25s;
+}
+
+.jcard .more .ar {
+  transition: transform 0.25s;
+}
+
+.jcard:hover .more .ar {
+  transform: translateX(5px);
+}
+
+/* ---------- 募集要項 table ---------- */
+.youkou {
+  position: relative;
+  padding: 74px 0 84px;
+  background: var(--cream);
+}
+
+.youkou .f-eyebrow {
+  margin-bottom: 8px;
+}
+
+.youkou h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 34px;
+}
+
+.youkou-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.youkou-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(193, 128, 93, 0.18);
+}
+
+.spec {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-row {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 24px;
+  padding: 22px 4px;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+
+.spec-row:first-child {
+  padding-top: 4px;
+}
+
+.spec-row dt {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.spec-row dd {
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.95;
+}
+
+.spec-row dd .sub {
+  display: block;
+  font-size: 12px;
+  color: var(--ink-faint);
+  margin-top: 4px;
+}
+
+/* ---------- FAQ ---------- */
+.faq {
+  position: relative;
+  padding: 30px 0 96px;
+  background: var(--cream);
+}
+
+.faq .f-eyebrow {
+  margin-bottom: 8px;
+}
+
+.faq h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 30px;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 0 8px 22px rgba(193, 128, 93, 0.08);
+  overflow: hidden;
+  transition: border-radius 0.3s;
+}
+
+.faq-item.open {
+  border-radius: 22px;
+}
+
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 30px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+}
+
+.faq-q .pm {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  position: relative;
+}
+
+.faq-q .pm::before,
+.faq-q .pm::after {
+  content: "";
+  position: absolute;
+  background: var(--orange-deep);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.faq-q .pm::before {
+  left: 0;
+  top: 10px;
+  width: 22px;
+  height: 2px;
+}
+
+.faq-q .pm::after {
+  left: 10px;
+  top: 0;
+  width: 2px;
+  height: 22px;
+}
+
+.faq-item.open .faq-q .pm::after {
+  transform: rotate(90deg);
+  opacity: 0;
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.faq-a-inner {
+  padding: 0 30px 24px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 2;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .shin-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    margin-bottom: 26px;
+  }
+
+  .shin-nav a {
+    border-bottom: none;
+    padding: 6px 0;
+    max-width: none;
+  }
+
+  .message-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .message-photo {
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .intv-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .intv-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .jobs4-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .youkou-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .youkou-photo {
+    max-width: 300px;
+  }
+
+  .spec-row {
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .intv-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .jobs4-grid {
+    grid-template-columns: 1fr;
+  }
+}

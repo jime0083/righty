@@ -43,7 +43,7 @@ export function Footer({ className = '' }: FooterProps) {
               <Link to="/recruit">よくある質問</Link>
             </div>
             <div className="foot-cta">
-              <a className="fc-fill" href="#">エントリーする →</a>
+              <Link className="fc-fill" to="/shinsotsu">新卒採用はこちら →</Link>
             </div>
           </div>
         </ScrollReveal>

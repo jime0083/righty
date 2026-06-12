@@ -74,7 +74,7 @@ function Recruit() {
           </Link>
           <div className="head-actions">
             <Link className="head-btn head-btn--dark" to="/jobs">募集職種一覧<span className="ar">→</span></Link>
-            <a className="head-btn head-btn--out" href="#">新卒採用<span className="ar">→</span></a>
+            <Link className="head-btn head-btn--out" to="/shinsotsu">新卒採用<span className="ar">→</span></Link>
             <div className="head-menu" role="button" aria-label="メニュー">
               <img src={`${BASE_URL}assets/images/三点リーダー.png`} alt="メニュー" />
             </div>
@@ -92,7 +92,6 @@ function Recruit() {
             <Link to="/jobs"><span className="dot"></span>職種紹介</Link>
             <Link to="/work"><span className="dot"></span>働く環境</Link>
             <Link className="active" to="/recruit"><span className="dot"></span>採用</Link>
-            <Link to="/message"><span className="dot"></span>採用メッセージ</Link>
           </nav>
           <div className="hero-head">
             <img className="hero-dots" src={`${BASE_URL}assets/images/deco_dots_scatter.png`} alt="" />
@@ -122,7 +121,7 @@ function Recruit() {
                 <span className="role">代表取締役<b>太田 健一</b></span>
                 <span className="name">Kenichi Ota</span>
               </div>
-              <a className="msg-btn" href="#">採用メッセージを読む<span className="ar">→</span></a>
+              <Link className="msg-btn" to="/message">採用メッセージを読む<span className="ar">→</span></Link>
             </ScrollReveal>
           </div>
           <div className="message-photo">

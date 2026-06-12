@@ -29,6 +29,7 @@ npm run deploy
 - Workページ: https://jime0083.github.io/righty/#/work
 - Recruitページ: https://jime0083.github.io/righty/#/recruit
 - Messageページ: https://jime0083.github.io/righty/#/message
+- Shinsotsuページ: https://jime0083.github.io/righty/#/shinsotsu
 
 ## デザインルール
 

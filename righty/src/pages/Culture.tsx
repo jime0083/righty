@@ -66,7 +66,7 @@ function Culture() {
           </Link>
           <div className="head-actions">
             <Link className="head-btn head-btn--dark" to="/#jobs">募集職種一覧<span className="ar">→</span></Link>
-            <a className="head-btn head-btn--out" href="#">新卒採用<span className="ar">→</span></a>
+            <Link className="head-btn head-btn--out" to="/shinsotsu">新卒採用<span className="ar">→</span></Link>
             <div className="head-menu" role="button" aria-label="メニュー">
               <img src={`${BASE_URL}assets/images/三点リーダー.png`} alt="メニュー" />
             </div>
@@ -84,7 +84,6 @@ function Culture() {
             <Link to="/jobs"><span className="dot"></span>職種紹介</Link>
             <Link to="/work"><span className="dot"></span>働く環境</Link>
             <Link to="/recruit"><span className="dot"></span>採用</Link>
-            <Link to="/message"><span className="dot"></span>採用メッセージ</Link>
           </nav>
           <div className="hero-head">
             <img className="hero-dots" src={`${BASE_URL}assets/images/deco_dots_scatter.png`} alt="" />
