@@ -10,10 +10,16 @@ import Work from './pages/Work.tsx'
 import Recruit from './pages/Recruit.tsx'
 import Message from './pages/Message.tsx'
 import Shinsotsu from './pages/Shinsotsu.tsx'
+import JobUiux from './pages/JobUiux.tsx'
+import JobFrontend from './pages/JobFrontend.tsx'
+import JobBackend from './pages/JobBackend.tsx'
+import JobSales from './pages/JobSales.tsx'
+import { ScrollToTop } from './components/ScrollToTop.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <HashRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
@@ -23,6 +29,10 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/recruit" element={<Recruit />} />
         <Route path="/message" element={<Message />} />
         <Route path="/shinsotsu" element={<Shinsotsu />} />
+        <Route path="/jobs/uiux" element={<JobUiux />} />
+        <Route path="/jobs/frontend" element={<JobFrontend />} />
+        <Route path="/jobs/backend" element={<JobBackend />} />
+        <Route path="/jobs/sales" element={<JobSales />} />
       </Routes>
     </HashRouter>
   </StrictMode>,

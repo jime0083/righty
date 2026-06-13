@@ -11,6 +11,7 @@ function Jobs() {
 
   const jobCards = [
     {
+      slug: 'uiux',
       title: 'UI/UXデザイナー',
       description: 'ユーザー体験の設計からUIデザインまで、プロダクトの価値を最大化します。',
       image: `${BASE_URL}assets/images/job_uiux_crop.png`,
@@ -28,6 +29,7 @@ function Jobs() {
       ]
     },
     {
+      slug: 'frontend',
       title: 'フロントエンドエンジニア',
       description: 'Webサイトやサービスのフロントエンド開発で、快適で魅力的な体験をつくります。',
       image: `${BASE_URL}assets/images/job_frontend_crop.png`,
@@ -44,6 +46,7 @@ function Jobs() {
       ]
     },
     {
+      slug: 'backend',
       title: 'バックエンドエンジニア',
       description: '安定したシステム基盤を構築し、サービスの成長を支えます。',
       image: `${BASE_URL}assets/images/job_backend_crop.png`,
@@ -61,6 +64,7 @@ function Jobs() {
       ]
     },
     {
+      slug: 'brand',
       title: 'ブランドデザイナー',
       description: 'ブランドの想いや価値を可視化し、心を動かすデザインをつくります。',
       image: `${BASE_URL}assets/images/job_brand_crop.png`,
@@ -78,6 +82,7 @@ function Jobs() {
       ]
     },
     {
+      slug: 'pm',
       title: 'プロジェクトマネージャー',
       description: 'プロジェクト全体をリードし、チームの力を最大限に引き出します。',
       image: `${BASE_URL}assets/images/job_pm_crop.png`,
@@ -201,7 +206,7 @@ function Jobs() {
                         </span>
                       ))}
                     </div>
-                    <a className="job-more" href="#">詳しく見る<span className="ar">→</span></a>
+                    <Link className="job-more" to={`/jobs/${job.slug}`}>詳しく見る<span className="ar">→</span></Link>
                   </div>
                 </article>
               </ScrollReveal>

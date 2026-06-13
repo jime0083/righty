@@ -66,21 +66,25 @@ const interviewCards = [
 
 const jobCards = [
   {
+    slug: 'uiux',
     icon: <svg viewBox="0 0 24 24"><path d="M5 19l1-4L17 4l3 3L9 18l-4 1z"/><path d="M14.5 6.5l3 3"/></svg>,
     title: 'UI/UXデザイナー',
     desc: 'ユーザー体験の設計からUIデザインまで、プロダクトの価値を最大化します。'
   },
   {
+    slug: 'frontend',
     icon: <svg viewBox="0 0 24 24"><path d="M9 8l-5 4 5 4M15 8l5 4-5 4"/></svg>,
     title: 'フロントエンドエンジニア',
     desc: 'Webサイトやサービスのフロントエンド開発で、快適で魅力的な体験をつくります。'
   },
   {
+    slug: 'backend',
     icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>,
     title: 'バックエンドエンジニア',
     desc: '安定したシステム基盤を構築し、サービスの成長を支えます。'
   },
   {
+    slug: 'pm',
     icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></svg>,
     title: 'プロジェクトマネージャー',
     desc: 'プロジェクト全体をリードし、チームの力を最大限に引き出します。'
@@ -215,7 +219,7 @@ function Shinsotsu() {
                   <span className="ic">{card.icon}</span>
                   <h3>{card.title}</h3>
                   <p>{card.desc}</p>
-                  <Link className="more" to="/jobs">詳しく見る<span className="ar">→</span></Link>
+                  <Link className="more" to={`/jobs/${card.slug}`}>詳しく見る<span className="ar">→</span></Link>
                 </article>
               </ScrollReveal>
             ))}

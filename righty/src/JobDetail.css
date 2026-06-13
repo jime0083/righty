@@ -1,0 +1,387 @@
+/* ---------- Job Detail Page Styles ---------- */
+
+/* ---------- job hero ---------- */
+.jd-hero {
+  padding: 142px 0 70px;
+  overflow: hidden;
+}
+
+.jhero-blob {
+  position: absolute;
+  top: 30px;
+  right: -150px;
+  width: 680px;
+  height: 430px;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(120% 120% at 60% 35%, #fbbf9d 0%, #fbd2bb 42%, #fde7d9 70%, rgba(253, 246, 240, 0) 100%);
+  border-radius: 54% 46% 58% 42% / 62% 54% 46% 38%;
+  transform: rotate(-6deg);
+}
+
+.jhero .f-eyebrow {
+  margin-bottom: 14px;
+}
+
+.jhero h1 {
+  font-size: 54px;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.jhero .lead {
+  margin-top: 24px;
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  line-height: 2.05;
+}
+
+/* ---------- about ---------- */
+.jabout {
+  position: relative;
+  padding: 50px 0 30px;
+  background: var(--paper);
+  overflow: hidden;
+}
+
+.jabout-grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 64px;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+.jabout-left .f-eyebrow {
+  margin-bottom: 16px;
+}
+
+.jabout-left h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 22px;
+}
+
+.jabout-left p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 2.1;
+}
+
+.jbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 34px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  border: 1.5px solid var(--orange);
+  border-radius: 40px;
+  padding: 15px 28px;
+  transition: 0.28s;
+  margin-top: 32px;
+  white-space: nowrap;
+}
+
+.jbtn .ar {
+  transition: transform 0.28s;
+}
+
+.jbtn:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.jbtn:hover .ar {
+  transform: translateX(5px);
+}
+
+.jabout-media {
+  position: relative;
+}
+
+.jabout-media .photo {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 46% 54% 56% 44% / 56% 48% 52% 44%;
+  box-shadow: 0 22px 46px rgba(160, 140, 120, 0.22);
+}
+
+.jabout-media .b-circle {
+  position: absolute;
+  left: -30px;
+  bottom: -26px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 38%, #fcdcc8, #f6bd9b);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.jabout-media .b-dots {
+  position: absolute;
+  right: -24px;
+  top: -14px;
+  width: 110px;
+  height: 90px;
+  opacity: 0.5;
+  z-index: 3;
+  background-image: radial-gradient(var(--orange) 1.4px, transparent 1.4px);
+  background-size: 13px 13px;
+  -webkit-mask-image: radial-gradient(circle, #000, transparent 72%);
+  mask-image: radial-gradient(circle, #000, transparent 72%);
+}
+
+/* ---------- manager message ---------- */
+.jmsg {
+  position: relative;
+  padding: 60px 0;
+  background: var(--paper);
+}
+
+.jmsg-panel {
+  background: var(--peach-soft);
+  border-radius: 28px;
+  padding: 54px 56px;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.jmsg-left .f-eyebrow {
+  margin-bottom: 16px;
+}
+
+.jmsg-left h2 {
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 22px;
+}
+
+.jmsg-left p {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  line-height: 2.15;
+}
+
+.jmsg-sign {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.jmsg-sign img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: none;
+}
+
+.jmsg-sign .role {
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+
+.jmsg-sign .nm {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.jmsg-illust {
+  display: flex;
+  justify-content: center;
+}
+
+.jmsg-illust img {
+  width: 100%;
+  max-width: 320px;
+}
+
+/* ---------- interview ---------- */
+.jintv {
+  position: relative;
+  padding: 50px 0 90px;
+  background: var(--paper);
+}
+
+.jintv-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 18px;
+}
+
+.jintv-head .f-eyebrow {
+  margin-bottom: 10px;
+}
+
+.jintv-head h2 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.jintv-head .sub {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.jintv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.jintv-card {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 0;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(193, 128, 93, 0.12);
+  transition: 0.3s;
+}
+
+.jintv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 54px rgba(193, 128, 93, 0.2);
+}
+
+.jintv-card .pic {
+  overflow: hidden;
+  background: var(--cream-2);
+}
+
+.jintv-card .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 230px;
+}
+
+.jintv-card .info {
+  padding: 26px 26px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.jintv-card .role {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.jintv-card .who {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.jintv-card .yr {
+  font-size: 11.5px;
+  color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+
+.jintv-card .quote {
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+  margin-bottom: 22px;
+}
+
+.jintv-card .more {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  border: 1.5px solid var(--orange);
+  border-radius: 40px;
+  padding: 11px 22px;
+  margin-top: auto;
+  transition: 0.25s;
+}
+
+.jintv-card .more .ar {
+  transition: transform 0.25s;
+}
+
+.jintv-card .more:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.jintv-card .more:hover .ar {
+  transform: translateX(5px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px) {
+  .jhero h1 {
+    font-size: 42px;
+  }
+
+  .jhero-blob {
+    display: none;
+  }
+
+  .jabout-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .jmsg-panel {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 40px 32px;
+  }
+
+  .jmsg-illust {
+    order: -1;
+  }
+
+  .jintv-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .jintv-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .jhero h1 {
+    font-size: 34px;
+  }
+
+  .jintv-card {
+    grid-template-columns: 1fr;
+  }
+}

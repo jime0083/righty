@@ -30,6 +30,7 @@ npm run deploy
 - Recruitページ: https://jime0083.github.io/righty/#/recruit
 - Messageページ: https://jime0083.github.io/righty/#/message
 - Shinsotsuページ: https://jime0083.github.io/righty/#/shinsotsu
+- UI/UXデザイナー職種詳細: https://jime0083.github.io/righty/#/jobs/uiux
 
 ## デザインルール
 
