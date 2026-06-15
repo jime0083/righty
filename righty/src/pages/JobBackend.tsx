@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ScrollReveal } from '../components/ScrollReveal'
 import { Footer } from '../components/Footer'
+import { SideNav } from '../components/SideNav'
 import '../JobDetail.css'
 
 const BASE_URL = import.meta.env.BASE_URL
@@ -62,12 +63,7 @@ function JobBackend() {
       <section className="page-hero jd-hero">
         <span className="jhero-blob"></span>
         <div className="wrap hero-grid">
-          <nav className="side-nav">
-            <Link to="/about"><span className="dot"></span>ライティについて</Link>
-            <Link className="active" to="/jobs"><span className="dot"></span>職種紹介</Link>
-            <Link to="/work"><span className="dot"></span>働く環境</Link>
-            <Link to="/recruit"><span className="dot"></span>採用</Link>
-          </nav>
+          <SideNav />
           <div className="jhero">
             <ScrollReveal animation="fadeUp">
               <div className="f-eyebrow">{jobData.eyebrow}</div>

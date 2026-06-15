@@ -256,7 +256,7 @@
   border-radius: 5px;
 }
 
-/* ---------- JOBS simple cards ---------- */
+/* ---------- JOBS ---------- */
 .shin-jobs {
   position: relative;
   padding: 74px 0 84px;
@@ -267,10 +267,15 @@
   margin-bottom: 40px;
 }
 
-.jobs4-grid {
+.shin-jobs .job-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.shin-jobs .job-grid > div {
+  height: 100%;
 }
 
 .jcard {
@@ -548,8 +553,8 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .jobs4-grid {
-    grid-template-columns: 1fr 1fr;
+  .shin-jobs .job-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .youkou-grid {
@@ -572,7 +577,7 @@
     grid-template-columns: 1fr;
   }
 
-  .jobs4-grid {
-    grid-template-columns: 1fr;
+  .shin-jobs .job-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }

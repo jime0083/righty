@@ -276,81 +276,13 @@
 
 .job-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 20px;
   align-items: stretch;
 }
 
 .job-grid > div {
   height: 100%;
-}
-
-.job-card {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 16px 40px rgba(193, 128, 93, 0.12);
-  transition: 0.3s;
-  height: 100%;
-}
-
-.job-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 26px 54px rgba(193, 128, 93, 0.2);
-}
-
-.job-img {
-  position: relative;
-  height: 128px;
-  overflow: hidden;
-  background: var(--cream-2);
-}
-
-.job-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.job-body {
-  padding: 20px 20px 22px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.job-body h3 {
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  margin-bottom: 11px;
-}
-
-.job-body .desc {
-  font-size: 11.5px;
-  color: var(--ink-soft);
-  line-height: 1.9;
-}
-
-.job-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--orange-deep);
-  margin-top: auto;
-  transition: 0.25s;
-}
-
-.job-more .ar {
-  transition: transform 0.25s;
-}
-
-.job-card:hover .job-more .ar {
-  transform: translateX(5px);
 }
 
 /* ---------- RECRUIT INFO ---------- */
@@ -473,7 +405,7 @@
   }
 
   .job-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .recruit-panel {

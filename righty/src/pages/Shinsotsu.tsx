@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ScrollReveal } from '../components/ScrollReveal'
 import { Footer } from '../components/Footer'
+import { JobCard, type JobCardData } from '../components/JobCard'
+import { SideNav } from '../components/SideNav'
 import '../Shinsotsu.css'
 
 const BASE_URL = import.meta.env.BASE_URL
@@ -64,30 +66,48 @@ const interviewCards = [
   }
 ]
 
-const jobCards = [
+const jobCards: JobCardData[] = [
   {
     slug: 'uiux',
-    icon: <svg viewBox="0 0 24 24"><path d="M5 19l1-4L17 4l3 3L9 18l-4 1z"/><path d="M14.5 6.5l3 3"/></svg>,
     title: 'UI/UXデザイナー',
-    desc: 'ユーザー体験の設計からUIデザインまで、プロダクトの価値を最大化します。'
+    description: 'ユーザー体験の設計からUIデザインまで、プロダクトの価値を最大化します。',
+    image: `${BASE_URL}assets/images/job_uiux_crop.png`,
+    imagePosition: '72% center'
   },
   {
     slug: 'frontend',
-    icon: <svg viewBox="0 0 24 24"><path d="M9 8l-5 4 5 4M15 8l5 4-5 4"/></svg>,
     title: 'フロントエンドエンジニア',
-    desc: 'Webサイトやサービスのフロントエンド開発で、快適で魅力的な体験をつくります。'
+    description: 'Webサイトやサービスのフロントエンド開発で、快適で魅力的な体験をつくります。',
+    image: `${BASE_URL}assets/images/job_frontend_crop.png`,
+    imagePosition: '62% center'
   },
   {
     slug: 'backend',
-    icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg>,
     title: 'バックエンドエンジニア',
-    desc: '安定したシステム基盤を構築し、サービスの成長を支えます。'
+    description: '安定したシステム基盤を構築し、サービスの成長を支えます。',
+    image: `${BASE_URL}assets/images/job_backend_crop.png`,
+    imagePosition: 'center center'
   },
   {
-    slug: 'pm',
-    icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4"/></svg>,
-    title: 'プロジェクトマネージャー',
-    desc: 'プロジェクト全体をリードし、チームの力を最大限に引き出します。'
+    slug: 'sales',
+    title: 'セールス',
+    description: 'クライアントの課題を深く理解し、最適なソリューションを提案します。',
+    image: `${BASE_URL}assets/images/cult_connect.png`,
+    imagePosition: 'center center'
+  },
+  {
+    slug: 'marketing',
+    title: 'マーケティング',
+    description: 'データと創造性を駆使し、サービスの成長を加速させます。',
+    image: `${BASE_URL}assets/images/cult_change.png`,
+    imagePosition: 'center center'
+  },
+  {
+    slug: 'planner',
+    title: 'プランナー',
+    description: 'クライアントの課題を紐解き、最適なソリューションを設計します。',
+    image: `${BASE_URL}assets/images/cult_confident.png`,
+    imagePosition: 'center center'
   }
 ]
 
@@ -121,13 +141,7 @@ function Shinsotsu() {
       <section className="page-hero">
         <span className="hero-blob"></span>
         <div className="wrap hero-grid">
-          <nav className="side-nav shin-nav">
-            <a href="#message"><span className="dot"></span>代表メッセージ</a>
-            <a href="#interview"><span className="dot"></span>インタビュー</a>
-            <a href="#jobs"><span className="dot"></span>職種紹介</a>
-            <a href="#youkou"><span className="dot"></span>募集要項</a>
-            <a href="#faq"><span className="dot"></span>よくあるご質問</a>
-          </nav>
+          <SideNav />
           <div className="hero-head">
             <img className="hero-dots" src={`${BASE_URL}assets/images/deco_dots_scatter.png`} alt="" />
             <ScrollReveal animation="fadeUp">
@@ -212,15 +226,10 @@ function Shinsotsu() {
             </div>
             <Link className="link-pill" to="/jobs">すべての職種を見る<span className="ar">→</span></Link>
           </div>
-          <div className="jobs4-grid">
-            {jobCards.map((card, i) => (
+          <div className="job-grid">
+            {jobCards.map((job, i) => (
               <ScrollReveal key={i} animation="fadeUp" delay={i * 0.1}>
-                <article className="jcard">
-                  <span className="ic">{card.icon}</span>
-                  <h3>{card.title}</h3>
-                  <p>{card.desc}</p>
-                  <Link className="more" to={`/jobs/${card.slug}`}>詳しく見る<span className="ar">→</span></Link>
-                </article>
+                <JobCard job={job} />
               </ScrollReveal>
             ))}
           </div>

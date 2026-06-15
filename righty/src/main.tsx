@@ -14,6 +14,8 @@ import JobUiux from './pages/JobUiux.tsx'
 import JobFrontend from './pages/JobFrontend.tsx'
 import JobBackend from './pages/JobBackend.tsx'
 import JobSales from './pages/JobSales.tsx'
+import JobMarketing from './pages/JobMarketing.tsx'
+import JobPlanner from './pages/JobPlanner.tsx'
 import { ScrollToTop } from './components/ScrollToTop.tsx'
 
 createRoot(document.getElementById('root')!).render(
@@ -33,6 +35,8 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/jobs/frontend" element={<JobFrontend />} />
         <Route path="/jobs/backend" element={<JobBackend />} />
         <Route path="/jobs/sales" element={<JobSales />} />
+        <Route path="/jobs/marketing" element={<JobMarketing />} />
+        <Route path="/jobs/planner" element={<JobPlanner />} />
       </Routes>
     </HashRouter>
   </StrictMode>,

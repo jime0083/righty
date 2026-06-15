@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 import { ScrollReveal } from '../components/ScrollReveal'
 import { Footer } from '../components/Footer'
+import { JobCard, type JobCardData } from '../components/JobCard'
+import { SideNav } from '../components/SideNav'
 import '../Recruit.css'
 
 const BASE_URL = import.meta.env.BASE_URL
@@ -30,7 +32,7 @@ function Recruit() {
     }
   ]
 
-  const jobs = [
+  const jobs: JobCardData[] = [
     {
       slug: 'uiux',
       title: 'UI/UXデザイナー',
@@ -53,18 +55,25 @@ function Recruit() {
       imagePosition: 'center center'
     },
     {
-      slug: 'brand',
-      title: 'ブランドデザイナー',
-      description: 'ブランドの想いや価値を可視化し、心を動かすデザインをつくります。',
-      image: `${BASE_URL}assets/images/job_brand_crop.png`,
-      imagePosition: 'center 35%'
+      slug: 'sales',
+      title: 'セールス',
+      description: 'クライアントの課題を深く理解し、最適なソリューションを提案します。',
+      image: `${BASE_URL}assets/images/cult_connect.png`,
+      imagePosition: 'center center'
     },
     {
-      slug: 'pm',
-      title: 'プロジェクトマネージャー',
-      description: 'プロジェクト全体をリードし、チームの力を最大限に引き出します。',
-      image: `${BASE_URL}assets/images/job_pm_crop.png`,
-      imagePosition: 'center 30%'
+      slug: 'marketing',
+      title: 'マーケティング',
+      description: 'データと創造性を駆使し、サービスの成長を加速させます。',
+      image: `${BASE_URL}assets/images/cult_change.png`,
+      imagePosition: 'center center'
+    },
+    {
+      slug: 'planner',
+      title: 'プランナー',
+      description: 'クライアントの課題を紐解き、最適なソリューションを設計します。',
+      image: `${BASE_URL}assets/images/cult_confident.png`,
+      imagePosition: 'center center'
     }
   ]
 
@@ -91,13 +100,7 @@ function Recruit() {
       <section className="page-hero">
         <span className="hero-blob"></span>
         <div className="wrap hero-grid">
-          <nav className="side-nav">
-            <Link to="/about"><span className="dot"></span>ライティについて</Link>
-            <Link to="/culture"><span className="dot"></span>カルチャー</Link>
-            <Link to="/jobs"><span className="dot"></span>職種紹介</Link>
-            <Link to="/work"><span className="dot"></span>働く環境</Link>
-            <Link className="active" to="/recruit"><span className="dot"></span>採用</Link>
-          </nav>
+          <SideNav />
           <div className="hero-head">
             <img className="hero-dots" src={`${BASE_URL}assets/images/deco_dots_scatter.png`} alt="" />
             <ScrollReveal animation="fadeUp">
@@ -155,16 +158,7 @@ function Recruit() {
           <div className="job-grid">
             {jobs.map((job, index) => (
               <ScrollReveal key={index} animation="fadeUp" delay={index * 0.08}>
-                <article className="job-card">
-                  <div className="job-img">
-                    <img src={job.image} alt={job.title} style={{ objectPosition: job.imagePosition }} />
-                  </div>
-                  <div className="job-body">
-                    <h3>{job.title}</h3>
-                    <p className="desc">{job.description}</p>
-                    <Link className="job-more" to={`/jobs/${job.slug}`}>詳しく見る<span className="ar">→</span></Link>
-                  </div>
-                </article>
+                <JobCard job={job} />
               </ScrollReveal>
             ))}
           </div>

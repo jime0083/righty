@@ -6,41 +6,40 @@ import '../JobDetail.css'
 
 const BASE_URL = import.meta.env.BASE_URL
 
-// Job data - can be extracted to a shared config for other job pages
 const jobData = {
   eyebrow: 'Job',
-  title: 'UI/UXデザイナー',
-  lead: 'ユーザー体験の設計からUIデザインまで、\nプロダクトの価値を最大化します。',
+  title: 'マーケティング',
+  lead: 'データと創造性を駆使し、\nサービスの成長を加速させます。',
   about: {
-    description: 'ユーザーリサーチや情報設計をもとに、プロダクトの体験価値を設計・デザインします。ワイヤーフレームやプロトタイプの作成、UIデザイン、ユーザビリティテストの実施まで一貫して担当し、使いやすく魅力的なプロダクトづくりをリードします。',
-    image: 'jd_desk.png'
+    description: 'デジタルマーケティング戦略の立案から実行まで一貫して担当します。市場分析やユーザーインサイトをもとに、効果的なプロモーション施策を企画・運用し、サービスの認知拡大とユーザー獲得に貢献します。データ分析に基づいたPDCAサイクルを回し、マーケティングROIの最大化を目指します。',
+    image: 'cult_change.png'
   },
   manager: {
-    message: 'UI/UXデザイナーは、ユーザーとプロダクトの最初の接点をつくる重要なポジションです。ライティでは、クライアントの課題に寄り添い、ユーザー視点で本質的な体験をデザインすることを大切にしています。リサーチからデザイン、検証まで一貫して関われる環境で、あなたのアイデアとスキルを発揮し、プロダクトの価値を一緒に高めていきましょう。',
-    role: 'UI/UXデザインチーム マネージャー',
-    name: '佐藤 大輔',
+    message: 'マーケティングは、サービスの成長エンジンとなる重要なポジションです。ライティでは、データドリブンな意思決定と、クリエイティブな発想の両方を大切にしています。様々なチャネルを活用した施策を試行錯誤しながら、サービスの成長に直接貢献できる環境で、あなたのマーケティングスキルを発揮してください。',
+    role: 'マーケティングチーム マネージャー',
+    name: '佐々木 美穂',
     image: 'intv_sato_hero.png',
     illustration: 'jd_illust.png'
   },
   interviews: [
     {
       image: 'jd_intv_woman.png',
-      role: 'UI/UXデザイナー',
-      name: '鈴木 美咲',
+      role: 'マーケティング',
+      name: '山本 愛',
       year: '2022年入社',
-      quote: 'ユーザーの心を動かす\nデザインを追求したい'
+      quote: 'データから見える\nユーザーの声を形にする'
     },
     {
       image: 'jd_intv_man.png',
-      role: 'UI/UXデザイナー',
-      name: '田中 健太',
+      role: 'マーケティング',
+      name: '加藤 隆',
       year: '2021年入社',
-      quote: 'デザインでビジネスの\n未来をつくりたい'
+      quote: '施策の成果が数字で\n見えるのが面白い'
     }
   ]
 }
 
-function JobUiux() {
+function JobMarketing() {
   return (
     <>
       {/* Header */}
@@ -168,4 +167,4 @@ function JobUiux() {
   )
 }
 
-export default JobUiux
+export default JobMarketing

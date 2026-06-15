@@ -6,41 +6,40 @@ import '../JobDetail.css'
 
 const BASE_URL = import.meta.env.BASE_URL
 
-// Job data - can be extracted to a shared config for other job pages
 const jobData = {
   eyebrow: 'Job',
-  title: 'UI/UXデザイナー',
-  lead: 'ユーザー体験の設計からUIデザインまで、\nプロダクトの価値を最大化します。',
+  title: 'プランナー',
+  lead: 'クライアントの課題を紐解き、\n最適なソリューションを設計します。',
   about: {
-    description: 'ユーザーリサーチや情報設計をもとに、プロダクトの体験価値を設計・デザインします。ワイヤーフレームやプロトタイプの作成、UIデザイン、ユーザビリティテストの実施まで一貫して担当し、使いやすく魅力的なプロダクトづくりをリードします。',
-    image: 'jd_desk.png'
+    description: 'クライアントのビジネス課題を深く理解し、最適なソリューションを企画・提案します。プロジェクトの要件定義からスケジュール管理、チーム間の調整まで幅広く担当し、デザイナーやエンジニアと連携しながらプロジェクトを成功に導きます。戦略的な視点と実行力の両方を発揮できるポジションです。',
+    image: 'cult_confident.png'
   },
   manager: {
-    message: 'UI/UXデザイナーは、ユーザーとプロダクトの最初の接点をつくる重要なポジションです。ライティでは、クライアントの課題に寄り添い、ユーザー視点で本質的な体験をデザインすることを大切にしています。リサーチからデザイン、検証まで一貫して関われる環境で、あなたのアイデアとスキルを発揮し、プロダクトの価値を一緒に高めていきましょう。',
-    role: 'UI/UXデザインチーム マネージャー',
-    name: '佐藤 大輔',
+    message: 'プランナーは、クライアントとチームをつなぎ、プロジェクトを成功に導く重要なポジションです。ライティでは、単なる要件をまとめるだけでなく、クライアントの本質的な課題を見極め、最適なソリューションを提案することを大切にしています。多様なプロジェクトに携わりながら成長できる環境で、あなたの企画力とコミュニケーション力を発揮してください。',
+    role: 'プランニングチーム マネージャー',
+    name: '石川 誠',
     image: 'intv_sato_hero.png',
     illustration: 'jd_illust.png'
   },
   interviews: [
     {
-      image: 'jd_intv_woman.png',
-      role: 'UI/UXデザイナー',
-      name: '鈴木 美咲',
+      image: 'jd_intv_man.png',
+      role: 'プランナー',
+      name: '藤田 拓也',
       year: '2022年入社',
-      quote: 'ユーザーの心を動かす\nデザインを追求したい'
+      quote: 'アイデアを形にする\nプロセスが面白い'
     },
     {
-      image: 'jd_intv_man.png',
-      role: 'UI/UXデザイナー',
-      name: '田中 健太',
+      image: 'jd_intv_woman.png',
+      role: 'プランナー',
+      name: '松本 彩',
       year: '2021年入社',
-      quote: 'デザインでビジネスの\n未来をつくりたい'
+      quote: 'チームで価値を生み出す\n喜びを感じる'
     }
   ]
 }
 
-function JobUiux() {
+function JobPlanner() {
   return (
     <>
       {/* Header */}
@@ -168,4 +167,4 @@ function JobUiux() {
   )
 }
 
-export default JobUiux
+export default JobPlanner

@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ScrollReveal } from '../components/ScrollReveal'
 import { Footer } from '../components/Footer'
+import { JobCard, type JobCardData } from '../components/JobCard'
+import { SideNav } from '../components/SideNav'
 import '../Jobs.css'
 
 const BASE_URL = import.meta.env.BASE_URL
@@ -9,96 +11,48 @@ const BASE_URL = import.meta.env.BASE_URL
 function Jobs() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
-  const jobCards = [
+  const jobCards: JobCardData[] = [
     {
       slug: 'uiux',
       title: 'UI/UXデザイナー',
       description: 'ユーザー体験の設計からUIデザインまで、プロダクトの価値を最大化します。',
       image: `${BASE_URL}assets/images/job_uiux_crop.png`,
-      imagePosition: '72% center',
-      icon: (
-        <svg viewBox="0 0 24 24">
-          <path d="M5 19l1-4L17 4l3 3L9 18l-4 1z" />
-          <path d="M14.5 6.5l3 3" />
-        </svg>
-      ),
-      tags: [
-        { icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5" /><path d="M5.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6" /></svg>, label: 'ユーザーリサーチ' },
-        { icon: <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2" /><path d="M3 9h18" /></svg>, label: 'UI設計・デザイン' },
-        { icon: <svg viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5" /></svg>, label: 'プロトタイピング' }
-      ]
+      imagePosition: '72% center'
     },
     {
       slug: 'frontend',
       title: 'フロントエンドエンジニア',
       description: 'Webサイトやサービスのフロントエンド開発で、快適で魅力的な体験をつくります。',
       image: `${BASE_URL}assets/images/job_frontend_crop.png`,
-      imagePosition: '62% center',
-      icon: (
-        <svg viewBox="0 0 24 24">
-          <path d="M9 8l-5 4 5 4M15 8l5 4-5 4" />
-        </svg>
-      ),
-      tags: [
-        { icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" /></svg>, label: 'Webアプリ開発' },
-        { icon: <svg viewBox="0 0 24 24"><path d="M4 18l4-12M10 18l4-12M3 10h12M2 14h12" /></svg>, label: 'UI実装・パフォーマンス改善' },
-        { icon: <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><circle cx="8" cy="10" r="1.6" /><path d="M5 17l4-4 3 2.5L16 11l3 3" /></svg>, label: 'デザインとの連携' }
-      ]
+      imagePosition: '62% center'
     },
     {
       slug: 'backend',
       title: 'バックエンドエンジニア',
       description: '安定したシステム基盤を構築し、サービスの成長を支えます。',
       image: `${BASE_URL}assets/images/job_backend_crop.png`,
-      imagePosition: 'center center',
-      icon: (
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="3" />
-          <path d="M12 4v2M12 18v2M4 12h2M18 12h2M6.3 6.3l1.4 1.4M16.3 16.3l1.4 1.4M17.7 6.3l-1.4 1.4M7.7 16.3l-1.4 1.4" />
-        </svg>
-      ),
-      tags: [
-        { icon: <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="5" rx="1.5" /><rect x="3" y="11" width="18" height="5" rx="1.5" /><path d="M7 6.5h.01M7 13.5h.01" /></svg>, label: 'API・サーバー開発' },
-        { icon: <svg viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="7" ry="3" /><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" /></svg>, label: 'データベース設計・運用' },
-        { icon: <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z" /></svg>, label: 'インフラ・セキュリティ' }
-      ]
+      imagePosition: 'center center'
     },
     {
-      slug: 'brand',
-      title: 'ブランドデザイナー',
-      description: 'ブランドの想いや価値を可視化し、心を動かすデザインをつくります。',
-      image: `${BASE_URL}assets/images/job_brand_crop.png`,
-      imagePosition: 'center 35%',
-      icon: (
-        <svg viewBox="0 0 24 24">
-          <path d="M4 20s1-4 4-7l8-8 3 3-8 8c-3 3-7 4-7 4z" />
-          <path d="M14 6l4 4" />
-        </svg>
-      ),
-      tags: [
-        { icon: <svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z" /></svg>, label: 'ブランド戦略・設計' },
-        { icon: <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="3.5" /></svg>, label: 'ロゴ・VI・グラフィック制作' },
-        { icon: <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h13" /></svg>, label: 'トーン&マナー開発' }
-      ]
+      slug: 'sales',
+      title: 'セールス',
+      description: 'クライアントの課題を深く理解し、最適なソリューションを提案します。',
+      image: `${BASE_URL}assets/images/cult_connect.png`,
+      imagePosition: 'center center'
     },
     {
-      slug: 'pm',
-      title: 'プロジェクトマネージャー',
-      description: 'プロジェクト全体をリードし、チームの力を最大限に引き出します。',
-      image: `${BASE_URL}assets/images/job_pm_crop.png`,
-      imagePosition: 'center 30%',
-      icon: (
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="9" />
-          <circle cx="12" cy="12" r="5" />
-          <circle cx="12" cy="12" r="1.4" />
-        </svg>
-      ),
-      tags: [
-        { icon: <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2" /><path d="M8 8h8M8 12h8M8 16h5" /></svg>, label: '要件定義・スケジュール管理' },
-        { icon: <svg viewBox="0 0 24 24"><path d="M4 5h12v9H8l-4 3z" /><path d="M9 18h7l4 3v-9h-3" /></svg>, label: 'チームコミュニケーション' },
-        { icon: <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-5" /><circle cx="12" cy="12" r="9" /></svg>, label: '品質管理・課題解決' }
-      ]
+      slug: 'marketing',
+      title: 'マーケティング',
+      description: 'データと創造性を駆使し、サービスの成長を加速させます。',
+      image: `${BASE_URL}assets/images/cult_change.png`,
+      imagePosition: 'center center'
+    },
+    {
+      slug: 'planner',
+      title: 'プランナー',
+      description: 'クライアントの課題を紐解き、最適なソリューションを設計します。',
+      image: `${BASE_URL}assets/images/cult_confident.png`,
+      imagePosition: 'center center'
     }
   ]
 
@@ -152,13 +106,7 @@ function Jobs() {
       <section className="page-hero">
         <span className="hero-blob"></span>
         <div className="wrap hero-grid">
-          <nav className="side-nav">
-            <Link to="/about"><span className="dot"></span>ライティについて</Link>
-            <Link to="/culture"><span className="dot"></span>カルチャー</Link>
-            <Link className="active" to="/jobs"><span className="dot"></span>職種紹介</Link>
-            <Link to="/work"><span className="dot"></span>働く環境</Link>
-            <Link to="/recruit"><span className="dot"></span>採用</Link>
-          </nav>
+          <SideNav />
           <div className="hero-head">
             <img className="hero-dots" src={`${BASE_URL}assets/images/deco_dots_scatter.png`} alt="" />
             <ScrollReveal animation="fadeUp">
@@ -190,25 +138,7 @@ function Jobs() {
           <div className="job-grid">
             {jobCards.map((job, index) => (
               <ScrollReveal key={index} animation="fadeUp" delay={index * 0.1}>
-                <article className="job-card">
-                  <div className="job-img">
-                    <img src={job.image} alt={job.title} style={{ objectPosition: job.imagePosition }} />
-                    <span className="job-ic">{job.icon}</span>
-                  </div>
-                  <div className="job-body">
-                    <h3>{job.title}</h3>
-                    <p className="desc">{job.description}</p>
-                    <div className="job-tags">
-                      {job.tags.map((tag, tagIndex) => (
-                        <span key={tagIndex} className="job-tag">
-                          {tag.icon}
-                          {tag.label}
-                        </span>
-                      ))}
-                    </div>
-                    <Link className="job-more" to={`/jobs/${job.slug}`}>詳しく見る<span className="ar">→</span></Link>
-                  </div>
-                </article>
+                <JobCard job={job} />
               </ScrollReveal>
             ))}
           </div>
