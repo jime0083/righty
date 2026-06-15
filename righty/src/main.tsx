@@ -18,6 +18,7 @@ import JobMarketing from './pages/JobMarketing.tsx'
 import JobPlanner from './pages/JobPlanner.tsx'
 import InterviewTakahashi from './pages/InterviewTakahashi.tsx'
 import InterviewFujiwara from './pages/InterviewFujiwara.tsx'
+import InterviewKamiya from './pages/InterviewKamiya.tsx'
 import { ScrollToTop } from './components/ScrollToTop.tsx'
 
 createRoot(document.getElementById('root')!).render(
@@ -41,6 +42,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/jobs/planner" element={<JobPlanner />} />
         <Route path="/interview/takahashi-ayumi" element={<InterviewTakahashi />} />
         <Route path="/interview/fujiwara-koki" element={<InterviewFujiwara />} />
+        <Route path="/interview/kamiya-sho" element={<InterviewKamiya />} />
       </Routes>
     </HashRouter>
   </StrictMode>,
