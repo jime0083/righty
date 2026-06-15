@@ -260,6 +260,10 @@
   transition: 0.3s;
 }
 
+.jintv-card--link {
+  cursor: pointer;
+}
+
 .jintv-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 26px 54px rgba(193, 128, 93, 0.2);
@@ -337,6 +341,15 @@
 }
 
 .jintv-card .more:hover .ar {
+  transform: translateX(5px);
+}
+
+.jintv-card--link:hover .more {
+  background: var(--orange);
+  color: #fff;
+}
+
+.jintv-card--link:hover .more .ar {
   transform: translateX(5px);
 }
 
