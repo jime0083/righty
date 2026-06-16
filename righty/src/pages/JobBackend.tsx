@@ -31,12 +31,12 @@ const jobData = {
       link: '/interview/kamiya-sho'
     },
     {
-      image: 'jd_intv_woman.png',
+      image: '佐藤美紀1.png',
       role: 'バックエンドエンジニア',
       name: '佐藤 美紀',
       year: '2021年入社',
       quote: '挑戦と学びが\n日々の成長につながる',
-      link: null
+      link: '/interview/sato-miki'
     }
   ]
 }

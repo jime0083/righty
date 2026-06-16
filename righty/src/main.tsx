@@ -19,6 +19,15 @@ import JobPlanner from './pages/JobPlanner.tsx'
 import InterviewTakahashi from './pages/InterviewTakahashi.tsx'
 import InterviewFujiwara from './pages/InterviewFujiwara.tsx'
 import InterviewKamiya from './pages/InterviewKamiya.tsx'
+import InterviewSatoMiki from './pages/InterviewSatoMiki.tsx'
+import InterviewKimura from './pages/InterviewKimura.tsx'
+import InterviewMori from './pages/InterviewMori.tsx'
+import InterviewArai from './pages/InterviewArai.tsx'
+import InterviewTada from './pages/InterviewTada.tsx'
+import InterviewAragaki from './pages/InterviewAragaki.tsx'
+import InterviewTachikawa from './pages/InterviewTachikawa.tsx'
+import InterviewNohara from './pages/InterviewNohara.tsx'
+import InterviewOyama from './pages/InterviewOyama.tsx'
 import { ScrollToTop } from './components/ScrollToTop.tsx'
 
 createRoot(document.getElementById('root')!).render(
@@ -43,6 +52,15 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/interview/takahashi-ayumi" element={<InterviewTakahashi />} />
         <Route path="/interview/fujiwara-koki" element={<InterviewFujiwara />} />
         <Route path="/interview/kamiya-sho" element={<InterviewKamiya />} />
+        <Route path="/interview/sato-miki" element={<InterviewSatoMiki />} />
+        <Route path="/interview/kimura-masahiro" element={<InterviewKimura />} />
+        <Route path="/interview/mori-makoto" element={<InterviewMori />} />
+        <Route path="/interview/arai-tadahiro" element={<InterviewArai />} />
+        <Route path="/interview/tada-tsutomu" element={<InterviewTada />} />
+        <Route path="/interview/aragaki-satoru" element={<InterviewAragaki />} />
+        <Route path="/interview/tachikawa-haruka" element={<InterviewTachikawa />} />
+        <Route path="/interview/nohara-chinatsu" element={<InterviewNohara />} />
+        <Route path="/interview/oyama-natsuki" element={<InterviewOyama />} />
       </Routes>
     </HashRouter>
   </StrictMode>,

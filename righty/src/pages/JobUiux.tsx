@@ -24,18 +24,20 @@ const jobData = {
   },
   interviews: [
     {
-      image: 'jd_intv_woman.png',
+      image: '木村正弘1.png',
       role: 'UI/UXデザイナー',
-      name: '鈴木 美咲',
-      year: '2022年入社',
-      quote: 'ユーザーの心を動かす\nデザインを追求したい'
+      name: '木村 正弘',
+      year: '2019年入社',
+      quote: 'ユーザーの本質的な\n課題に向き合う',
+      link: '/interview/kimura-masahiro'
     },
     {
-      image: 'jd_intv_man.png',
+      image: '森真琴1.png',
       role: 'UI/UXデザイナー',
-      name: '田中 健太',
-      year: '2021年入社',
-      quote: 'デザインでビジネスの\n未来をつくりたい'
+      name: '森 真琴',
+      year: '2022年入社',
+      quote: 'デザインで\nビジネスの未来をつくる',
+      link: '/interview/mori-makoto'
     }
   ]
 }
@@ -143,20 +145,36 @@ function JobUiux() {
           <div className="jintv-grid">
             {jobData.interviews.map((interview, i) => (
               <ScrollReveal key={i} animation="fadeUp" delay={i * 0.1}>
-                <article className="jintv-card">
-                  <div className="pic">
-                    <img src={`${BASE_URL}assets/images/${interview.image}`} alt={interview.name} />
-                  </div>
-                  <div className="info">
-                    <div className="role">{interview.role}</div>
-                    <div className="who">{interview.name}</div>
-                    <div className="yr">{interview.year}</div>
-                    <p className="quote">{interview.quote.split('\n').map((line, j) => (
-                      <span key={j}>{line}{j < interview.quote.split('\n').length - 1 && <br />}</span>
-                    ))}</p>
-                    <a className="more" href="#">詳しく見る<span className="ar">→</span></a>
-                  </div>
-                </article>
+                {interview.link ? (
+                  <Link to={interview.link} className="jintv-card jintv-card--link">
+                    <div className="pic">
+                      <img src={`${BASE_URL}assets/images/${interview.image}`} alt={interview.name} />
+                    </div>
+                    <div className="info">
+                      <div className="role">{interview.role}</div>
+                      <div className="who">{interview.name}</div>
+                      <div className="yr">{interview.year}</div>
+                      <p className="quote">{interview.quote.split('\n').map((line, j) => (
+                        <span key={j}>{line}{j < interview.quote.split('\n').length - 1 && <br />}</span>
+                      ))}</p>
+                      <span className="more">詳しく見る<span className="ar">→</span></span>
+                    </div>
+                  </Link>
+                ) : (
+                  <article className="jintv-card">
+                    <div className="pic">
+                      <img src={`${BASE_URL}assets/images/${interview.image}`} alt={interview.name} />
+                    </div>
+                    <div className="info">
+                      <div className="role">{interview.role}</div>
+                      <div className="who">{interview.name}</div>
+                      <div className="yr">{interview.year}</div>
+                      <p className="quote">{interview.quote.split('\n').map((line, j) => (
+                        <span key={j}>{line}{j < interview.quote.split('\n').length - 1 && <br />}</span>
+                      ))}</p>
+                    </div>
+                  </article>
+                )}
               </ScrollReveal>
             ))}
           </div>
