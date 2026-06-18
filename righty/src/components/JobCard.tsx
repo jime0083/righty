@@ -15,7 +15,7 @@ interface JobCardProps {
 
 export function JobCard({ job }: JobCardProps) {
   return (
-    <article className="job-card">
+    <Link className="job-card" to={`/jobs/${job.slug}`}>
       <div className="job-img">
         <img
           src={job.image}
@@ -26,10 +26,10 @@ export function JobCard({ job }: JobCardProps) {
       <div className="job-body">
         <h3>{job.title}</h3>
         <p className="desc">{job.description}</p>
-        <Link className="job-more" to={`/jobs/${job.slug}`}>
+        <span className="job-more">
           詳しく見る<span className="ar">→</span>
-        </Link>
+        </span>
       </div>
-    </article>
+    </Link>
   )
 }

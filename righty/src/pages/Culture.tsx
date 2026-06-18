@@ -1,7 +1,8 @@
-import { Link } from 'react-router-dom'
 import { ScrollReveal } from '../components/ScrollReveal'
 import { Footer } from '../components/Footer'
 import { SideNav } from '../components/SideNav'
+import { Header } from '../components/Header'
+import { OfficeCard, type OfficeCardData } from '../components/OfficeCard'
 import '../Culture.css'
 
 const BASE_URL = import.meta.env.BASE_URL
@@ -38,7 +39,7 @@ function Culture() {
     }
   ]
 
-  const moreCards = [
+  const moreCards: OfficeCardData[] = [
     {
       title: 'メンバーインタビュー',
       description: 'ギフティで働くメンバーの想いやキャリアを紹介します。',
@@ -58,22 +59,7 @@ function Culture() {
 
   return (
     <>
-      {/* Header */}
-      <header className="site-head">
-        <div className="wrap head-row">
-          <Link className="logo" to="/">
-            <span className="mark">RIGHTY<sup>®</sup></span>
-            <span className="sub">Careers</span>
-          </Link>
-          <div className="head-actions">
-            <Link className="head-btn head-btn--dark" to="/#jobs">募集職種一覧<span className="ar">→</span></Link>
-            <Link className="head-btn head-btn--out" to="/shinsotsu">新卒採用<span className="ar">→</span></Link>
-            <div className="head-menu" role="button" aria-label="メニュー">
-              <img src={`${BASE_URL}assets/images/三点リーダー.png`} alt="メニュー" />
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Page Hero */}
       <section className="page-hero">
@@ -83,8 +69,8 @@ function Culture() {
           <div className="hero-head">
             <img className="hero-dots" src={`${BASE_URL}assets/images/deco_dots_scatter.png`} alt="" />
             <ScrollReveal animation="fadeUp">
-              <div className="f-eyebrow" style={{ marginBottom: '14px' }}>Culture</div>
-              <h1>カルチャー</h1>
+              <div className="f-eyebrow" style={{ marginBottom: '14px' }}>About</div>
+              <h1>ライティについて</h1>
             </ScrollReveal>
             <ScrollReveal animation="fadeUp" delay={0.1}>
               <p>一人ひとりの個性を尊重し、<br />チームでより良い未来をつくるために。</p>
@@ -159,17 +145,10 @@ function Culture() {
               <a className="link-out" href="#">カルチャーページを見る<span className="ar">→</span></a>
             </ScrollReveal>
           </div>
-          <div className="mc-cards">
+          <div className="mc-cards office-cards">
             {moreCards.map((card, index) => (
               <ScrollReveal key={index} animation="fadeUp" delay={index * 0.1}>
-                <article className="mc-card">
-                  <div className="img"><img src={card.image} alt={card.title} /></div>
-                  <div className="body">
-                    <h4>{card.title}</h4>
-                    <p>{card.description}</p>
-                    <a className="more" href="#">詳しく見る<span className="ar">→</span></a>
-                  </div>
-                </article>
+                <OfficeCard card={card} />
               </ScrollReveal>
             ))}
           </div>

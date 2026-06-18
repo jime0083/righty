@@ -1,0 +1,51 @@
+/* ========== Office Card Component ========== */
+
+.office-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(193, 128, 93, 0.12);
+  transition: 0.3s;
+  height: 100%;
+}
+
+.office-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 54px rgba(193, 128, 93, 0.2);
+}
+
+.office-card-img {
+  height: 150px;
+  overflow: hidden;
+  background: var(--cream-2);
+  flex-shrink: 0;
+}
+
+.office-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.office-card-body {
+  padding: 20px 20px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.office-card-body h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.office-card-body p {
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.9;
+  flex: 1;
+}

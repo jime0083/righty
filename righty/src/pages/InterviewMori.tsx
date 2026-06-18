@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Header } from '../components/Header'
 import { ScrollReveal } from '../components/ScrollReveal'
 import { Footer } from '../components/Footer'
 import { SideNav } from '../components/SideNav'
@@ -56,22 +57,7 @@ const interviewData = {
 function InterviewMori() {
   return (
     <>
-      {/* Header */}
-      <header className="site-head">
-        <div className="wrap head-row">
-          <Link className="logo" to="/">
-            <span className="mark">RIGHTY<sup>®</sup></span>
-            <span className="sub">Careers</span>
-          </Link>
-          <div className="head-actions">
-            <Link className="head-btn head-btn--dark" to="/jobs">募集職種一覧<span className="ar">→</span></Link>
-            <Link className="head-btn head-btn--out" to="/shinsotsu">新卒採用<span className="ar">→</span></Link>
-            <div className="head-menu" role="button" aria-label="メニュー">
-              <img src={`${BASE_URL}assets/images/三点リーダー.png`} alt="メニュー" />
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Page Hero */}
       <section className="page-hero intv-hero">

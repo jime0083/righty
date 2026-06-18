@@ -2,7 +2,6 @@ import { Link, useLocation } from 'react-router-dom'
 
 const navItems = [
   { label: 'ライティについて', path: '/about' },
-  { label: 'カルチャー', path: '/culture' },
   { label: '職種紹介', path: '/jobs' },
   { label: '働く環境', path: '/work' },
   { label: '採用', path: '/recruit' }

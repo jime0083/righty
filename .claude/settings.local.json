@@ -22,7 +22,10 @@
       "WebFetch(domain:api.anthropic.com)",
       "Bash(npm run dev:*)",
       "Bash(git remote add:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "WebFetch(domain:jime0083.github.io)",
+      "Bash(cat:*)",
+      "Bash(grep:*)"
     ]
   }
 }

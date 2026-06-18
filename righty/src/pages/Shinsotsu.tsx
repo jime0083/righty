@@ -2,8 +2,10 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ScrollReveal } from '../components/ScrollReveal'
 import { Footer } from '../components/Footer'
-import { JobCard, type JobCardData } from '../components/JobCard'
+import { JobSlider } from '../components/JobSlider'
+import { type JobCardData } from '../components/JobCard'
 import { SideNav } from '../components/SideNav'
+import { Header } from '../components/Header'
 import '../Shinsotsu.css'
 
 const BASE_URL = import.meta.env.BASE_URL
@@ -120,22 +122,7 @@ function Shinsotsu() {
 
   return (
     <>
-      {/* Header */}
-      <header className="site-head">
-        <div className="wrap head-row">
-          <Link className="logo" to="/">
-            <span className="mark">RIGHTY<sup>®</sup></span>
-            <span className="sub">Careers</span>
-          </Link>
-          <div className="head-actions">
-            <Link className="head-btn head-btn--dark" to="/jobs">募集職種一覧<span className="ar">→</span></Link>
-            <Link className="head-btn head-btn--out active" to="/shinsotsu">新卒採用<span className="ar">→</span></Link>
-            <div className="head-menu" role="button" aria-label="メニュー">
-              <img src={`${BASE_URL}assets/images/三点リーダー.png`} alt="メニュー" />
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Page Hero */}
       <section className="page-hero">
@@ -226,13 +213,9 @@ function Shinsotsu() {
             </div>
             <Link className="link-pill" to="/jobs">すべての職種を見る<span className="ar">→</span></Link>
           </div>
-          <div className="job-grid">
-            {jobCards.map((job, i) => (
-              <ScrollReveal key={i} animation="fadeUp" delay={i * 0.1}>
-                <JobCard job={job} />
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal animation="fadeUp" delay={0.1}>
+            <JobSlider jobs={jobCards} />
+          </ScrollReveal>
         </div>
       </section>
 

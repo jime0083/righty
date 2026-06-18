@@ -1,0 +1,108 @@
+/* ========== Interview Card Component ========== */
+
+.intv-card {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 0;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(193, 128, 93, 0.12);
+  overflow: hidden;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.intv-card--link {
+  cursor: pointer;
+}
+
+.intv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 54px rgba(193, 128, 93, 0.2);
+}
+
+.intv-card-pic {
+  overflow: hidden;
+  background: var(--cream-2);
+}
+
+.intv-card-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 230px;
+}
+
+.intv-card-info {
+  padding: 26px 26px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.intv-card-role {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
+.intv-card-name {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.intv-card-year {
+  font-size: 11.5px;
+  color: var(--ink-faint);
+  margin-bottom: 18px;
+}
+
+.intv-card-quote {
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+  margin-bottom: 22px;
+  flex: 1;
+}
+
+.intv-card-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--orange-deep);
+  padding: 10px 20px;
+  border: 1.5px solid var(--orange);
+  border-radius: 30px;
+  transition: 0.25s;
+}
+
+.intv-card-more .ar {
+  transition: transform 0.25s;
+}
+
+.intv-card:hover .intv-card-more {
+  background: var(--orange);
+  color: #fff;
+}
+
+.intv-card:hover .intv-card-more .ar {
+  transform: translateX(5px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 560px) {
+  .intv-card {
+    grid-template-columns: 1fr;
+  }
+
+  .intv-card-pic img {
+    min-height: 200px;
+  }
+}

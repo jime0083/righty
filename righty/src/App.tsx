@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './App.css'
 import { ScrollReveal } from './components/ScrollReveal'
+import { SideNav } from './components/SideNav'
+import { JobSlider } from './components/JobSlider'
+import { type JobCardData } from './components/JobCard'
 
 const BASE_URL = import.meta.env.BASE_URL
 
@@ -18,35 +21,47 @@ function App() {
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
-  const jobs = [
+  const jobCards: JobCardData[] = [
     {
-      title: 'ブランドデザイナー',
-      description: 'ブランドの価値を可視化し、ロゴやVIなどを通して一貫した体験を設計します。',
-      image: `${BASE_URL}assets/images/汎用1.png`,
+      slug: 'uiux',
+      title: 'UI/UXデザイナー',
+      description: 'ユーザー体験の設計からUIデザインまで、プロダクトの価値を最大化します。',
+      image: `${BASE_URL}assets/images/汎用5.png`,
       imagePosition: 'center center'
     },
     {
-      title: 'UI/UXデザイナー',
-      description: 'ユーザー起点で体験を設計し、使いやすく、美しいデジタル体験をつくります。',
+      slug: 'frontend',
+      title: 'フロントエンドエンジニア',
+      description: 'Webサイトやサービスのフロントエンド開発で、快適で魅力的な体験をつくります。',
       image: `${BASE_URL}assets/images/汎用2.png`,
       imagePosition: 'center center'
     },
     {
-      title: 'フロントエンドエンジニア',
-      description: 'デザインを正確に実装し、ユーザーにとって心地よいインターフェースを実現します。',
-      image: `${BASE_URL}assets/images/汎用3.png`,
-      imagePosition: 'center center'
-    },
-    {
+      slug: 'backend',
       title: 'バックエンドエンジニア',
-      description: 'システムの設計・開発を通して、安定性・拡張性の高い基盤をつくります。',
-      image: `${BASE_URL}assets/images/汎用4.png`,
+      description: '安定したシステム基盤を構築し、サービスの成長を支えます。',
+      image: `${BASE_URL}assets/images/汎用7.png`,
       imagePosition: 'center center'
     },
     {
-      title: 'プロジェクトマネージャー',
-      description: 'チームとクライアントをつなぎ、プロジェクトを成功へと導く推進役を担います。',
-      image: `${BASE_URL}assets/images/汎用5.png`,
+      slug: 'sales',
+      title: 'セールス',
+      description: 'クライアントの課題を深く理解し、最適なソリューションを提案します。',
+      image: `${BASE_URL}assets/images/汎用MT2.png`,
+      imagePosition: 'center center'
+    },
+    {
+      slug: 'marketing',
+      title: 'マーケティング',
+      description: 'データと創造性を駆使し、サービスの成長を加速させます。',
+      image: `${BASE_URL}assets/images/汎用MT1.png`,
+      imagePosition: 'center center'
+    },
+    {
+      slug: 'planner',
+      title: 'プランナー',
+      description: 'クライアントの課題を紐解き、最適なソリューションを設計します。',
+      image: `${BASE_URL}assets/images/汎用9.png`,
       imagePosition: 'center center'
     }
   ]
@@ -137,13 +152,7 @@ function App() {
           }}
         ></span>
         <div className="wrap hero-grid">
-          <nav className="side-nav">
-            <Link to="/about"><span className="dot"></span>ライティについて</Link>
-            <a href="#"><span className="dot"></span>カルチャー</a>
-            <a href="#jobs"><span className="dot"></span>職種紹介</a>
-            <a href="#work"><span className="dot"></span>働く環境</a>
-            <a href="#recruit"><span className="dot"></span>採用</a>
-          </nav>
+          <SideNav />
           <div className="hero-photo-area">
             <h1 className="vhead">
               <span className="vhead-line vhead-line-1">つくりたいのは</span>
@@ -200,30 +209,8 @@ function App() {
             <div className="sec-title-c">Job Category</div>
             <div className="sec-jp">職種紹介</div>
           </ScrollReveal>
-          <div className="job-grid">
-            {jobs.map((job, index) => (
-              <ScrollReveal key={index} animation="fadeUp" delay={index * 0.1}>
-                <article className="job-card">
-                  <div className="job-img">
-                    <img
-                      src={job.image}
-                      alt={job.title}
-                      style={{ objectPosition: job.imagePosition }}
-                    />
-                  </div>
-                  <div className="job-body">
-                    <h3>{job.title}</h3>
-                    <p>{job.description}</p>
-                    <a className="job-more" href="#">詳しく見る<span className="ar">→</span></a>
-                  </div>
-                </article>
-              </ScrollReveal>
-            ))}
-          </div>
-          <ScrollReveal animation="fadeUp" delay={0.3}>
-            <div className="jobs-cta">
-              <a className="link-out" href="#">すべての職種を見る<span className="ar">→</span></a>
-            </div>
+          <ScrollReveal animation="fadeUp">
+            <JobSlider jobs={jobCards} />
           </ScrollReveal>
         </div>
       </section>
@@ -295,7 +282,7 @@ function App() {
               <span className="rv-circle"></span>
               <span className="rv-dots"></span>
               <div className="rv-photo">
-                <img src={`${BASE_URL}assets/team.png`} alt="チームメンバー" />
+                <img src={`${BASE_URL}assets/images/MT3.png`} alt="チームメンバー" />
               </div>
             </div>
           </ScrollReveal>

@@ -70,7 +70,7 @@
 /* ---------- Page Hero ---------- */
 .page-hero {
   position: relative;
-  padding: 158px 0 70px;
+  padding: 150px 0 80px;
   overflow: hidden;
 }
 
@@ -84,6 +84,7 @@
 
 .page-hero .side-nav {
   padding-top: 6px;
+  margin-top: 0;
 }
 
 .hero-head {
@@ -177,15 +178,6 @@
 
 .feature-row.reverse .copy {
   order: -1;
-}
-
-.f-eyebrow {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.22em;
-  color: var(--orange-deep);
-  text-transform: uppercase;
 }
 
 .f-title {

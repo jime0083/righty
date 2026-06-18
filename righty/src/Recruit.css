@@ -270,6 +270,24 @@
   background: var(--cream);
 }
 
+.jobs-sec .f-eyebrow {
+  margin-bottom: 8px;
+}
+
+.jobs-sec h2 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.jobs-sec-desc {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  line-height: 2.05;
+  margin-bottom: 40px;
+}
+
 .jobs-sec .intv-head {
   margin-bottom: 40px;
 }

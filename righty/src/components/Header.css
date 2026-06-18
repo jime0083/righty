@@ -1,0 +1,156 @@
+/* ========== Site Header Component ========== */
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  padding: 38px 0 0;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.header-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+}
+
+.header-logo .mark {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-size: 25px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  position: relative;
+}
+
+.header-logo .mark sup {
+  color: var(--orange);
+  font-size: 16px;
+  top: -0.7em;
+}
+
+.header-logo .sub {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+}
+
+/* Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Buttons */
+.header-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 34px;
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 14px 26px;
+  border-radius: 40px;
+  transition: 0.28s;
+  white-space: nowrap;
+}
+
+.header-btn .ar {
+  transition: transform 0.28s;
+}
+
+.header-btn:hover .ar {
+  transform: translateX(5px);
+}
+
+.header-btn--dark {
+  background: #2b1a12;
+  color: #fff;
+}
+
+.header-btn--dark:hover {
+  background: #3a2418;
+  transform: translateY(-2px);
+}
+
+.header-btn--dark.active {
+  background: #3a2418;
+}
+
+.header-btn--out {
+  border: 1.5px solid var(--orange);
+  color: var(--orange-deep);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.header-btn--out:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.header-btn--out.active {
+  background: var(--orange);
+  color: #fff;
+}
+
+/* Menu Button - Hidden by default on desktop */
+.header-menu {
+  display: none;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex: none;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.header-menu:hover {
+  transform: scale(1.06);
+}
+
+.header-menu img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive - Show menu button only when buttons are hidden */
+@media (max-width: 980px) {
+  .header-btn {
+    display: none;
+  }
+
+  .header-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 560px) {
+  .site-header {
+    padding: 24px 0 0;
+  }
+
+  .header-logo .mark {
+    font-size: 22px;
+  }
+
+  .header-logo .sub {
+    font-size: 13px;
+  }
+
+  .header-menu {
+    width: 48px;
+    height: 48px;
+  }
+}

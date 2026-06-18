@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { ScrollReveal } from '../components/ScrollReveal'
 import { Footer } from '../components/Footer'
-import { JobCard, type JobCardData } from '../components/JobCard'
+import { JobSlider } from '../components/JobSlider'
+import { type JobCardData } from '../components/JobCard'
 import { SideNav } from '../components/SideNav'
+import { Header } from '../components/Header'
 import '../Jobs.css'
 
 const BASE_URL = import.meta.env.BASE_URL
@@ -16,42 +17,42 @@ function Jobs() {
       slug: 'uiux',
       title: 'UI/UXデザイナー',
       description: 'ユーザー体験の設計からUIデザインまで、プロダクトの価値を最大化します。',
-      image: `${BASE_URL}assets/images/job_uiux_crop.png`,
-      imagePosition: '72% center'
+      image: `${BASE_URL}assets/images/汎用5.png`,
+      imagePosition: 'center center'
     },
     {
       slug: 'frontend',
       title: 'フロントエンドエンジニア',
       description: 'Webサイトやサービスのフロントエンド開発で、快適で魅力的な体験をつくります。',
-      image: `${BASE_URL}assets/images/job_frontend_crop.png`,
-      imagePosition: '62% center'
+      image: `${BASE_URL}assets/images/汎用2.png`,
+      imagePosition: 'center center'
     },
     {
       slug: 'backend',
       title: 'バックエンドエンジニア',
       description: '安定したシステム基盤を構築し、サービスの成長を支えます。',
-      image: `${BASE_URL}assets/images/job_backend_crop.png`,
+      image: `${BASE_URL}assets/images/汎用7.png`,
       imagePosition: 'center center'
     },
     {
       slug: 'sales',
       title: 'セールス',
       description: 'クライアントの課題を深く理解し、最適なソリューションを提案します。',
-      image: `${BASE_URL}assets/images/cult_connect.png`,
+      image: `${BASE_URL}assets/images/汎用MT2.png`,
       imagePosition: 'center center'
     },
     {
       slug: 'marketing',
       title: 'マーケティング',
       description: 'データと創造性を駆使し、サービスの成長を加速させます。',
-      image: `${BASE_URL}assets/images/cult_change.png`,
+      image: `${BASE_URL}assets/images/汎用MT1.png`,
       imagePosition: 'center center'
     },
     {
       slug: 'planner',
       title: 'プランナー',
       description: 'クライアントの課題を紐解き、最適なソリューションを設計します。',
-      image: `${BASE_URL}assets/images/cult_confident.png`,
+      image: `${BASE_URL}assets/images/汎用9.png`,
       imagePosition: 'center center'
     }
   ]
@@ -85,22 +86,7 @@ function Jobs() {
 
   return (
     <>
-      {/* Header */}
-      <header className="site-head">
-        <div className="wrap head-row">
-          <Link className="logo" to="/">
-            <span className="mark">RIGHTY<sup>®</sup></span>
-            <span className="sub">Careers</span>
-          </Link>
-          <div className="head-actions">
-            <Link className="head-btn head-btn--dark" to="/jobs">募集職種一覧<span className="ar">→</span></Link>
-            <Link className="head-btn head-btn--out" to="/shinsotsu">新卒採用<span className="ar">→</span></Link>
-            <div className="head-menu" role="button" aria-label="メニュー">
-              <img src={`${BASE_URL}assets/images/三点リーダー.png`} alt="メニュー" />
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Page Hero */}
       <section className="page-hero">
@@ -120,33 +106,18 @@ function Jobs() {
         </div>
       </section>
 
-      {/* Jobs Intro */}
-      <section className="jobs-intro">
+      {/* Jobs Section */}
+      <section className="jobs-sec">
         <div className="wrap">
           <ScrollReveal animation="fadeUp">
             <h2>私たちの仕事と役割</h2>
           </ScrollReveal>
           <ScrollReveal animation="fadeUp" delay={0.1}>
-            <p>クライアントの課題を深く理解し、アイデアを形にする。<br />企画から設計、実装、運用まで、チームで価値をつくり、届けています。</p>
+            <p className="jobs-sec-desc">クライアントの課題を深く理解し、アイデアを形にする。<br />企画から設計、実装、運用まで、チームで価値をつくり、届けています。</p>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Job Cards */}
-      <section className="jobs-sec">
-        <div className="wrap">
-          <div className="job-grid">
-            {jobCards.map((job, index) => (
-              <ScrollReveal key={index} animation="fadeUp" delay={index * 0.1}>
-                <JobCard job={job} />
-              </ScrollReveal>
-            ))}
-          </div>
-          <div className="jobs-cta">
-            <ScrollReveal animation="fadeUp">
-              <a href="#">すべての募集職種を見る<span className="ar">→</span></a>
-            </ScrollReveal>
-          </div>
+          <ScrollReveal animation="fadeUp" delay={0.2}>
+            <JobSlider jobs={jobCards} />
+          </ScrollReveal>
         </div>
       </section>
 
