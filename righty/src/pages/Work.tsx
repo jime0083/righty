@@ -150,17 +150,17 @@ function Work() {
 
   const officeCards: OfficeCardData[] = [
     {
-      image: `${BASE_URL}assets/images/cult_yoshinani.png`,
+      image: `${BASE_URL}assets/images/汎用MT1.png`,
       title: '開放的な空間設計',
       description: '大きな窓から自然光が差し込み、明るく開放的なオフィスです。'
     },
     {
-      image: `${BASE_URL}assets/images/cult_connect.png`,
+      image: `${BASE_URL}assets/images/汎用MT5.png`,
       title: 'リフレッシュスペース',
       description: 'ソファやグリーンに囲まれたスペースで、リフレッシュや気軽な会話が生まれます。'
     },
     {
-      image: `${BASE_URL}assets/images/about_cafe.png`,
+      image: `${BASE_URL}assets/images/汎用MT4.png`,
       title: '集中できる会議室',
       description: '用途に合わせた会議室を完備。オンライン会議も快適に行えます。'
     }
@@ -311,11 +311,11 @@ function Work() {
       <section className="workcta">
         <div className="wrap workcta-inner">
           <ScrollReveal animation="fadeRight">
-            <img className="workcta-photo" src={`${BASE_URL}assets/images/cta_team.png`} alt="ライティで働く人" />
+            <img className="workcta-photo" src={`${BASE_URL}assets/images/MT2人1.png`} alt="ライティで働く人" />
           </ScrollReveal>
           <ScrollReveal animation="fadeUp" delay={0.1}>
             <div className="workcta-text">
-              <h2>ライティについてもっと詳しく知りたい方へ</h2>
+              <h2>ライティをもっと詳しく知りたい方へ</h2>
               <p>社員インタビューや一日のスケジュールなど、リアルな働き方をご紹介しています。</p>
             </div>
           </ScrollReveal>

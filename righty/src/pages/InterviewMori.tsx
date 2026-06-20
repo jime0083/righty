@@ -19,7 +19,7 @@ const interviewData = {
     bio: 'デザイン専門学校でWebデザインを学ぶ。\n制作会社でのWebサイト制作経験を経て、\nUXデザインに興味を持ちライティへ転職。\n現在はtoB向けプロダクトのUI設計を担当。'
   },
   heroImage: `${BASE_URL}assets/images/森真琴1.png`,
-  qaImage: `${BASE_URL}assets/images/森真琴2.png`,
+  qaImage: `${BASE_URL}assets/images/森真琴3.png`,
   qaList: [
     {
       question: 'ライティに入社した理由',

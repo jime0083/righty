@@ -18,7 +18,7 @@ const interviewData = {
     year: '2021年入社',
     bio: '大学では情報科学を専攻し、\nWeb開発のインターンを経験。\nライティに中途入社後、\nフロントエンドチームで複数のプロジェクトに参画。'
   },
-  heroImage: `${BASE_URL}assets/images/藤原幸樹1.png`,
+  heroImage: `${BASE_URL}assets/images/藤原幸樹3.png`,
   qaImage: `${BASE_URL}assets/images/藤原幸樹2.png`,
   qaList: [
     {

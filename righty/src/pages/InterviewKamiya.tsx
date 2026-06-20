@@ -18,7 +18,7 @@ const interviewData = {
     year: '2020年入社',
     bio: '大学院で分散システムを研究。\n大手SIerでの経験を経て、\nより技術的にチャレンジできる環境を求めてライティに入社。\n現在はバックエンドチームのテックリードを務める。'
   },
-  heroImage: `${BASE_URL}assets/images/神谷翔1.png`,
+  heroImage: `${BASE_URL}assets/images/神谷翔3.png`,
   qaImage: `${BASE_URL}assets/images/神谷翔2.png`,
   qaList: [
     {

@@ -38,7 +38,7 @@ function Message() {
               <span className="msg-deco c1"></span>
               <span className="msg-deco dots" style={{ top: '-26px', right: '-10px' }}></span>
               <div className="photo blob-rect">
-                <img src={`${BASE_URL}assets/images/ceo2_left.png`} alt="代表取締役 太田憲一" />
+                <img src={`${BASE_URL}assets/images/太田 憲一2.png`} alt="代表取締役 太田憲一" />
               </div>
               <div className="msg-caption">
                 <div className="role">CEO</div>
@@ -70,7 +70,7 @@ function Message() {
               <span className="msg-deco c2" style={{ left: '-20px', top: '14%' }}></span>
               <span className="msg-deco dots" style={{ bottom: '30px', left: '-30px' }}></span>
               <div className="photo blob-rect">
-                <img src={`${BASE_URL}assets/images/cto_rect.png`} alt="CTO 鈴木達哉" />
+                <img src={`${BASE_URL}assets/images/鈴木 達哉.png`} alt="CTO 鈴木達哉" />
               </div>
               <div className="msg-caption" style={{ textAlign: 'right' }}>
                 <div className="role">CTO</div>

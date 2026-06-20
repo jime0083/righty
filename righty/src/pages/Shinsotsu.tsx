@@ -4,6 +4,8 @@ import { ScrollReveal } from '../components/ScrollReveal'
 import { Footer } from '../components/Footer'
 import { JobSlider } from '../components/JobSlider'
 import { type JobCardData } from '../components/JobCard'
+import { InterviewSlider } from '../components/InterviewSlider'
+import { type InterviewCardData } from '../components/InterviewCard'
 import { SideNav } from '../components/SideNav'
 import { Header } from '../components/Header'
 import '../Shinsotsu.css'
@@ -38,33 +40,38 @@ const faqItems: FaqItem[] = [
   }
 ]
 
-const interviewCards = [
+const newGradInterviews: InterviewCardData[] = [
   {
-    img: 'job_frontend_crop.png',
-    imgPosition: '60% center',
+    image: `${BASE_URL}assets/images/高橋歩美1.png`,
     role: 'フロントエンドエンジニア',
-    name: '佐藤 大輝',
-    year: '2023年入社',
-    title: '挑戦する文化が、成長を加速させる',
-    desc: '学生時代の制作経験を活かし、より高度な領域に挑戦したいという想いでライティを選びました。'
+    name: '高橋 歩美',
+    year: '2022年入社',
+    quote: '「思いを、かたちにできる」\nプロダクトをつくる',
+    link: '/interview/takahashi-ayumi'
   },
   {
-    img: 'job_uiux_crop.png',
-    imgPosition: '72% center',
+    image: `${BASE_URL}assets/images/木村正弘1.png`,
     role: 'UI/UXデザイナー',
-    name: '鈴木 美咲',
-    year: '2023年入社',
-    title: 'ユーザーの心を動かすデザインを',
-    desc: '実際のプロジェクトでユーザーの反応を知るたびに、デザインの面白さを実感しています。'
+    name: '木村 正弘',
+    year: '2019年入社',
+    quote: 'ユーザーの本質的な\n課題に向き合う',
+    link: '/interview/kimura-masahiro'
   },
   {
-    img: 'job_pm_crop.png',
-    imgPosition: 'center 28%',
-    role: 'バックエンドエンジニア',
-    name: '髙橋 健太',
-    year: '2023年入社',
-    title: '技術で事業の成長を支えたい',
-    desc: '安定したシステムをつくることで、サービスの成長に貢献できることにやりがいを感じています。'
+    image: `${BASE_URL}assets/images/藤原幸樹3.png`,
+    role: 'フロントエンドエンジニア',
+    name: '藤原 幸樹',
+    year: '2021年入社',
+    quote: 'チームで学び合いながら\n成長できる環境',
+    link: '/interview/fujiwara-koki'
+  },
+  {
+    image: `${BASE_URL}assets/images/森真琴1.png`,
+    role: 'UI/UXデザイナー',
+    name: '森 真琴',
+    year: '2022年入社',
+    quote: 'デザインで\nビジネスの未来をつくる',
+    link: '/interview/mori-makoto'
   }
 ]
 
@@ -73,42 +80,42 @@ const jobCards: JobCardData[] = [
     slug: 'uiux',
     title: 'UI/UXデザイナー',
     description: 'ユーザー体験の設計からUIデザインまで、プロダクトの価値を最大化します。',
-    image: `${BASE_URL}assets/images/job_uiux_crop.png`,
-    imagePosition: '72% center'
+    image: `${BASE_URL}assets/images/汎用5.png`,
+    imagePosition: 'center center'
   },
   {
     slug: 'frontend',
     title: 'フロントエンドエンジニア',
     description: 'Webサイトやサービスのフロントエンド開発で、快適で魅力的な体験をつくります。',
-    image: `${BASE_URL}assets/images/job_frontend_crop.png`,
-    imagePosition: '62% center'
+    image: `${BASE_URL}assets/images/汎用2.png`,
+    imagePosition: 'center center'
   },
   {
     slug: 'backend',
     title: 'バックエンドエンジニア',
     description: '安定したシステム基盤を構築し、サービスの成長を支えます。',
-    image: `${BASE_URL}assets/images/job_backend_crop.png`,
+    image: `${BASE_URL}assets/images/汎用7.png`,
     imagePosition: 'center center'
   },
   {
     slug: 'sales',
     title: 'セールス',
     description: 'クライアントの課題を深く理解し、最適なソリューションを提案します。',
-    image: `${BASE_URL}assets/images/cult_connect.png`,
+    image: `${BASE_URL}assets/images/汎用MT2.png`,
     imagePosition: 'center center'
   },
   {
     slug: 'marketing',
     title: 'マーケティング',
     description: 'データと創造性を駆使し、サービスの成長を加速させます。',
-    image: `${BASE_URL}assets/images/cult_change.png`,
+    image: `${BASE_URL}assets/images/汎用MT1.png`,
     imagePosition: 'center center'
   },
   {
     slug: 'planner',
     title: 'プランナー',
     description: 'クライアントの課題を紐解き、最適なソリューションを設計します。',
-    image: `${BASE_URL}assets/images/cult_confident.png`,
+    image: `${BASE_URL}assets/images/汎用9.png`,
     imagePosition: 'center center'
   }
 ]
@@ -164,39 +171,20 @@ function Shinsotsu() {
       </section>
 
       {/* INTERVIEW */}
-      <section className="shin-interview" id="interview">
+      <section className="interview" id="interview">
         <div className="wrap">
           <div className="intv-head">
             <div>
               <ScrollReveal animation="fadeUp">
-                <div className="f-eyebrow">Interview</div>
-                <h2>新入社員インタビュー</h2>
-                <p>ライティで働く新入社員に、<br />入社の決め手や成長を感じた瞬間について聞きました。</p>
+                <div className="f-eyebrow">Voice</div>
+                <h2>新入社員の声</h2>
+                <p>ライティで働く若手社員に、<br />入社の決め手や成長を感じた瞬間について聞きました。</p>
               </ScrollReveal>
             </div>
-            <a className="link-pill" href="#">すべてのインタビューを見る<span className="ar">→</span></a>
           </div>
-          <div className="intv-grid">
-            {interviewCards.map((card, i) => (
-              <ScrollReveal key={i} animation="fadeUp" delay={i * 0.1}>
-                <article className="icard">
-                  <div className="img">
-                    <img src={`${BASE_URL}assets/images/${card.img}`} alt={card.role} style={{ objectPosition: card.imgPosition }} />
-                  </div>
-                  <div className="body">
-                    <div className="role">{card.role}</div>
-                    <div className="who">{card.name} <span>{card.year}</span></div>
-                    <h3>{card.title}</h3>
-                    <p className="desc">{card.desc}</p>
-                    <a className="more" href="#">詳しく見る<span className="ar">→</span></a>
-                  </div>
-                </article>
-              </ScrollReveal>
-            ))}
-          </div>
-          <div className="intv-dots">
-            <span className="on"></span><span></span><span></span><span></span><span></span>
-          </div>
+          <ScrollReveal animation="fadeUp" delay={0.1}>
+            <InterviewSlider interviews={newGradInterviews} />
+          </ScrollReveal>
         </div>
       </section>
 

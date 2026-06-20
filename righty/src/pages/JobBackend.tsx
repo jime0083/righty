@@ -24,7 +24,7 @@ const jobData = {
   },
   interviews: [
     {
-      image: '神谷翔1.png',
+      image: '神谷翔3.png',
       role: 'バックエンドエンジニア',
       name: '神谷 翔',
       year: '2020年入社',

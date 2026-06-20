@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, EffectFade } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/effect-fade'
 import './App.css'
 import { ScrollReveal } from './components/ScrollReveal'
 import { SideNav } from './components/SideNav'
@@ -7,6 +11,13 @@ import { JobSlider } from './components/JobSlider'
 import { type JobCardData } from './components/JobCard'
 
 const BASE_URL = import.meta.env.BASE_URL
+
+const heroImages = [
+  `${BASE_URL}assets/images/汎用MT3.png`,
+  `${BASE_URL}assets/images/MT3.png`,
+  `${BASE_URL}assets/images/Gemini_Generated_Image_9pj57b9pj57b9pj5.png`,
+  `${BASE_URL}assets/images/汎用9.png`
+]
 
 function App() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
@@ -144,13 +155,29 @@ function App() {
           }}
         ></span>
         <span className="dots-hero"></span>
-        <span
+        <div
           className="copy-circle"
           style={{
             transform: `translate(calc(-50% + ${mousePos.x * 50}px), calc(-50% + ${mousePos.y * 40}px))`,
             borderRadius: `${50 + mousePos.x * 20}% ${50 - mousePos.x * 20}% ${50 + mousePos.y * 18}% ${50 - mousePos.y * 18}% / ${50 - mousePos.y * 15}% ${50 + mousePos.y * 15}% ${50 - mousePos.x * 18}% ${50 + mousePos.x * 18}%`
           }}
-        ></span>
+        >
+          <Swiper
+            modules={[Autoplay, EffectFade]}
+            effect="fade"
+            fadeEffect={{ crossFade: true }}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            loop={true}
+            speed={1500}
+            className="hero-blob-slider"
+          >
+            {heroImages.map((img, i) => (
+              <SwiperSlide key={i}>
+                <img src={img} alt="" />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
         <div className="wrap hero-grid">
           <SideNav />
           <div className="hero-photo-area">

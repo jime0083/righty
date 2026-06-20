@@ -40,7 +40,7 @@ function Recruit() {
       link: '/interview/takahashi-ayumi'
     },
     {
-      image: `${BASE_URL}assets/images/藤原幸樹1.png`,
+      image: `${BASE_URL}assets/images/藤原幸樹3.png`,
       role: 'フロントエンドエンジニア',
       name: '藤原 幸樹',
       year: '2021年入社',
@@ -49,7 +49,7 @@ function Recruit() {
     },
     // バックエンドエンジニア
     {
-      image: `${BASE_URL}assets/images/神谷翔1.png`,
+      image: `${BASE_URL}assets/images/神谷翔3.png`,
       role: 'バックエンドエンジニア',
       name: '神谷 翔',
       year: '2020年入社',
@@ -204,7 +204,7 @@ function Recruit() {
           </div>
           <div className="message-photo">
             <ScrollReveal animation="scale">
-              <img src={`${BASE_URL}assets/images/ceo_blob.png`} alt="代表取締役 太田健一" />
+              <img src={`${BASE_URL}assets/images/太田 憲一1.png`} alt="代表取締役 太田健一" />
             </ScrollReveal>
           </div>
         </div>
@@ -237,11 +237,8 @@ function Recruit() {
                 <p>ライティで働くメンバーに、<br />仕事のやりがいやチームの雰囲気について聞きました。</p>
               </ScrollReveal>
             </div>
-            <ScrollReveal animation="fadeUp" delay={0.1}>
-              <a className="link-pill" href="#">すべてのインタビューを見る<span className="ar">→</span></a>
-            </ScrollReveal>
           </div>
-          <ScrollReveal animation="fadeUp" delay={0.2}>
+          <ScrollReveal animation="fadeUp" delay={0.1}>
             <InterviewSlider interviews={interviews} />
           </ScrollReveal>
         </div>

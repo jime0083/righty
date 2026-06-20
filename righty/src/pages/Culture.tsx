@@ -2,7 +2,6 @@ import { ScrollReveal } from '../components/ScrollReveal'
 import { Footer } from '../components/Footer'
 import { SideNav } from '../components/SideNav'
 import { Header } from '../components/Header'
-import { OfficeCard, type OfficeCardData } from '../components/OfficeCard'
 import '../Culture.css'
 
 const BASE_URL = import.meta.env.BASE_URL
@@ -13,47 +12,29 @@ function Culture() {
       num: '01',
       title: '自信はあるけど謙虚',
       description: '自己顕示欲を満たすことより、社会にインパクトを与えることが私たちにとっては重要です。もちろん自分たちの仕事への矜持は持っているべきです。アピールすることが目的達成のために必要な手段であれば、その選択肢も否定されるべきものではありません。つまり、姿勢と結果で示していくというシンプルな原理です。それが私たちギフティの「行まい」をつくります。',
-      image: `${BASE_URL}assets/images/cult_confident.png`,
+      image: `${BASE_URL}assets/images/汎用MT4.png`,
       deco: 'dots'
     },
     {
       num: '02',
       title: 'よしなに進める',
       description: '「よしなに」という言葉には解釈の幅の広さがあります。ギフティにおいては、お互いがそれぞれ自立しているからこそ、あえて「よしなに」という言葉を使って、仲間のやりたいことを尊重します。その一方でプロフェッショナルとして責任を持つということが求められます。組織や事業にとって「離も良い」と思うことを、自らが判断して実行することが「よしなに進める」の意味することです。',
-      image: `${BASE_URL}assets/images/cult_yoshinani.png`,
+      image: `${BASE_URL}assets/images/MT1.png`,
       deco: null
     },
     {
       num: '03',
       title: 'つながりを大切に',
       description: '定期的に1on1やチームイベントで、信頼関係を育みます。物理的な距離にとらわれず、フラットに意見を交わし、互いの強みを活かすことで、一人では生み出せない価値をつくります。つながりは、ギフティが社会に提供する価値の源泉です。',
-      image: `${BASE_URL}assets/images/cult_connect.png`,
+      image: `${BASE_URL}assets/images/汎用MT5.png`,
       deco: 'circ-top'
     },
     {
       num: '04',
       title: '変化を楽しむ',
       description: 'デザインもテクノロジーも、社会も、常に変化しています。私たちはその変化を恐れず、新しい知識やスキルを学び続け、柔軟にアップデートしていきます。変化を楽しむ姿勢が、未来の可能性を広げます。',
-      image: `${BASE_URL}assets/images/cult_change.png`,
+      image: `${BASE_URL}assets/images/汎用3.png`,
       deco: 'circ-bottom'
-    }
-  ]
-
-  const moreCards: OfficeCardData[] = [
-    {
-      title: 'メンバーインタビュー',
-      description: 'ギフティで働くメンバーの想いやキャリアを紹介します。',
-      image: `${BASE_URL}assets/images/cult_yoshinani.png`
-    },
-    {
-      title: 'チームの取り組み',
-      description: 'プロジェクトやチームの取り組みをご紹介します。',
-      image: `${BASE_URL}assets/images/cult_card_team.png`
-    },
-    {
-      title: 'イベント・社内活動',
-      description: '社内イベントやワークショップなど、文化を育む活動を紹介します。',
-      image: `${BASE_URL}assets/images/cult_card_event.png`
     }
   ]
 
@@ -86,13 +67,20 @@ function Culture() {
           <span className="ib2"></span>
           <span className="ib3"></span>
         </div>
-        <div className="wrap">
-          <ScrollReveal animation="fadeUp">
-            <div className="f-eyebrow">Culture</div>
-            <h2>カルチャー</h2>
-          </ScrollReveal>
-          <ScrollReveal animation="fadeUp" delay={0.1}>
-            <p>ギフティは「つくりたいのは、"つながり"の先にある価値」という想いのもと、人と人、想いと想いをつなぐデザインとテクノロジーで、社会に貢献していきます。<br />その実現のために、私たちは4つの価値観を大切にしています。</p>
+        <div className="wrap cult-intro-grid">
+          <div className="cult-intro-text">
+            <ScrollReveal animation="fadeUp">
+              <div className="f-eyebrow">Culture</div>
+              <h2>カルチャー</h2>
+            </ScrollReveal>
+            <ScrollReveal animation="fadeUp" delay={0.1}>
+              <p>ギフティは「つくりたいのは、"つながり"の先にある価値」という想いのもと、人と人、想いと想いをつなぐデザインとテクノロジーで、社会に貢献していきます。<br />その実現のために、私たちは4つの価値観を大切にしています。</p>
+            </ScrollReveal>
+          </div>
+          <ScrollReveal animation="scale">
+            <div className="cult-intro-photo">
+              <img src={`${BASE_URL}assets/images/汎用MT3.png`} alt="カルチャー" />
+            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -128,27 +116,6 @@ function Culture() {
                     <p>{value.description}</p>
                   </div>
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* More Culture */}
-      <section className="more-cult">
-        <div className="wrap mc-grid">
-          <div className="mc-left">
-            <ScrollReveal animation="fadeRight">
-              <div className="f-eyebrow">More Culture</div>
-              <h2>ライティのカルチャーを<br />もっと知る</h2>
-              <p>メンバーのインタビューや、チームの取り組み、イベントの様子など、ギフティのカルチャーをより深く知ることができます。</p>
-              <a className="link-out" href="#">カルチャーページを見る<span className="ar">→</span></a>
-            </ScrollReveal>
-          </div>
-          <div className="mc-cards office-cards">
-            {moreCards.map((card, index) => (
-              <ScrollReveal key={index} animation="fadeUp" delay={index * 0.1}>
-                <OfficeCard card={card} />
               </ScrollReveal>
             ))}
           </div>
